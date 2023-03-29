@@ -1,19 +1,30 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
 
+        Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3);
+
+
         JLabel desert = new JLabel();
         ImageIcon desertIcon = new ImageIcon("img/desert.png");
         desert.setIcon(desertIcon);
         desert.setBounds(0, 0, 750, 750);
+        //desert.setBorder(border);
 
-        JLabel information = new JLabel();
-        ImageIcon informationIcon = new ImageIcon("img/information.png");
-        information.setIcon(informationIcon);
-        information.setBounds(17, 320, 700, 400);
-        
+        JLabel statusBoard = new JLabel();
+        statusBoard.setText("Status Board");
+        statusBoard.setHorizontalTextPosition(JLabel.CENTER);
+        statusBoard.setVerticalTextPosition(JLabel.TOP);
+        statusBoard.setIconTextGap(-35);//distance between image & text
+        statusBoard.setFont(new Font("Century", Font.PLAIN, 32));
+        ImageIcon informationIcon = new ImageIcon("img/statusBoard.png");
+        statusBoard.setIcon(informationIcon);
+        statusBoard.setBounds(10, 10, 500, 300);
+        statusBoard.setBorder(border);
+
 
         JLabel player_1_Image = new JLabel();
         player_1_Image.setText("Werewolf");
@@ -22,7 +33,7 @@ public class Main {
         player_1_Image.setFont(new Font("Century", Font.PLAIN, 32));
         ImageIcon player_1_image_Icon = new ImageIcon("img/player_1_image.png");
         player_1_Image.setIcon(player_1_image_Icon);
-        player_1_Image.setBounds(500, -230, 750, 750);
+        player_1_Image.setBounds(500, 0, 300, 320);
 
 
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
@@ -43,7 +54,7 @@ public class Main {
 
         rightPanel.add(player_1_Image);
         rightPanel.add(player_1_HP_bar);
-        rightPanel.add(information);
+        rightPanel.add(statusBoard);
 
 
         Frame frame = new Frame();
