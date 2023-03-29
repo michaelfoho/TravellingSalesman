@@ -4,16 +4,16 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
 
-        JLabel desert = new JLabel();
+        /*JLabel desert = new JLabel();
         ImageIcon desertIcon = new ImageIcon("img/desert.png");
         desert.setIcon(desertIcon);
-        desert.setBounds(0, 0, 750, 750);
+        desert.setBounds(0, 0, 750, 750);*/
 
         JLabel information = new JLabel();
         ImageIcon informationIcon = new ImageIcon("img/information.png");
         information.setIcon(informationIcon);
         information.setBounds(17, 320, 700, 400);
-        
+
 
         JLabel player_1_Image = new JLabel();
         player_1_Image.setText("Werewolf");
@@ -33,7 +33,7 @@ public class Main {
         leftPanel.setBounds(0, 0, 750, 750);
         leftPanel.setLayout(null);
 
-        leftPanel.add(desert);
+        //leftPanel.add(desert);
 
 
         JPanel rightPanel = new JPanel();

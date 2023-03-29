@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,9 +18,18 @@ public class Frame extends JFrame implements ActionListener {
     JMenuItem soundOnItem = new JMenuItem("On");
     JMenuItem soundOffItem = new JMenuItem("Off");
 
+    panel panel;
+
     Frame() {
+
+        panel = new panel();
+
         this.setTitle("Travelling Salesman");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.add(panel);
+        this.pack();
+
         this.setSize(1500, 810);
         this.setResizable(false);
         this.setLocationRelativeTo(null);//load frame in the center of screen instead the top corner
@@ -49,6 +59,8 @@ public class Frame extends JFrame implements ActionListener {
         this.setJMenuBar(menuBar);
         this.setVisible(true);
     }
+
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
