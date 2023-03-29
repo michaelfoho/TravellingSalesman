@@ -30,7 +30,7 @@ public class Frame extends JFrame implements ActionListener {
         this.add(panel);
         this.pack();
 
-        this.setSize(1500, 810);
+        this.setSize(1514, 810);
         this.setResizable(false);
         this.setLocationRelativeTo(null);//load frame in the center of screen instead the top corner
         this.setLayout(null);

@@ -1,0 +1,208 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport java.awt.*;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3);\r\n\r\n\r\n        JLabel desert = new JLabel();\r\n        ImageIcon desertIcon = new ImageIcon(\"img/desert.png\");\r\n        desert.setIcon(desertIcon);\r\n        desert.setBounds(0, 0, 750, 750);\r\n        //desert.setBorder(border);\r\n\r\n        JLabel statusBoard = new JLabel();\r\n        statusBoard.setText(\"Status Board\");\r\n        statusBoard.setHorizontalTextPosition(JLabel.CENTER);\r\n        statusBoard.setVerticalTextPosition(JLabel.TOP);\r\n        statusBoard.setIconTextGap(-35);//distance between image & text\r\n        statusBoard.setFont(new Font(\"Century\", Font.PLAIN, 32));\r\n        ImageIcon informationIcon = new ImageIcon(\"img/statusBoard.png\");\r\n        statusBoard.setIcon(informationIcon);\r\n        statusBoard.setBounds(10, 10, 500, 300);\r\n        statusBoard.setBorder(border);\r\n\r\n\r\n        JLabel player_1_Image = new JLabel();\r\n        player_1_Image.setText(\"Werewolf\");\r\n        player_1_Image.setHorizontalTextPosition(JLabel.CENTER);\r\n        player_1_Image.setVerticalTextPosition(JLabel.BOTTOM);\r\n        player_1_Image.setFont(new Font(\"Century\", Font.PLAIN, 32));\r\n        ImageIcon player_1_image_Icon = new ImageIcon(\"img/player_1_image.png\");\r\n        player_1_Image.setIcon(player_1_image_Icon);\r\n        player_1_Image.setBounds(500, 0, 300, 320);\r\n\r\n\r\n        JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max\r\n\r\n\r\n        JPanel leftPanel = new JPanel();\r\n        leftPanel.setBackground(new Color(255, 0, 0));\r\n        leftPanel.setBounds(0, 0, 750, 750);\r\n        leftPanel.setLayout(null);\r\n\r\n        leftPanel.add(desert);\r\n\r\n\r\n        JPanel rightPanel = new JPanel();\r\n        rightPanel.setBackground(new Color(255, 255, 0));\r\n        rightPanel.setBounds(750, 0, 750, 750);\r\n        rightPanel.setLayout(null);\r\n\r\n        rightPanel.add(player_1_Image);\r\n        rightPanel.add(player_1_HP_bar);\r\n        rightPanel.add(statusBoard);\r\n\r\n\r\n        Frame frame = new Frame();\r\n\r\n        frame.add(leftPanel);\r\n        frame.add(rightPanel);\r\n\r\n        ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);\r\n\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision f4a25a64433a967fe46a84cafd31228398a1b538)
++++ b/src/Main.java	(date 1680128149808)
+@@ -5,35 +5,55 @@
+ public class Main {
+     public static void main(String[] args) {
+ 
+-        Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3);
++        Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
++
++        Font font32 = new Font("Century", Font.PLAIN, 32);
+ 
+ 
+         JLabel desert = new JLabel();
+         ImageIcon desertIcon = new ImageIcon("img/desert.png");
+         desert.setIcon(desertIcon);
+         desert.setBounds(0, 0, 750, 750);
+-        //desert.setBorder(border);
++        desert.setBorder(border);
+ 
+         JLabel statusBoard = new JLabel();
+         statusBoard.setText("Status Board");
+         statusBoard.setHorizontalTextPosition(JLabel.CENTER);
+         statusBoard.setVerticalTextPosition(JLabel.TOP);
+         statusBoard.setIconTextGap(-35);//distance between image & text
+-        statusBoard.setFont(new Font("Century", Font.PLAIN, 32));
++        statusBoard.setFont(font32);
+         ImageIcon informationIcon = new ImageIcon("img/statusBoard.png");
+         statusBoard.setIcon(informationIcon);
+         statusBoard.setBounds(10, 10, 500, 300);
+         statusBoard.setBorder(border);
+ 
++        JLabel inventory = new JLabel();
++        inventory.setText("In              ry");
++        inventory.setHorizontalTextPosition(JLabel.CENTER);
++        inventory.setVerticalTextPosition(JLabel.TOP);
++        inventory.setIconTextGap(-67);//distance between image & text
++        inventory.setFont(font32);
++        inventory.setForeground(Color.WHITE);
++        ImageIcon inventoryIcon = new ImageIcon("img/inventory.png");
++        inventory.setIcon(inventoryIcon);
++        inventory.setBounds(135, 335, 600, 400);
++
++        Text ven = new Text("ven", font32, Color.WHITE, 500, 500, 100, 50);
+ 
+         JLabel player_1_Image = new JLabel();
+         player_1_Image.setText("Werewolf");
+         player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
+         player_1_Image.setVerticalTextPosition(JLabel.BOTTOM);
+-        player_1_Image.setFont(new Font("Century", Font.PLAIN, 32));
++        player_1_Image.setFont(font32);
+         ImageIcon player_1_image_Icon = new ImageIcon("img/player_1_image.png");
+         player_1_Image.setIcon(player_1_image_Icon);
+-        player_1_Image.setBounds(500, 0, 300, 320);
++        player_1_Image.setBounds(507, 0, 300, 320);
++
++        JLabel player_1 = new JLabel();
++        ImageIcon player_1_Icon = new ImageIcon("img/player_1.png");
++        player_1.setIcon(player_1_Icon);
++        player_1.setBounds(0, 675, 75, 75);
++        player_1.setBorder(border);
+ 
+ 
+         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
+@@ -43,7 +63,6 @@
+         leftPanel.setBackground(new Color(255, 0, 0));
+         leftPanel.setBounds(0, 0, 750, 750);
+         leftPanel.setLayout(null);
+-
+         leftPanel.add(desert);
+ 
+ 
+@@ -51,10 +70,13 @@
+         rightPanel.setBackground(new Color(255, 255, 0));
+         rightPanel.setBounds(750, 0, 750, 750);
+         rightPanel.setLayout(null);
+-
++        rightPanel.setBorder(border);
+         rightPanel.add(player_1_Image);
+         rightPanel.add(player_1_HP_bar);
+         rightPanel.add(statusBoard);
++        rightPanel.add(player_1);
++        //rightPanel.add(inventory);
++        rightPanel.add(ven);
+ 
+ 
+         Frame frame = new Frame();
+Index: src/Frame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class Frame extends JFrame implements ActionListener {\r\n\r\n    JMenuBar menuBar = new JMenuBar();\r\n\r\n    JMenu fileMenu = new JMenu(\"File\");\r\n    JMenu soundMenu = new JMenu(\"Sound\");\r\n    JMenu helpMenu = new JMenu(\"Help\");\r\n\r\n    JMenuItem newGameItem = new JMenuItem(\"New Game\");\r\n    JMenuItem saveItem = new JMenuItem(\"Save\");\r\n    JMenuItem exitItem = new JMenuItem(\"Exit\");\r\n\r\n    JMenuItem soundOnItem = new JMenuItem(\"On\");\r\n    JMenuItem soundOffItem = new JMenuItem(\"Off\");\r\n\r\n    Frame() {\r\n        this.setTitle(\"Travelling Salesman\");\r\n        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        this.setSize(1500, 810);\r\n        this.setResizable(false);\r\n        this.setLocationRelativeTo(null);//load frame in the center of screen instead the top corner\r\n        this.setLayout(null);\r\n        ImageIcon imageIcon = new ImageIcon(\"img/logo.png\");//change icon of frame(top left)\r\n        this.setIconImage(imageIcon.getImage());\r\n\r\n\r\n        newGameItem.addActionListener(this);\r\n        saveItem.addActionListener(this);\r\n        exitItem.addActionListener(this);\r\n\r\n        fileMenu.add(newGameItem);\r\n        fileMenu.add(saveItem);\r\n        fileMenu.add(exitItem);\r\n\r\n        soundOnItem.addActionListener(this);\r\n        soundOffItem.addActionListener(this);\r\n\r\n        soundMenu.add(soundOnItem);\r\n        soundMenu.add(soundOffItem);\r\n\r\n        menuBar.add(fileMenu);\r\n        menuBar.add(soundMenu);\r\n        menuBar.add(helpMenu);\r\n\r\n        this.setJMenuBar(menuBar);\r\n        this.setVisible(true);\r\n    }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n\r\n        if (e.getSource() == newGameItem) {\r\n            System.out.println(1);\r\n        }\r\n        if (e.getSource() == saveItem) {\r\n            System.out.println(1);\r\n        }\r\n        if (e.getSource() == exitItem) {\r\n            System.exit(0);\r\n        }\r\n\r\n        if (e.getSource() == soundOnItem) {\r\n            System.exit(0);\r\n        }\r\n        if (e.getSource() == soundOffItem) {\r\n            System.exit(0);\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Frame.java b/src/Frame.java
+--- a/src/Frame.java	(revision f4a25a64433a967fe46a84cafd31228398a1b538)
++++ b/src/Frame.java	(date 1680126101217)
+@@ -20,7 +20,7 @@
+     Frame() {
+         this.setTitle("Travelling Salesman");
+         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+-        this.setSize(1500, 810);
++        this.setSize(1514, 810);
+         this.setResizable(false);
+         this.setLocationRelativeTo(null);//load frame in the center of screen instead the top corner
+         this.setLayout(null);
+Index: src/ProgressBarDemo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.*;\r\n\r\npublic class ProgressBarDemo {\r\n    ProgressBarDemo(JProgressBar bar) {\r\n\r\n        bar.setValue(0);\r\n        bar.setBounds(550, 10, 150, 10);\r\n        bar.setStringPainted(true);\r\n        bar.setFont(new Font(\"MV Boli\", Font.PLAIN, 10));\r\n        bar.setForeground(new Color(255, 0, 0));\r\n        bar.setBackground(new Color(0, 0, 0));\r\n\r\n\r\n        fill(bar);\r\n    }\r\n\r\n    public void fill(JProgressBar bar) {\r\n\r\n        int counter = 0;\r\n\r\n        while (counter <= 500) {\r\n\r\n            bar.setValue(counter);\r\n\r\n            try {\r\n                Thread.sleep(50/*mili second*/);\r\n            } catch (InterruptedException e) {\r\n                e.printStackTrace();\r\n            }//each second increase\r\n\r\n            counter += 1;\r\n        }\r\n\r\n        bar.setString(\"Max\");//when the bar is 100% shows the text\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ProgressBarDemo.java b/src/ProgressBarDemo.java
+--- a/src/ProgressBarDemo.java	(revision f4a25a64433a967fe46a84cafd31228398a1b538)
++++ b/src/ProgressBarDemo.java	(date 1680126394365)
+@@ -5,7 +5,7 @@
+     ProgressBarDemo(JProgressBar bar) {
+ 
+         bar.setValue(0);
+-        bar.setBounds(550, 10, 150, 10);
++        bar.setBounds(557, 10, 150, 10);
+         bar.setStringPainted(true);
+         bar.setFont(new Font("MV Boli", Font.PLAIN, 10));
+         bar.setForeground(new Color(255, 0, 0));
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6ace8c08-b2ba-4e54-9bb0-20211672cb75\" name=\"Changes\" comment=\"master\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/img/information.png\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Ngk7YKZbmAfl7YDP3Ibh3pOfp0\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"TravellingSalesman\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6ace8c08-b2ba-4e54-9bb0-20211672cb75\" name=\"Changes\" comment=\"\" />\r\n      <created>1680092948629</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1680092948629</updated>\r\n      <workItem from=\"1680093358242\" duration=\"2795000\" />\r\n      <workItem from=\"1680103335051\" duration=\"932000\" />\r\n      <workItem from=\"1680105758214\" duration=\"10958000\" />\r\n      <workItem from=\"1680119023241\" duration=\"4200000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"master\">\r\n      <created>1680096594589</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680096594589</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"master\">\r\n      <created>1680098780641</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680098780641</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"master\">\r\n      <created>1680100534926</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680100534926</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"master\">\r\n      <created>1680100719988</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680100719988</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"master\">\r\n      <created>1680106820666</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680106820666</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"master\">\r\n      <created>1680117410248</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680117410249</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"master\">\r\n      <created>1680120527058</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680120527058</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"master\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"master\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f4a25a64433a967fe46a84cafd31228398a1b538)
++++ b/.idea/workspace.xml	(date 1680128084644)
+@@ -5,9 +5,14 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="master">
++      <change afterPath="$PROJECT_DIR$/src/Text.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/img/information.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/img/OIP (2).jpg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/img/OIP (3).jpg" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/img/R.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ProgressBarDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgressBarDemo.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -70,7 +75,7 @@
+       <workItem from="1680093358242" duration="2795000" />
+       <workItem from="1680103335051" duration="932000" />
+       <workItem from="1680105758214" duration="10958000" />
+-      <workItem from="1680119023241" duration="4200000" />
++      <workItem from="1680119023241" duration="8171000" />
+     </task>
+     <task id="LOCAL-00001" summary="master">
+       <created>1680096594589</created>
+@@ -121,7 +126,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1680120527058</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="master">
++      <created>1680124217257</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1680124217257</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: src/Text.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Text.java b/src/Text.java
+new file mode 100644
+--- /dev/null	(date 1680128084603)
++++ b/src/Text.java	(date 1680128084603)
+@@ -0,0 +1,15 @@
++import javax.swing.*;
++import java.awt.*;
++
++public class Text extends JLabel {
++
++    Text(String text, Font font, Color color, int x, int y, int width, int height) {
++        this.setText(text);
++        this.setHorizontalTextPosition(JLabel.CENTER);
++        this.setVerticalTextPosition(JLabel.TOP);
++        this.setFont(font);
++        this.setForeground(color);
++        this.setBounds(x, y, width, height);
++    }
++
++}
