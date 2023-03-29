@@ -1,20 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class panel extends JPanel {
+public class Panel extends JPanel {
 
     Image image;
 
-    panel(){
+    Panel() {
 
         image = new ImageIcon("img/desert.png").getImage();
-        this.setPreferredSize(new Dimension(750,750));
+        this.setPreferredSize(new Dimension(750, 750));
     }
-    public void paint(Graphics g){
+
+    public void paint(Graphics g) {
 
         Graphics2D g2D = (Graphics2D) g;
 
-        g2D.drawImage(image,0,0,null);
+        g2D.drawImage(image, 0, 0, null);
 
         g2D.setPaint(Color.BLACK);
         g2D.setStroke(new BasicStroke(5));//thikness

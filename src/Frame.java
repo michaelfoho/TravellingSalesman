@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,11 +17,11 @@ public class Frame extends JFrame implements ActionListener {
     JMenuItem soundOnItem = new JMenuItem("On");
     JMenuItem soundOffItem = new JMenuItem("Off");
 
-    panel panel;
+    Panel panel;
 
     Frame() {
 
-        panel = new panel();
+        panel = new Panel();
 
         this.setTitle("Travelling Salesman");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,7 +58,6 @@ public class Frame extends JFrame implements ActionListener {
         this.setJMenuBar(menuBar);
         this.setVisible(true);
     }
-
 
 
     @Override
