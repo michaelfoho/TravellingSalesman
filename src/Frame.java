@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MyFrame extends JFrame implements ActionListener {
+public class Frame extends JFrame implements ActionListener {
 
     JMenuBar menuBar = new JMenuBar();
 
@@ -18,7 +18,7 @@ public class MyFrame extends JFrame implements ActionListener {
     JMenuItem soundOnItem = new JMenuItem("On");
     JMenuItem soundOffItem = new JMenuItem("Off");
 
-    MyFrame() {
+    Frame() {
         this.setTitle("Travelling Salesman");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1500, 800);
