@@ -21,10 +21,10 @@ public class Frame extends JFrame implements ActionListener {
     Frame() {
         this.setTitle("Travelling Salesman");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1500, 800);
+        this.setSize(1500, 810);
         this.setResizable(false);
         this.setLocationRelativeTo(null);//load frame in the center of screen instead the top corner
-        this.setLayout(new FlowLayout());
+        this.setLayout(null);
         ImageIcon imageIcon = new ImageIcon("img/logo.png");//change icon of frame(top left)
         this.setIconImage(imageIcon.getImage());
 
