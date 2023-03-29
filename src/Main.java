@@ -8,10 +8,10 @@ public class Main {
         Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3);
 
 
-        JLabel desert = new JLabel();
+        /*JLabel desert = new JLabel();
         ImageIcon desertIcon = new ImageIcon("img/desert.png");
         desert.setIcon(desertIcon);
-        desert.setBounds(0, 0, 750, 750);
+        desert.setBounds(0, 0, 750, 750);*/
         //desert.setBorder(border);
 
         JLabel statusBoard = new JLabel();
@@ -39,12 +39,12 @@ public class Main {
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
 
 
-        JPanel leftPanel = new JPanel();
+        /*JPanel leftPanel = new JPanel();
         leftPanel.setBackground(new Color(255, 0, 0));
         leftPanel.setBounds(0, 0, 750, 750);
         leftPanel.setLayout(null);
 
-        leftPanel.add(desert);
+        leftPanel.add(desert);*/
 
 
         JPanel rightPanel = new JPanel();
@@ -59,7 +59,7 @@ public class Main {
 
         Frame frame = new Frame();
 
-        frame.add(leftPanel);
+        //frame.add(leftPanel);
         frame.add(rightPanel);
 
         ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
