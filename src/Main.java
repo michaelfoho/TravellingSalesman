@@ -9,6 +9,12 @@ public class Main {
         desert.setIcon(desertIcon);
         desert.setBounds(0, 0, 750, 750);
 
+        JLabel information = new JLabel();
+        ImageIcon informationIcon = new ImageIcon("img/information.png");
+        information.setIcon(informationIcon);
+        information.setBounds(17, 320, 700, 400);
+        
+
         JLabel player_1_Image = new JLabel();
         player_1_Image.setText("Werewolf");
         player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
@@ -37,6 +43,7 @@ public class Main {
 
         rightPanel.add(player_1_Image);
         rightPanel.add(player_1_HP_bar);
+        rightPanel.add(information);
 
 
         Frame frame = new Frame();
