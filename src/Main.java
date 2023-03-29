@@ -9,10 +9,17 @@ public class Main {
         desert.setIcon(desertIcon);
         desert.setBounds(0, 0, 750, 750);
 
-        JLabel logo = new JLabel();
-        ImageIcon logoIcon = new ImageIcon("img/logo.png");
-        logo.setIcon(logoIcon);
-        logo.setBounds(0, 0, 750, 750);
+        JLabel player_1_Image = new JLabel();
+        player_1_Image.setText("Werewolf");
+        player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
+        player_1_Image.setVerticalTextPosition(JLabel.BOTTOM);
+        player_1_Image.setFont(new Font("Century", Font.PLAIN, 32));
+        ImageIcon player_1_image_Icon = new ImageIcon("img/player_1_image.png");
+        player_1_Image.setIcon(player_1_image_Icon);
+        player_1_Image.setBounds(500, -230, 750, 750);
+
+
+        JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
 
 
         JPanel leftPanel = new JPanel();
@@ -28,12 +35,17 @@ public class Main {
         rightPanel.setBounds(750, 0, 750, 750);
         rightPanel.setLayout(null);
 
-        rightPanel.add(logo);
+        rightPanel.add(player_1_Image);
+        rightPanel.add(player_1_HP_bar);
 
 
         Frame frame = new Frame();
 
         frame.add(leftPanel);
         frame.add(rightPanel);
+
+        ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
+
+
     }
 }
