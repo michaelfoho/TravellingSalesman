@@ -1,8 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Frame extends JFrame implements ActionListener {
+
+    JButton button;
+
 
     JMenuBar menuBar = new JMenuBar();
 
@@ -35,6 +39,24 @@ public class Frame extends JFrame implements ActionListener {
         this.setLayout(null);
         ImageIcon imageIcon = new ImageIcon("img/logo.png");//change icon of frame(top left)
         this.setIconImage(imageIcon.getImage());
+
+
+        button = new JButton();
+        button.setBounds(766, 450, 100, 70);
+        button.addActionListener(this);
+        button.setFocusable(false);
+
+        button.setText("Button");
+        button.setHorizontalTextPosition(JButton.CENTER);
+        button.setVerticalTextPosition(JButton.CENTER);
+        button.setFont(new Font("Comic Sans", Font.PLAIN, 25));
+        button.setForeground(new Color(0, 0, 0));
+        button.setBackground(new Color(0, 255, 255));//if you add an image for background of button comment this line
+
+        button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3, true));//this argument can change
+
+        button.setEnabled(true);//if you want to disable the button change (true) to (false)
+        this.add(button);
 
 
         newGameItem.addActionListener(this);
@@ -78,6 +100,12 @@ public class Frame extends JFrame implements ActionListener {
         }
         if (e.getSource() == soundOffItem) {
             System.exit(0);
+        }
+
+
+        if (e.getSource() == button) {
+            //System.out.println(1);
+
         }
 
     }
