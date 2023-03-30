@@ -29,7 +29,7 @@ public class Frame extends JFrame implements ActionListener {
 
         layeredPane.setBounds(750, 0, 750, 750);
         layeredPane.add(panel_1, Integer.valueOf(0));
-        layeredPane.add(panel_2, Integer.valueOf(1));
+        //layeredPane.add(panel_2, Integer.valueOf(1));
 
         this.add(layeredPane);
 
@@ -53,7 +53,8 @@ public class Frame extends JFrame implements ActionListener {
         button = new JButton();
         button.setBounds(766, 450, 100, 70);
         button.addActionListener(this);
-        button.setFocusable(false);
+        button.setFocusable(true);
+        //button.setVisible(true);
 
         button.setText("Button");
         button.setHorizontalTextPosition(JButton.CENTER);
@@ -88,6 +89,7 @@ public class Frame extends JFrame implements ActionListener {
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
+
     }
 
 
