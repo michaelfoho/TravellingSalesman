@@ -16,14 +16,14 @@ public class Main {
         Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
-        Treasure ring = new Treasure("img/treasure/ring.png", 652, 350, 50, 70);
-        Treasure sword = new Treasure("img/treasure/sword.png", 660, 445, 50, 70);
-        Treasure goldenGlass = new Treasure("img/treasure/goldenGlass.png", 655, 540, 50, 70);
-        Treasure glassCup = new Treasure("img/treasure/glassCup.png", 652, 635, 50, 70);
-        Treasure bow = new Treasure("img/treasure/bow.png", 583, 350, 50, 70);
-        Treasure shield = new Treasure("img/treasure/shield.png", 567, 447, 50, 70);
-        Treasure key = new Treasure("img/treasure/key.png", 580, 540, 50, 70);
-        Treasure scroll = new Treasure("img/treasure/scroll.png", 567, 637, 50, 70);
+        TreasureLoot ring = new TreasureLoot("img/treasure/ring.png", 652, 350, 50, 70);
+        TreasureLoot sword = new TreasureLoot("img/treasure/sword.png", 660, 445, 50, 70);
+        TreasureLoot goldenGlass = new TreasureLoot("img/treasure/goldenGlass.png", 655, 540, 50, 70);
+        TreasureLoot glassCup = new TreasureLoot("img/treasure/glassCup.png", 652, 635, 50, 70);
+        TreasureLoot bow = new TreasureLoot("img/treasure/bow.png", 583, 350, 50, 70);
+        TreasureLoot shield = new TreasureLoot("img/treasure/shield.png", 567, 447, 50, 70);
+        TreasureLoot key = new TreasureLoot("img/treasure/key.png", 580, 540, 50, 70);
+        TreasureLoot scroll = new TreasureLoot("img/treasure/scroll.png", 567, 637, 50, 70);
 
 
         JLabel statusBoard1 = new JLabel();
