@@ -13,6 +13,7 @@ public class Main {
         Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
         Font font32 = new Font("Century", Font.PLAIN, 32);
         Font font64 = new Font("Century", Font.PLAIN, 64);
+        Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
         JLabel statusBoard = new JLabel();
@@ -41,6 +42,12 @@ public class Main {
 
         Text textVen = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
         Text textTo = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
+        Text texttime = new Text("time:",font24,Color.WHITE,230,217,100,100);
+        Text text_treasure_score = new Text("treasure score:",font24,Color.WHITE,230,113,300,100);
+        Text textmoney = new Text("money:",font24,Color.WHITE,230,147,300,100);
+        Text textpower = new Text("power:",font24,Color.WHITE,230,180,300,100);
+        Text textquest = new Text("quest:",font32,Color.WHITE,230,25,300,100);
+        Text text_treasure_number = new Text("treasure number:",font24,Color.WHITE,230,75,300,100);
 
         JLabel player_1_Image = new JLabel();
         player_1_Image.setText("Werewolf");
@@ -109,10 +116,17 @@ public class Main {
         player_1_panel.add(player_1_Image);
         player_1_panel.add(player_1);
         player_1_panel.add(player_1_HP_bar);
+        player_1_panel.add(texttime);
+        player_1_panel.add(text_treasure_number);
+        player_1_panel.add(text_treasure_score);
+        player_1_panel.add(textmoney);
+        player_1_panel.add(textpower);
+        player_1_panel.add(textquest);
         player_1_panel.add(statusBoard);
         player_1_panel.add(textVen);
         player_1_panel.add(textTo);
         player_1_panel.add(inventory);
+
 
         player_1_panel.add(dice);
 
