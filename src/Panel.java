@@ -18,7 +18,7 @@ public class Panel extends JPanel {
         g2D.drawImage(image, 0, 0, null);
 
         g2D.setPaint(Color.BLACK);
-        g2D.setStroke(new BasicStroke(5));//thikness
+        g2D.setStroke(new BasicStroke(5));//thickness
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 g2D.drawRoundRect(75 * i, 75 * j, 75, 75, 10, 10);
