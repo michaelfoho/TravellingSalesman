@@ -15,42 +15,67 @@ public class Main {
         Font font64 = new Font("Century", Font.PLAIN, 64);
 
 
-        JLabel statusBoard = new JLabel();
-        statusBoard.setText("Status Board");
-        statusBoard.setHorizontalTextPosition(JLabel.CENTER);
-        statusBoard.setVerticalTextPosition(JLabel.TOP);
-        statusBoard.setIconTextGap(-35);//distance between image & text
-        statusBoard.setFont(font32);
+        JLabel statusBoard1 = new JLabel();
+        statusBoard1.setText("Status Board");
+        statusBoard1.setHorizontalTextPosition(JLabel.CENTER);
+        statusBoard1.setVerticalTextPosition(JLabel.TOP);
+        statusBoard1.setIconTextGap(-35);//distance between image & text
+        statusBoard1.setFont(font32);
         ImageIcon statusBoardIcon1 = new ImageIcon("img/statusBoard.png");
-        statusBoard.setIcon(statusBoardIcon1);
-        statusBoard.setBounds(10, 10, 500, 300);
-        statusBoard.setBorder(border);
+        statusBoard1.setIcon(statusBoardIcon1);
+        statusBoard1.setBounds(10, 10, 500, 300);
+        statusBoard1.setBorder(border);
 
-        JLabel inventory = new JLabel();
-        inventory.setText("In              ry");
-        inventory.setHorizontalTextPosition(JLabel.CENTER);
-        inventory.setVerticalTextPosition(JLabel.TOP);
-        inventory.setIconTextGap(-68);//distance between image & text
-        inventory.setFont(font32);
-        inventory.setForeground(Color.WHITE);
+        JLabel statusBoard2 = new JLabel();
+        statusBoard2.setText("Status Board");
+        statusBoard2.setHorizontalTextPosition(JLabel.CENTER);
+        statusBoard2.setVerticalTextPosition(JLabel.TOP);
+        statusBoard2.setIconTextGap(-35);//distance between image & text
+        statusBoard2.setFont(font32);
+        ImageIcon statusBoardIcon2 = new ImageIcon("img/statusBoard.png");
+        statusBoard2.setIcon(statusBoardIcon2);
+        statusBoard2.setBounds(10, 10, 500, 300);
+        statusBoard2.setBorder(border);
+
+        JLabel inventory1 = new JLabel();
+        inventory1.setText("In              ry");
+        inventory1.setHorizontalTextPosition(JLabel.CENTER);
+        inventory1.setVerticalTextPosition(JLabel.TOP);
+        inventory1.setIconTextGap(-68);//distance between image & text
+        inventory1.setFont(font32);
+        inventory1.setForeground(Color.WHITE);
         ImageIcon inventoryIcon1 = new ImageIcon("img/inventory.png");
-        inventory.setIcon(inventoryIcon1);
-        inventory.setBounds(130, 330, 600, 400);
-        inventory.setBorder(border);
+        inventory1.setIcon(inventoryIcon1);
+        inventory1.setBounds(130, 330, 600, 400);
+        inventory1.setBorder(border);
 
-        Text textVen = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
-        Text textTo = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
+        JLabel inventory2 = new JLabel();
+        inventory2.setText("In              ry");
+        inventory2.setHorizontalTextPosition(JLabel.CENTER);
+        inventory2.setVerticalTextPosition(JLabel.TOP);
+        inventory2.setIconTextGap(-68);//distance between image & text
+        inventory2.setFont(font32);
+        inventory2.setForeground(Color.WHITE);
+        ImageIcon inventoryIcon2 = new ImageIcon("img/inventory.png");
+        inventory2.setIcon(inventoryIcon2);
+        inventory2.setBounds(130, 330, 600, 400);
+        inventory2.setBorder(border);
 
-        JLabel dice = new JLabel();
-        dice.setText("" + diceNumber);
-        dice.setHorizontalAlignment(JLabel.CENTER);
-        dice.setVerticalAlignment(JLabel.CENTER);
-        dice.setFont(font64);
-        dice.setBackground(new Color(255, 0, 0, 70));//background color
-        dice.setOpaque(true);//display background color
-        dice.setBounds(17, 340, 100, 100);
-        dice.setBorder(border);
-        MouseListener diceMouse = new MouseListener() {
+        Text textVen1 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
+        Text textVen2 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
+        Text textTo1 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
+        Text textTo2 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
+
+        JLabel dice1 = new JLabel();
+        dice1.setText("" + diceNumber);
+        dice1.setHorizontalAlignment(JLabel.CENTER);
+        dice1.setVerticalAlignment(JLabel.CENTER);
+        dice1.setFont(font64);
+        dice1.setBackground(new Color(255, 0, 0, 70));//background color
+        dice1.setOpaque(true);//display background color
+        dice1.setBounds(17, 340, 100, 100);
+        dice1.setBorder(border);
+        MouseListener diceMouse1 = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("0");
@@ -76,16 +101,66 @@ public class Main {
 
             }
         };
-        dice.addMouseListener(diceMouse);
+        dice1.addMouseListener(diceMouse1);
+
+        JLabel dice2 = new JLabel();
+        dice2.setText("" + diceNumber);
+        dice2.setHorizontalAlignment(JLabel.CENTER);
+        dice2.setVerticalAlignment(JLabel.CENTER);
+        dice2.setFont(font64);
+        dice2.setBackground(new Color(255, 0, 0, 70));//background color
+        dice2.setOpaque(true);//display background color
+        dice2.setBounds(17, 340, 100, 100);
+        dice2.setBorder(border);
+        MouseListener diceMouse2 = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("0");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        };
+        dice2.addMouseListener(diceMouse2);
+
 
         JLabel player_1_Image = new JLabel();
         player_1_Image.setText("Werewolf");
+        player_1_Image.setForeground(Color.BLACK);
         player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
         player_1_Image.setVerticalTextPosition(JLabel.BOTTOM);
         player_1_Image.setFont(font32);
         ImageIcon player_1_image_Icon = new ImageIcon("img/player_1_image.png");
         player_1_Image.setIcon(player_1_image_Icon);
         player_1_Image.setBounds(500, 0, 300, 320);
+
+        JLabel player_2_Image = new JLabel();
+        player_2_Image.setText("Illidan");
+        player_2_Image.setForeground(Color.BLACK);
+        player_2_Image.setHorizontalTextPosition(JLabel.CENTER);
+        player_2_Image.setVerticalTextPosition(JLabel.BOTTOM);
+        player_2_Image.setFont(font32);
+        ImageIcon player_2_image_Icon = new ImageIcon("img/player_2_image.png");
+        player_2_Image.setIcon(player_2_image_Icon);
+        player_2_Image.setBounds(500, 0, 300, 320);
+
 
         JLabel player_1 = new JLabel();
         player_1.setHorizontalTextPosition(JLabel.CENTER);
@@ -94,16 +169,6 @@ public class Main {
         player_1.setIcon(player_1_Icon);
         player_1.setBounds(0, 675, 75, 75);
         player_1.setBorder(border);
-
-
-        JLabel player_2_Image = new JLabel();
-        player_2_Image.setText("Illidan");
-        player_2_Image.setHorizontalTextPosition(JLabel.CENTER);
-        player_2_Image.setVerticalTextPosition(JLabel.BOTTOM);
-        player_2_Image.setFont(font32);
-        ImageIcon player_2_image_Icon = new ImageIcon("img/player_2_image.png");
-        player_2_Image.setIcon(player_2_image_Icon);
-        player_2_Image.setBounds(500, 0, 300, 320);
 
         JLabel player_2 = new JLabel();
         player_2.setHorizontalTextPosition(JLabel.CENTER);
@@ -126,11 +191,11 @@ public class Main {
         player_1_panel.add(player_1_Image);
         player_1_panel.add(player_1);
         player_1_panel.add(player_1_HP_bar);
-        player_1_panel.add(statusBoard);
-        player_1_panel.add(textVen);
-        player_1_panel.add(textTo);
-        player_1_panel.add(inventory);
-        player_1_panel.add(dice);
+        player_1_panel.add(statusBoard1);
+        player_1_panel.add(textVen1);
+        player_1_panel.add(textTo1);
+        player_1_panel.add(inventory1);
+        player_1_panel.add(dice1);
 
         JPanel player_2_panel = new JPanel();
         player_2_panel.setBackground(new Color(0, 0, 255));
@@ -140,18 +205,18 @@ public class Main {
         player_2_panel.add(player_2_Image);
         player_2_panel.add(player_2);
         player_2_panel.add(player_2_HP_bar);
-        player_2_panel.add(statusBoard);
-        player_2_panel.add(textVen);
-        player_2_panel.add(textTo);
-        player_2_panel.add(inventory);
-        player_2_panel.add(dice);
+        player_2_panel.add(statusBoard2);
+        player_2_panel.add(textVen2);
+        player_2_panel.add(textTo2);
+        player_2_panel.add(inventory2);
+        player_2_panel.add(dice2);
 
 
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(750, 0, 750, 750);
 
-        layeredPane.add(player_1_panel, Integer.valueOf(1));
-        layeredPane.add(player_2_panel, Integer.valueOf(0));
+        layeredPane.add(player_1_panel, Integer.valueOf(0));
+        layeredPane.add(player_2_panel, Integer.valueOf(1));
 
 
         Frame frame = new Frame();
