@@ -25,6 +25,19 @@ public class Main {
         TreasureLoot key = new TreasureLoot("img/treasure/key.png", 580, 540, 50, 70);
         TreasureLoot scroll = new TreasureLoot("img/treasure/scroll.png", 567, 637, 50, 70);
 
+        TreasureLoot lostObject_1 = new TreasureLoot("img/lostObject/lostObject_1.png", 490, 445, 50, 70);
+        TreasureLoot lostObject_2 = new TreasureLoot("img/lostObject/lostObject_2.png", 490, 540, 50, 70);
+        TreasureLoot lostObject_3 = new TreasureLoot("img/lostObject/lostObject_3.png", 490, 635, 50, 70);
+        TreasureLoot lostObject_4 = new TreasureLoot("img/lostObject/lostObject_4.png", 411, 445, 50, 70);
+        TreasureLoot lostObject_5 = new TreasureLoot("img/lostObject/lostObject_5.png", 411, 540, 50, 70);
+        TreasureLoot lostObject_6 = new TreasureLoot("img/lostObject/lostObject_6.png", 411, 635, 50, 70);
+        TreasureLoot lostObject_7 = new TreasureLoot("img/lostObject/lostObject_7.png", 332, 447, 50, 70);
+        TreasureLoot lostObject_8 = new TreasureLoot("img/lostObject/lostObject_8.png", 332, 540, 50, 70);
+        TreasureLoot lostObject_9 = new TreasureLoot("img/lostObject/lostObject_9.png", 332, 635, 50, 70);
+        TreasureLoot lostObject_10 = new TreasureLoot("img/lostObject/lostObject_10.png", 253, 540, 50, 70);
+        TreasureLoot lostObject_11 = new TreasureLoot("img/lostObject/lostObject_11.png", 253, 635, 50, 70);
+        TreasureLoot lostObject_12 = new TreasureLoot("img/lostObject/lostObject_12.png", 175, 540, 50, 70);
+        TreasureLoot lostObject_13 = new TreasureLoot("img/lostObject/lostObject_13.png", 175, 637, 50, 70);
 
         JLabel statusBoard1 = new JLabel();
 
@@ -233,6 +246,20 @@ public class Main {
         player_1_panel.add(shield);
         player_1_panel.add(key);
         player_1_panel.add(scroll);
+
+        player_1_panel.add(lostObject_1);
+        player_1_panel.add(lostObject_2);
+        player_1_panel.add(lostObject_3);
+        player_1_panel.add(lostObject_4);
+        player_1_panel.add(lostObject_5);
+        player_1_panel.add(lostObject_6);
+        player_1_panel.add(lostObject_7);
+        player_1_panel.add(lostObject_8);
+        player_1_panel.add(lostObject_9);
+        player_1_panel.add(lostObject_10);
+        player_1_panel.add(lostObject_11);
+        player_1_panel.add(lostObject_12);
+        player_1_panel.add(lostObject_13);
 
         player_1_panel.add(inventory1);
         player_1_panel.add(dice1);
