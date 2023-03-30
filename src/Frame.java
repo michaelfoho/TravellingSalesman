@@ -7,6 +7,8 @@ public class Frame extends JFrame implements ActionListener {
 
     JButton button;
 
+    JLayeredPane layeredPane = new JLayeredPane();
+
 
     JMenuBar menuBar = new JMenuBar();
 
@@ -23,7 +25,14 @@ public class Frame extends JFrame implements ActionListener {
 
     Panel panel;
 
-    Frame() {
+    Frame(JPanel panel_1, JPanel panel_2) {
+
+        layeredPane.setBounds(750, 0, 750, 750);
+        layeredPane.add(panel_1, Integer.valueOf(0));
+        layeredPane.add(panel_2, Integer.valueOf(1));
+
+        this.add(layeredPane);
+
 
         panel = new Panel();
 
