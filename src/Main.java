@@ -13,9 +13,11 @@ public class Main {
         Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
         Font font32 = new Font("Century", Font.PLAIN, 32);
         Font font64 = new Font("Century", Font.PLAIN, 64);
+        Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
         JLabel statusBoard1 = new JLabel();
+
         statusBoard1.setText("Status Board");
         statusBoard1.setHorizontalTextPosition(JLabel.CENTER);
         statusBoard1.setVerticalTextPosition(JLabel.TOP);
@@ -65,6 +67,18 @@ public class Main {
         Text textVen2 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
         Text textTo1 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
         Text textTo2 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
+        Text textquest1 = new Text("quest:", font32, Color.BLACK, 245, 30, 300, 100);
+        Text textquest2 = new Text("quest:", font32, Color.BLACK, 245, 30,300, 100 );
+        Text text_treasure_number_1 = new Text("treasure number:", font24, Color.WHITE, 245, 70,300, 100);
+        Text text_treasure_number_2 = new Text("treasure number:", font24, Color.WHITE, 245, 70,300, 100);
+        Text text_treasure_score_1 = new Text("treasure score:", font24, Color.WHITE, 245, 110,300, 100);
+        Text textT_treasure_score_2 = new Text("treasure score:", font24, Color.WHITE, 245, 110,300, 100);
+        Text textpower1 = new Text("power:", font24, Color.WHITE, 245, 150,300, 100);
+        Text textpower2 = new Text("power:", font24, Color.WHITE, 245, 150,300, 100);
+        Text textmoney1 = new Text("money:", font24, Color.WHITE, 245, 190,300, 100);
+        Text textmoney2 = new Text("money:", font24, Color.WHITE, 245, 190,300, 100);
+        Text texttime1 = new Text("time:", font24, Color.WHITE, 245, 230,300, 100);
+        Text texttime2 = new Text("time:", font24, Color.WHITE, 245, 230,300, 100);
 
         JLabel dice1 = new JLabel();
         dice1.setText("" + diceNumber);
@@ -191,11 +205,19 @@ public class Main {
         player_1_panel.add(player_1_Image);
         player_1_panel.add(player_1);
         player_1_panel.add(player_1_HP_bar);
+        player_1_panel.add(textquest1);
+        player_1_panel.add(text_treasure_number_1);
+        player_1_panel.add(text_treasure_score_1);
+        player_1_panel.add(textpower1);
+        player_1_panel.add(textmoney1);
+        player_1_panel.add(texttime1);
         player_1_panel.add(statusBoard1);
         player_1_panel.add(textVen1);
         player_1_panel.add(textTo1);
         player_1_panel.add(inventory1);
         player_1_panel.add(dice1);
+
+
 
         JPanel player_2_panel = new JPanel();
         player_2_panel.setBackground(new Color(200, 200, 200));
@@ -205,6 +227,12 @@ public class Main {
         player_2_panel.add(player_2_Image);
         player_2_panel.add(player_2);
         player_2_panel.add(player_2_HP_bar);
+        player_2_panel.add(textquest2);
+        player_2_panel.add(text_treasure_number_2);
+        player_2_panel.add(textT_treasure_score_2);
+        player_2_panel.add(textpower2);
+        player_2_panel.add(textmoney2);
+        player_2_panel.add(texttime2);
         player_2_panel.add(statusBoard2);
         player_2_panel.add(textVen2);
         player_2_panel.add(textTo2);
@@ -212,12 +240,13 @@ public class Main {
         player_2_panel.add(dice2);
 
 
+
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(750, 0, 750, 750);
 
 
         layeredPane.add(player_1_panel, Integer.valueOf(0));
-        layeredPane.add(player_2_panel, Integer.valueOf(1));
+        //layeredPane.add(player_2_panel, Integer.valueOf(1));
 
 
         Frame frame = new Frame();
