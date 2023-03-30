@@ -105,6 +105,14 @@ public class Main {
         player_2_Image.setIcon(player_2_image_Icon);
         player_2_Image.setBounds(500, 0, 300, 320);
 
+        JLabel player_2 = new JLabel();
+        player_2.setHorizontalTextPosition(JLabel.CENTER);
+        player_2.setVerticalTextPosition(JLabel.CENTER);
+        ImageIcon player_2_Icon = new ImageIcon("img/player_2.png");
+        player_2.setIcon(player_2_Icon);
+        player_2.setBounds(0, 675, 75, 75);
+        player_2.setBorder(border);
+
 
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
         JProgressBar player_2_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
@@ -116,6 +124,7 @@ public class Main {
         player_1_panel.setLayout(null);
         player_1_panel.setBorder(border);
         player_1_panel.add(player_1_Image);
+        player_1_panel.add(player_1);
         player_1_panel.add(player_1_HP_bar);
         player_1_panel.add(statusBoard);
         player_1_panel.add(textVen);
@@ -129,6 +138,7 @@ public class Main {
         player_2_panel.setLayout(null);
         player_2_panel.setBorder(border);
         player_2_panel.add(player_2_Image);
+        player_2_panel.add(player_2);
         player_2_panel.add(player_2_HP_bar);
         player_2_panel.add(statusBoard);
         player_2_panel.add(textVen);
@@ -140,8 +150,8 @@ public class Main {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(750, 0, 750, 750);
 
-        layeredPane.add(player_1_panel, Integer.valueOf(0));
-        layeredPane.add(player_2_panel, Integer.valueOf(1));
+        layeredPane.add(player_1_panel, Integer.valueOf(1));
+        layeredPane.add(player_2_panel, Integer.valueOf(0));
 
 
         Frame frame = new Frame();
@@ -151,7 +161,5 @@ public class Main {
 
         ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
         ProgressBarDemo player_2_HP_barDemo = new ProgressBarDemo(player_2_HP_bar);
-
-
     }
 }
