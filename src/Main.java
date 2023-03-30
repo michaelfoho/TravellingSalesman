@@ -1,14 +1,14 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class Main {
-
-
     public static void main(String[] args) {
+
+        int diceNumber = 0;
+
 
         Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
         Font font32 = new Font("Century", Font.PLAIN, 32);
@@ -59,12 +59,19 @@ public class Main {
         player_1.setBounds(0, 675, 75, 75);
         player_1.setBorder(border);
 
-        String strDice = "1";
-
-        MouseListener mouse = new MouseListener() {
+        JLabel dice = new JLabel();
+        dice.setText("" + diceNumber);
+        dice.setHorizontalAlignment(JLabel.CENTER);
+        dice.setVerticalAlignment(JLabel.CENTER);
+        dice.setFont(font64);
+        dice.setBackground(new Color(255, 0, 0, 70));//background color
+        dice.setOpaque(true);//display background color
+        dice.setBounds(17, 340, 100, 100);
+        dice.setBorder(border);
+        MouseListener diceMouse = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //strDice = "2";
+                System.out.println("0");
             }
 
             @Override
@@ -87,17 +94,7 @@ public class Main {
 
             }
         };
-
-        JLabel dice = new JLabel();
-        dice.setText(strDice);
-        dice.setHorizontalAlignment(JLabel.CENTER);
-        dice.setVerticalAlignment(JLabel.CENTER);
-        dice.setFont(font64);
-        dice.setBackground(new Color(255, 0, 0, 70));//background color
-        dice.setOpaque(true);//display background color
-        dice.setBounds(17, 340, 100, 100);
-        dice.setBorder(border);
-        dice.addMouseListener(mouse);
+        dice.addMouseListener(diceMouse);
 
 
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
@@ -108,6 +105,7 @@ public class Main {
         rightPanel.setBounds(750, 0, 750, 750);
         rightPanel.setLayout(null);
         rightPanel.setBorder(border);
+
         rightPanel.add(player_1_Image);
         rightPanel.add(player_1);
         rightPanel.add(player_1_HP_bar);
@@ -115,6 +113,7 @@ public class Main {
         rightPanel.add(textVen);
         rightPanel.add(textTo);
         rightPanel.add(inventory);
+
         rightPanel.add(dice);
 
 
