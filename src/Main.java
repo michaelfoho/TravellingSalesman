@@ -255,6 +255,9 @@ public class Main {
         player_2_panel.add(statusBoard2);
         player_2_panel.add(textVen2);
         player_2_panel.add(textTo2);
+
+        player_2_panel.add(ring);
+
         player_2_panel.add(inventory2);
         player_2_panel.add(dice2);
 
@@ -264,7 +267,7 @@ public class Main {
 
 
         layeredPane.add(player_1_panel, Integer.valueOf(0));
-        //layeredPane.add(player_2_panel, Integer.valueOf(1));
+        layeredPane.add(player_2_panel, Integer.valueOf(1));
 
 
         Frame frame = new Frame();
