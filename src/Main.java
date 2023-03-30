@@ -16,7 +16,7 @@ public class Main {
         Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
-        TreasureLoot ring = new TreasureLoot("img/treasure/ring.png", 652, 350, 50, 70);
+        TreasureLoot ring = new TreasureLoot("img/treasure/ring.png", 646, 350, 50, 70);
         TreasureLoot sword = new TreasureLoot("img/treasure/sword.png", 660, 445, 50, 70);
         TreasureLoot goldenGlass = new TreasureLoot("img/treasure/goldenGlass.png", 655, 540, 50, 70);
         TreasureLoot glassCup = new TreasureLoot("img/treasure/glassCup.png", 652, 635, 50, 70);
