@@ -100,26 +100,26 @@ public class Main {
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
 
 
-        JPanel rightPanel = new JPanel();
-        rightPanel.setBackground(new Color(255, 255, 0));
-        rightPanel.setBounds(750, 0, 750, 750);
-        rightPanel.setLayout(null);
-        rightPanel.setBorder(border);
+        JPanel player_1_panel = new JPanel();
+        player_1_panel.setBackground(new Color(255, 255, 0));
+        player_1_panel.setBounds(750, 0, 750, 750);
+        player_1_panel.setLayout(null);
+        player_1_panel.setBorder(border);
 
-        rightPanel.add(player_1_Image);
-        rightPanel.add(player_1);
-        rightPanel.add(player_1_HP_bar);
-        rightPanel.add(statusBoard);
-        rightPanel.add(textVen);
-        rightPanel.add(textTo);
-        rightPanel.add(inventory);
+        player_1_panel.add(player_1_Image);
+        player_1_panel.add(player_1);
+        player_1_panel.add(player_1_HP_bar);
+        player_1_panel.add(statusBoard);
+        player_1_panel.add(textVen);
+        player_1_panel.add(textTo);
+        player_1_panel.add(inventory);
 
-        rightPanel.add(dice);
+        player_1_panel.add(dice);
 
 
         Frame frame = new Frame();
 
-        frame.add(rightPanel);
+        frame.add(player_1_panel);
         //frame.panel.add(player_1);
 
         ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
