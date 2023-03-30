@@ -3,11 +3,14 @@ import java.awt.*;
 
 public class Panel extends JPanel {
 
-    Image desert, castle, market, wall, trap, treasure, loot;
+    Image desert, split_1, split_2, split_3, castle, market, wall, trap, treasure, loot;
 
     Panel() {
 
         desert = new ImageIcon("img/desert.png").getImage();
+        split_1 = new ImageIcon("img/split_1.png").getImage();
+        split_2 = new ImageIcon("img/split_2.png").getImage();
+        split_3 = new ImageIcon("img/split_3.png").getImage();
         castle = new ImageIcon("img/castle.png").getImage();
         wall = new ImageIcon("img/wall.png").getImage();
         trap = new ImageIcon("img/trap.png").getImage();
@@ -23,6 +26,9 @@ public class Panel extends JPanel {
         Graphics2D g2D = (Graphics2D) g;
 
         g2D.drawImage(desert, 0, 0, null);
+        g2D.drawImage(split_1, 0, 0, null);
+        g2D.drawImage(split_2, 400, 0, null);
+        g2D.drawImage(split_3, 320, 330, null);
         g2D.drawImage(castle, 5 * 75, 5 * 75, null);
         g2D.drawImage(wall, 2 * 75, 2 * 75, null);
         g2D.drawImage(wall, 7 * 75, 6 * 75, null);

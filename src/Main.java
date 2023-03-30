@@ -198,7 +198,7 @@ public class Main {
         player_1_panel.add(dice1);
 
         JPanel player_2_panel = new JPanel();
-        player_2_panel.setBackground(new Color(0, 0, 255));
+        player_2_panel.setBackground(new Color(255, 255, 0));
         player_2_panel.setBounds(0, 0, 750, 750);
         player_2_panel.setLayout(null);
         player_2_panel.setBorder(border);
