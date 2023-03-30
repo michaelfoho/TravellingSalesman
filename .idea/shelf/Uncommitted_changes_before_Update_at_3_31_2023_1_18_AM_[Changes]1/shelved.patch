@@ -1,0 +1,21 @@
+Index: src/Treasure.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Treasure.java b/src/Treasure.java
+new file mode 100644
+--- /dev/null	
++++ b/src/Treasure.java	
+@@ -0,0 +1,11 @@
++import javax.swing.*;
++
++public class Treasure extends JLabel {
++    Treasure(String URL, int x, int y, int width, int height) {
++
++        ImageIcon ringIcon = new ImageIcon(URL);
++        this.setIcon(ringIcon);
++        this.setBounds(x, y, width, height);
++    }
++
++}

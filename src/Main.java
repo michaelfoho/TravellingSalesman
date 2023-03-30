@@ -16,6 +16,16 @@ public class Main {
         Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
+        Treasure ring = new Treasure("img/treasure/ring.png", 652, 350, 50, 70);
+        Treasure sword = new Treasure("img/treasure/sword.png", 660, 445, 50, 70);
+        Treasure goldenGlass = new Treasure("img/treasure/goldenGlass.png", 655, 540, 50, 70);
+        Treasure glassCup = new Treasure("img/treasure/glassCup.png", 652, 635, 50, 70);
+        Treasure bow = new Treasure("img/treasure/bow.png", 583, 350, 50, 70);
+        Treasure shield = new Treasure("img/treasure/shield.png", 567, 447, 50, 70);
+        Treasure key = new Treasure("img/treasure/key.png", 580, 540, 50, 70);
+        Treasure scroll = new Treasure("img/treasure/scroll.png", 567, 637, 50, 70);
+
+
         JLabel statusBoard1 = new JLabel();
 
         statusBoard1.setText("Status Board");
@@ -68,17 +78,17 @@ public class Main {
         Text textTo1 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
         Text textTo2 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
         Text textquest1 = new Text("quest:", font32, Color.BLACK, 245, 30, 300, 100);
-        Text textquest2 = new Text("quest:", font32, Color.BLACK, 245, 30,300, 100 );
-        Text text_treasure_number_1 = new Text("treasure number:", font24, Color.WHITE, 245, 70,300, 100);
-        Text text_treasure_number_2 = new Text("treasure number:", font24, Color.WHITE, 245, 70,300, 100);
-        Text text_treasure_score_1 = new Text("treasure score:", font24, Color.WHITE, 245, 110,300, 100);
-        Text textT_treasure_score_2 = new Text("treasure score:", font24, Color.WHITE, 245, 110,300, 100);
-        Text textpower1 = new Text("power:", font24, Color.WHITE, 245, 150,300, 100);
-        Text textpower2 = new Text("power:", font24, Color.WHITE, 245, 150,300, 100);
-        Text textmoney1 = new Text("money:", font24, Color.WHITE, 245, 190,300, 100);
-        Text textmoney2 = new Text("money:", font24, Color.WHITE, 245, 190,300, 100);
-        Text texttime1 = new Text("time:", font24, Color.WHITE, 245, 230,300, 100);
-        Text texttime2 = new Text("time:", font24, Color.WHITE, 245, 230,300, 100);
+        Text textquest2 = new Text("quest:", font32, Color.BLACK, 245, 30, 300, 100);
+        Text text_treasure_number_1 = new Text("treasure number:", font24, Color.WHITE, 245, 70, 300, 100);
+        Text text_treasure_number_2 = new Text("treasure number:", font24, Color.WHITE, 245, 70, 300, 100);
+        Text text_treasure_score_1 = new Text("treasure score:", font24, Color.WHITE, 245, 110, 300, 100);
+        Text textT_treasure_score_2 = new Text("treasure score:", font24, Color.WHITE, 245, 110, 300, 100);
+        Text textpower1 = new Text("power:", font24, Color.WHITE, 245, 150, 300, 100);
+        Text textpower2 = new Text("power:", font24, Color.WHITE, 245, 150, 300, 100);
+        Text textmoney1 = new Text("money:", font24, Color.WHITE, 245, 190, 300, 100);
+        Text textmoney2 = new Text("money:", font24, Color.WHITE, 245, 190, 300, 100);
+        Text texttime1 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);
+        Text texttime2 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);
 
         JLabel dice1 = new JLabel();
         dice1.setText("" + diceNumber);
@@ -214,9 +224,18 @@ public class Main {
         player_1_panel.add(statusBoard1);
         player_1_panel.add(textVen1);
         player_1_panel.add(textTo1);
+
+        player_1_panel.add(ring);
+        player_1_panel.add(sword);
+        player_1_panel.add(goldenGlass);
+        player_1_panel.add(glassCup);
+        player_1_panel.add(bow);
+        player_1_panel.add(shield);
+        player_1_panel.add(key);
+        player_1_panel.add(scroll);
+
         player_1_panel.add(inventory1);
         player_1_panel.add(dice1);
-
 
 
         JPanel player_2_panel = new JPanel();
@@ -238,7 +257,6 @@ public class Main {
         player_2_panel.add(textTo2);
         player_2_panel.add(inventory2);
         player_2_panel.add(dice2);
-
 
 
         JLayeredPane layeredPane = new JLayeredPane();
