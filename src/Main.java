@@ -152,7 +152,7 @@ public class Main {
         player_1_Image.setBounds(500, 0, 300, 320);
 
         JLabel player_2_Image = new JLabel();
-        player_2_Image.setText("Illidan");
+        player_2_Image.setText("Angel");
         player_2_Image.setForeground(Color.BLACK);
         player_2_Image.setHorizontalTextPosition(JLabel.CENTER);
         player_2_Image.setVerticalTextPosition(JLabel.BOTTOM);
