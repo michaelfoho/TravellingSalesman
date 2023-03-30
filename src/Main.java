@@ -215,6 +215,7 @@ public class Main {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(750, 0, 750, 750);
 
+
         layeredPane.add(player_1_panel, Integer.valueOf(0));
         layeredPane.add(player_2_panel, Integer.valueOf(1));
 
@@ -224,7 +225,7 @@ public class Main {
         frame.add(layeredPane);
         //frame.panel.add(player_1);
 
-        ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
-        ProgressBarDemo player_2_HP_barDemo = new ProgressBarDemo(player_2_HP_bar);
+        //ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
+        //ProgressBarDemo player_2_HP_barDemo = new ProgressBarDemo(player_2_HP_bar);
     }
 }

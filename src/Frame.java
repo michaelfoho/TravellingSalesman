@@ -104,7 +104,7 @@ public class Frame extends JFrame implements ActionListener {
 
 
         if (e.getSource() == button) {
-            System.out.println(1);
+
 
         }
 
