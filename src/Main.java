@@ -147,7 +147,7 @@ public class Main {
         player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
         player_1_Image.setVerticalTextPosition(JLabel.BOTTOM);
         player_1_Image.setFont(font32);
-        ImageIcon player_1_image_Icon = new ImageIcon("img/player_1_image.png");
+        ImageIcon player_1_image_Icon = new ImageIcon("img/hero/player_1_image.png");
         player_1_Image.setIcon(player_1_image_Icon);
         player_1_Image.setBounds(500, 0, 300, 320);
 
@@ -157,7 +157,7 @@ public class Main {
         player_2_Image.setHorizontalTextPosition(JLabel.CENTER);
         player_2_Image.setVerticalTextPosition(JLabel.BOTTOM);
         player_2_Image.setFont(font32);
-        ImageIcon player_2_image_Icon = new ImageIcon("img/player_2_image.png");
+        ImageIcon player_2_image_Icon = new ImageIcon("img/hero/player_2_image.png");
         player_2_Image.setIcon(player_2_image_Icon);
         player_2_Image.setBounds(500, 0, 300, 320);
 
@@ -165,7 +165,7 @@ public class Main {
         JLabel player_1 = new JLabel();
         player_1.setHorizontalTextPosition(JLabel.CENTER);
         player_1.setVerticalTextPosition(JLabel.CENTER);
-        ImageIcon player_1_Icon = new ImageIcon("img/player_1.png");
+        ImageIcon player_1_Icon = new ImageIcon("img/hero/player_1.png");
         player_1.setIcon(player_1_Icon);
         player_1.setBounds(0, 675, 75, 75);
         player_1.setBorder(border);
@@ -173,7 +173,7 @@ public class Main {
         JLabel player_2 = new JLabel();
         player_2.setHorizontalTextPosition(JLabel.CENTER);
         player_2.setVerticalTextPosition(JLabel.CENTER);
-        ImageIcon player_2_Icon = new ImageIcon("img/player_2.png");
+        ImageIcon player_2_Icon = new ImageIcon("img/hero/player_2.png");
         player_2.setIcon(player_2_Icon);
         player_2.setBounds(0, 675, 75, 75);
         player_2.setBorder(border);
@@ -184,7 +184,7 @@ public class Main {
 
 
         JPanel player_1_panel = new JPanel();
-        player_1_panel.setBackground(new Color(255, 255, 0));
+        player_1_panel.setBackground(new Color(50, 50, 50));
         player_1_panel.setBounds(0, 0, 750, 750);
         player_1_panel.setLayout(null);
         player_1_panel.setBorder(border);
@@ -198,7 +198,7 @@ public class Main {
         player_1_panel.add(dice1);
 
         JPanel player_2_panel = new JPanel();
-        player_2_panel.setBackground(new Color(255, 255, 0));
+        player_2_panel.setBackground(new Color(200, 200, 200));
         player_2_panel.setBounds(0, 0, 750, 750);
         player_2_panel.setLayout(null);
         player_2_panel.setBorder(border);

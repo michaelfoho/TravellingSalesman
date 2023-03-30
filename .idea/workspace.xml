@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start" />
+    <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/market_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/market_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/market_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/market_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/player_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/player_1_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/player_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/player_2_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/trap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/wall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +85,7 @@
       <workItem from="1680119023241" duration="4200000" />
       <workItem from="1680165166481" duration="2534000" />
       <workItem from="1680184756641" duration="2442000" />
-      <workItem from="1680189879306" duration="6071000" />
+      <workItem from="1680189879306" duration="10714000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1680096594589</created>
@@ -190,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680197803205</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="start">
+      <created>1680197987026</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680197987026</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
