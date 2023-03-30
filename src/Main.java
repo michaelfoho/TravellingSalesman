@@ -1,12 +1,18 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class Main {
+
+
     public static void main(String[] args) {
 
         Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
         Font font32 = new Font("Century", Font.PLAIN, 32);
+        Font font64 = new Font("Century", Font.PLAIN, 64);
 
 
         JLabel statusBoard = new JLabel();
@@ -53,6 +59,46 @@ public class Main {
         player_1.setBounds(0, 675, 75, 75);
         player_1.setBorder(border);
 
+        String strDice = "1";
+
+        MouseListener mouse = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //strDice = "2";
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        };
+
+        JLabel dice = new JLabel();
+        dice.setText(strDice);
+        dice.setHorizontalAlignment(JLabel.CENTER);
+        dice.setVerticalAlignment(JLabel.CENTER);
+        dice.setFont(font64);
+        dice.setBackground(new Color(255, 0, 0, 70));//background color
+        dice.setOpaque(true);//display background color
+        dice.setBounds(17, 340, 100, 100);
+        dice.setBorder(border);
+        dice.addMouseListener(mouse);
+
 
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
 
@@ -69,6 +115,7 @@ public class Main {
         rightPanel.add(textVen);
         rightPanel.add(textTo);
         rightPanel.add(inventory);
+        rightPanel.add(dice);
 
 
         Frame frame = new Frame();
