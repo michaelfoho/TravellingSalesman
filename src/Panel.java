@@ -85,21 +85,17 @@ public class Panel extends JPanel implements ActionListener {
         weapon3 = new ImageIcon("img/weapon/weapon3.png").getImage();
         weapon4 = new ImageIcon("img/weapon/weapon4.png").getImage();
 
-
         werewolfImage = new ImageIcon("img/hero/big/werewolf.png").getImage();
         angelImage = new ImageIcon("img/hero/big/angel.png").getImage();
 
         werewolf = new ImageIcon("img/hero/small/werewolf.png").getImage();
         angel = new ImageIcon("img/hero/small/angel.png").getImage();
 
-
         playerImage = werewolfImage;
         player = werewolf;
 
         this.setLayout(null);
-
         this.add(button);
-
         this.setPreferredSize(new Dimension(1500, 750));
     }
 
@@ -188,8 +184,6 @@ public class Panel extends JPanel implements ActionListener {
         g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
         g2D.setFont(font64);//font
         g2D.drawString("1", 798, 410);
-
-
     }
 
     @Override
@@ -204,10 +198,8 @@ public class Panel extends JPanel implements ActionListener {
                 playerImage = werewolfImage;
                 player = werewolf;
             }
-
-
         }
-        repaint();
 
+        repaint();
     }
 }
