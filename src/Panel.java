@@ -184,6 +184,8 @@ public class Panel extends JPanel implements ActionListener {
         g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
         g2D.setFont(font64);//font
         g2D.drawString("1", 798, 410);
+
+
     }
 
     @Override
