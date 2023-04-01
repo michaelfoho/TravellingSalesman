@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 public class Frame extends JFrame implements ActionListener {
 
-    JButton button;
+    int layeredPaneValue1 = 0;
+    int layeredPaneValue2 = 1;
 
-    JLayeredPane layeredPane = new JLayeredPane();
-
+    //JButton button;
 
     JMenuBar menuBar = new JMenuBar();
 
@@ -25,14 +25,7 @@ public class Frame extends JFrame implements ActionListener {
 
     Panel panel;
 
-    Frame(JPanel panel_1, JPanel panel_2) {
-
-        layeredPane.setBounds(750, 0, 750, 750);
-        layeredPane.add(panel_1, Integer.valueOf(0));
-        //layeredPane.add(panel_2, Integer.valueOf(1));
-
-        this.add(layeredPane);
-
+    Frame() {
 
         panel = new Panel();
 
@@ -50,23 +43,22 @@ public class Frame extends JFrame implements ActionListener {
         this.setIconImage(imageIcon.getImage());
 
 
-        button = new JButton();
+       /* button = new JButton();
         button.setBounds(766, 450, 100, 70);
         button.addActionListener(this);
         button.setFocusable(true);
         //button.setVisible(true);
 
-        button.setText("Button");
+        button.setText("Next");
         button.setHorizontalTextPosition(JButton.CENTER);
         button.setVerticalTextPosition(JButton.CENTER);
         button.setFont(new Font("Comic Sans", Font.PLAIN, 25));
         button.setForeground(new Color(0, 0, 0));
         button.setBackground(new Color(0, 255, 255));//if you add an image for background of button comment this line
 
-        button.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3, true));//this argument can change
 
         button.setEnabled(true);//if you want to disable the button change (true) to (false)
-        this.add(button);
+        this.add(button);*/
 
 
         newGameItem.addActionListener(this);
@@ -89,6 +81,8 @@ public class Frame extends JFrame implements ActionListener {
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
+
+        this.setBackground(new Color(50,50,50));
 
     }
 
@@ -114,10 +108,9 @@ public class Frame extends JFrame implements ActionListener {
         }
 
 
-        if (e.getSource() == button) {
+        /*if (e.getSource() == button) {
 
-
-        }
-
+            System.out.println("button");
+        }*/
     }
 }

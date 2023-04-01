@@ -7,7 +7,7 @@ import java.awt.event.MouseListener;
 public class Main {
     public static void main(String[] args) {
 
-        int diceNumber = 0;
+        int diceNumber = 1;
 
 
         Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
@@ -16,7 +16,7 @@ public class Main {
         Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
-        TreasureLoot ring = new TreasureLoot("img/treasure/ring.png", 646, 350, 50, 70);
+        /*TreasureLoot ring = new TreasureLoot("img/treasure/ring.png", 646, 350, 50, 70);
         TreasureLoot sword = new TreasureLoot("img/treasure/sword.png", 660, 445, 50, 70);
         TreasureLoot goldenGlass = new TreasureLoot("img/treasure/goldenGlass.png", 655, 540, 50, 70);
         TreasureLoot glassCup = new TreasureLoot("img/treasure/glassCup.png", 652, 635, 50, 70);
@@ -37,10 +37,9 @@ public class Main {
         TreasureLoot lostObject_10 = new TreasureLoot("img/lostObject/lostObject_10.png", 253, 540, 50, 70);
         TreasureLoot lostObject_11 = new TreasureLoot("img/lostObject/lostObject_11.png", 253, 635, 50, 70);
         TreasureLoot lostObject_12 = new TreasureLoot("img/lostObject/lostObject_12.png", 175, 540, 50, 70);
-        TreasureLoot lostObject_13 = new TreasureLoot("img/lostObject/lostObject_13.png", 175, 637, 50, 70);
+        TreasureLoot lostObject_13 = new TreasureLoot("img/lostObject/lostObject_13.png", 175, 637, 50, 70);*/
 
-        JLabel statusBoard1 = new JLabel();
-
+       /* JLabel statusBoard1 = new JLabel();
         statusBoard1.setText("Status Board");
         statusBoard1.setHorizontalTextPosition(JLabel.CENTER);
         statusBoard1.setVerticalTextPosition(JLabel.TOP);
@@ -49,9 +48,9 @@ public class Main {
         ImageIcon statusBoardIcon1 = new ImageIcon("img/statusBoard.png");
         statusBoard1.setIcon(statusBoardIcon1);
         statusBoard1.setBounds(10, 10, 500, 300);
-        statusBoard1.setBorder(border);
+        statusBoard1.setBorder(border);*/
 
-        JLabel statusBoard2 = new JLabel();
+        /*JLabel statusBoard2 = new JLabel();
         statusBoard2.setText("Status Board");
         statusBoard2.setHorizontalTextPosition(JLabel.CENTER);
         statusBoard2.setVerticalTextPosition(JLabel.TOP);
@@ -60,9 +59,9 @@ public class Main {
         ImageIcon statusBoardIcon2 = new ImageIcon("img/statusBoard.png");
         statusBoard2.setIcon(statusBoardIcon2);
         statusBoard2.setBounds(10, 10, 500, 300);
-        statusBoard2.setBorder(border);
+        statusBoard2.setBorder(border);*/
 
-        JLabel inventory1 = new JLabel();
+        /*JLabel inventory1 = new JLabel();
         inventory1.setText("In              ry");
         inventory1.setHorizontalTextPosition(JLabel.CENTER);
         inventory1.setVerticalTextPosition(JLabel.TOP);
@@ -72,9 +71,9 @@ public class Main {
         ImageIcon inventoryIcon1 = new ImageIcon("img/inventory.png");
         inventory1.setIcon(inventoryIcon1);
         inventory1.setBounds(130, 330, 600, 400);
-        inventory1.setBorder(border);
+        inventory1.setBorder(border);*/
 
-        JLabel inventory2 = new JLabel();
+        /*JLabel inventory2 = new JLabel();
         inventory2.setText("In              ry");
         inventory2.setHorizontalTextPosition(JLabel.CENTER);
         inventory2.setVerticalTextPosition(JLabel.TOP);
@@ -84,9 +83,9 @@ public class Main {
         ImageIcon inventoryIcon2 = new ImageIcon("img/inventory.png");
         inventory2.setIcon(inventoryIcon2);
         inventory2.setBounds(130, 330, 600, 400);
-        inventory2.setBorder(border);
+        inventory2.setBorder(border);*/
 
-        Text textVen1 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
+       /* Text textVen1 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
         Text textVen2 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
         Text textTo1 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
         Text textTo2 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
@@ -101,7 +100,7 @@ public class Main {
         Text textmoney1 = new Text("money:", font24, Color.WHITE, 245, 190, 300, 100);
         Text textmoney2 = new Text("money:", font24, Color.WHITE, 245, 190, 300, 100);
         Text texttime1 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);
-        Text texttime2 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);
+        Text texttime2 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);*/
 
         JLabel dice1 = new JLabel();
         dice1.setText("" + diceNumber);
@@ -178,7 +177,7 @@ public class Main {
         dice2.addMouseListener(diceMouse2);
 
 
-        JLabel player_1_Image = new JLabel();
+        /*JLabel player_1_Image = new JLabel();
         player_1_Image.setText("Werewolf");
         player_1_Image.setForeground(Color.BLACK);
         player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
@@ -196,10 +195,10 @@ public class Main {
         player_2_Image.setFont(font32);
         ImageIcon player_2_image_Icon = new ImageIcon("img/hero/player_2_image.png");
         player_2_Image.setIcon(player_2_image_Icon);
-        player_2_Image.setBounds(500, 0, 300, 320);
+        player_2_Image.setBounds(500, 0, 300, 320);*/
 
 
-        JLabel player_1 = new JLabel();
+        /*JLabel player_1 = new JLabel();
         player_1.setHorizontalTextPosition(JLabel.CENTER);
         player_1.setVerticalTextPosition(JLabel.CENTER);
         ImageIcon player_1_Icon = new ImageIcon("img/hero/player_1.png");
@@ -213,7 +212,7 @@ public class Main {
         ImageIcon player_2_Icon = new ImageIcon("img/hero/player_2.png");
         player_2.setIcon(player_2_Icon);
         player_2.setBounds(0, 675, 75, 75);
-        player_2.setBorder(border);
+        player_2.setBorder(border);*/
 
 
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
@@ -225,43 +224,43 @@ public class Main {
         player_1_panel.setBounds(0, 0, 750, 750);
         player_1_panel.setLayout(null);
         player_1_panel.setBorder(border);
-        player_1_panel.add(player_1_Image);
-        player_1_panel.add(player_1);
-        player_1_panel.add(player_1_HP_bar);
-        player_1_panel.add(textquest1);
-        player_1_panel.add(text_treasure_number_1);
-        player_1_panel.add(text_treasure_score_1);
-        player_1_panel.add(textpower1);
-        player_1_panel.add(textmoney1);
-        player_1_panel.add(texttime1);
-        player_1_panel.add(statusBoard1);
-        player_1_panel.add(textVen1);
-        player_1_panel.add(textTo1);
+        // player_1_panel.add(player_1_Image);
+        ///player_1_panel.add(player_1);
+        //player_1_panel.add(player_1_HP_bar);
+        //player_1_panel.add(textquest1);
+        //player_1_panel.add(text_treasure_number_1);
+        //player_1_panel.add(text_treasure_score_1);
+        //player_1_panel.add(textpower1);
+        //player_1_panel.add(textmoney1);
+        //player_1_panel.add(texttime1);
+        ////player_1_panel.add(statusBoard1);
+        //player_1_panel.add(textVen1);
+        //player_1_panel.add(textTo1);
 
-        player_1_panel.add(ring);
-        player_1_panel.add(sword);
-        player_1_panel.add(goldenGlass);
-        player_1_panel.add(glassCup);
-        player_1_panel.add(bow);
-        player_1_panel.add(shield);
-        player_1_panel.add(key);
-        player_1_panel.add(scroll);
+       //player_1_panel.add(ring);
+       //player_1_panel.add(sword);
+       //player_1_panel.add(goldenGlass);
+       //player_1_panel.add(glassCup);
+       //player_1_panel.add(bow);
+       //player_1_panel.add(shield);
+       //player_1_panel.add(key);
+       //player_1_panel.add(scroll);
 
-        player_1_panel.add(lostObject_1);
-        player_1_panel.add(lostObject_2);
-        player_1_panel.add(lostObject_3);
-        player_1_panel.add(lostObject_4);
-        player_1_panel.add(lostObject_5);
-        player_1_panel.add(lostObject_6);
-        player_1_panel.add(lostObject_7);
-        player_1_panel.add(lostObject_8);
-        player_1_panel.add(lostObject_9);
-        player_1_panel.add(lostObject_10);
-        player_1_panel.add(lostObject_11);
-        player_1_panel.add(lostObject_12);
-        player_1_panel.add(lostObject_13);
+       //player_1_panel.add(lostObject_1);
+       //player_1_panel.add(lostObject_2);
+       //player_1_panel.add(lostObject_3);
+       //player_1_panel.add(lostObject_4);
+       //player_1_panel.add(lostObject_5);
+       //player_1_panel.add(lostObject_6);
+       //player_1_panel.add(lostObject_7);
+       //player_1_panel.add(lostObject_8);
+       //player_1_panel.add(lostObject_9);
+       //player_1_panel.add(lostObject_10);
+       //player_1_panel.add(lostObject_11);
+       //player_1_panel.add(lostObject_12);
+       //player_1_panel.add(lostObject_13);
 
-        player_1_panel.add(inventory1);
+        //player_1_panel.add(inventory1);
         player_1_panel.add(dice1);
 
 
@@ -270,27 +269,29 @@ public class Main {
         player_2_panel.setBounds(0, 0, 750, 750);
         player_2_panel.setLayout(null);
         player_2_panel.setBorder(border);
-        player_2_panel.add(player_2_Image);
-        player_2_panel.add(player_2);
-        player_2_panel.add(player_2_HP_bar);
-        player_2_panel.add(textquest2);
-        player_2_panel.add(text_treasure_number_2);
-        player_2_panel.add(textT_treasure_score_2);
-        player_2_panel.add(textpower2);
-        player_2_panel.add(textmoney2);
-        player_2_panel.add(texttime2);
-        player_2_panel.add(statusBoard2);
-        player_2_panel.add(textVen2);
-        player_2_panel.add(textTo2);
-        player_2_panel.add(inventory2);
-        player_2_panel.add(dice2);
+        // player_2_panel.add(player_2_Image);
+        //player_2_panel.add(player_2);
+        //player_2_panel.add(player_2_HP_bar);
+        //player_2_panel.add(textquest2);
+        //player_2_panel.add(text_treasure_number_2);
+        //player_2_panel.add(textT_treasure_score_2);
+        //player_2_panel.add(textpower2);
+        //player_2_panel.add(textmoney2);
+        //player_2_panel.add(texttime2);
+        //// player_2_panel.add(statusBoard2);
+        //player_2_panel.add(textVen2);
+        //player_2_panel.add(textTo2);
+        //// player_2_panel.add(inventory2);
+        //player_2_panel.add(dice2);
 
 
-        Frame frame = new Frame(player_1_panel, player_2_panel);
+        Frame frame = new Frame();
+
+        frame.add(player_1_HP_bar);
 
         //frame.panel.add(player_1);
 
-        //ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
+        ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
         //ProgressBarDemo player_2_HP_barDemo = new ProgressBarDemo(player_2_HP_bar);
     }
 }

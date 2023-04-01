@@ -5,7 +5,7 @@ public class ProgressBarDemo {
     ProgressBarDemo(JProgressBar bar) {
 
         bar.setValue(0);
-        bar.setBounds(557, 10, 150, 10);
+        bar.setBounds(1310, 10, 150, 10);
         bar.setStringPainted(true);
         bar.setFont(new Font("MV Boli", Font.PLAIN, 10));
         bar.setForeground(new Color(255, 0, 0));
