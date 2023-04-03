@@ -289,8 +289,6 @@ public class Main {
 
         frame.add(player_1_HP_bar);
 
-        //frame.panel.add(player_1);
-
         ProgressBarDemo player_1_HP_barDemo = new ProgressBarDemo(player_1_HP_bar);
         //ProgressBarDemo player_2_HP_barDemo = new ProgressBarDemo(player_2_HP_bar);
     }

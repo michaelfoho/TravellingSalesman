@@ -1,9 +1,9 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Frame extends JFrame implements ActionListener {
+
     JMenuBar menuBar = new JMenuBar();
 
     JMenu fileMenu = new JMenu("File");
@@ -22,6 +22,7 @@ public class Frame extends JFrame implements ActionListener {
     Frame() {
 
         panel = new Panel();
+
 
         this.setTitle("Travelling Salesman");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +58,7 @@ public class Frame extends JFrame implements ActionListener {
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
-        this.setBackground(new Color(50, 50, 50));
+        //this.setBackground(new Color(50, 50, 50));
     }
 
 
