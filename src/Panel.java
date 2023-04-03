@@ -2,8 +2,16 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
 
-public class Panel extends JPanel implements ActionListener {
+public class Panel extends JPanel implements ActionListener, KeyListener {
+
+    /*ImageIcon icon = new ImageIcon("img/logo.png");
+    Image scaleIcon = icon.getImage().getScaledInstance(200, 100, Image.SCALE_DEFAULT);*/   //scaled image
+
+    int diceNumber = 1;
+    int x1 = 750, y1 = 675;
+
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
     Font font64 = new Font("Century", Font.PLAIN, 64);
@@ -12,10 +20,15 @@ public class Panel extends JPanel implements ActionListener {
     Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
+    Random rand = new Random();
+
     JButton button;
 
+    JLabel dice;
 
-    Image desert, castle, wall, treasure, loot;
+
+    Image desert, backgroundColor;
+    Image castle, wall, treasure, loot;
     Image trap1, trap2;
     Image market1, market2, market3, market4;
     Image statusBoard, inventory;
@@ -27,6 +40,17 @@ public class Panel extends JPanel implements ActionListener {
     Image weapon1, weapon2, weapon3, weapon4;
 
     Panel() {
+
+        dice = new JLabel();
+        dice.setText("" + diceNumber);
+        dice.setHorizontalAlignment(JLabel.CENTER);
+        dice.setVerticalAlignment(JLabel.CENTER);
+        dice.setFont(font64);
+        dice.setBackground(new Color(150, 150, 0));//background color
+        dice.setOpaque(true);//display background color
+        dice.setBounds(765, 340, 100, 100);
+        dice.addMouseListener(diceMouse);
+
 
         button = new JButton();
         button.setBounds(766, 450, 100, 70);
@@ -43,6 +67,7 @@ public class Panel extends JPanel implements ActionListener {
 
 
         desert = new ImageIcon("img/desert.png").getImage();
+        backgroundColor = new ImageIcon("img/backgroundColor.png").getImage();
         castle = new ImageIcon("img/building/castle.png").getImage();
         wall = new ImageIcon("img/building/wall.png").getImage();
         trap1 = new ImageIcon("img/trap1.png").getImage();
@@ -94,7 +119,9 @@ public class Panel extends JPanel implements ActionListener {
         playerImage = werewolfImage;
         player = werewolf;
 
+
         this.setLayout(null);
+        this.add(dice);
         this.add(button);
         this.setPreferredSize(new Dimension(1500, 750));
     }
@@ -105,10 +132,11 @@ public class Panel extends JPanel implements ActionListener {
 
         g2D.setPaint(Color.BLACK);
         g2D.setStroke(new BasicStroke(4));//thickness
-        g2D.setFont(font40);//font
+        g2D.setFont(font40);
 
 
         g2D.drawImage(desert, 0, 0, null);
+        g2D.drawImage(backgroundColor, 750, 0, null);
         g2D.drawImage(castle, 5 * 75, 5 * 75, null);
         g2D.drawImage(wall, 2 * 75, 2 * 75, null);
         g2D.drawImage(wall, 7 * 75, 6 * 75, null);
@@ -165,7 +193,7 @@ public class Panel extends JPanel implements ActionListener {
 
         g2D.setPaint(Color.BLACK);
 
-        g2D.drawImage(player, 750, 675, null);
+        g2D.drawImage(player, x1, y1, null);
         g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
         g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
@@ -178,22 +206,91 @@ public class Panel extends JPanel implements ActionListener {
         }
 
 
-        g2D.setPaint(new Color(5, 100, 125));
+       /* g2D.setPaint(new Color(5, 100, 125));
         g2D.fillRoundRect(766, 340, 100, 100, 10, 10);//dice
-        g2D.setPaint(new Color(0, 0, 0));
+        g2D.setPaint(new Color(0, 0, 0));*/
         g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
-        g2D.setFont(font64);//font
-        g2D.drawString("1", 798, 410);
+       /* g2D.setFont(font64);//font
+        g2D.drawString("1", 798, 410);*/
 
 
     }
+
+
+    MouseListener diceMouse = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+
+            diceNumber = rand.nextInt(6) + 1;
+            dice.setText("" + diceNumber);
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+    };
+
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+        /*switch (e.getKeyChar()) {
+            case 'w':
+                y1 -= 75;
+                break;
+            case 's':
+                y1 += 75;
+                break;
+            case 'a':
+                x1 -= 75;
+                break;
+            case 'd':
+                x1 += 75;
+                break;
+        }//move with wsad*/
+
+        if (e.getKeyChar() != 'w') {
+            System.out.println(x1);
+        }
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+        if (e.getKeyChar() == 'w') {
+            System.out.println(x1);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == button) {
 
-            if (playerImage == werewolfImage) {
+            if (player == werewolf) {
                 playerImage = angelImage;
                 player = angel;
             } else {
