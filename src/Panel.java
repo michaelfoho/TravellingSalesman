@@ -13,7 +13,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     int x1 = 750, y1 = 675;
 
 
-    Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 4, true);
+    Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
     Font font64 = new Font("Century", Font.PLAIN, 64);
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Font font32 = new Font("Century", Font.PLAIN, 32);
@@ -55,6 +55,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         dice.setVerticalAlignment(JLabel.CENTER);
         dice.setOpaque(true);
         dice.setBounds(765, 340, 100, 100);
+        dice.setBorder(border);
         dice.addMouseListener(diceMouse);
 
 
