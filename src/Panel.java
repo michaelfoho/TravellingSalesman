@@ -4,20 +4,20 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
-public class Panel extends JPanel implements ActionListener, KeyListener {
+public class Panel extends JPanel implements ActionListener {
 
     /*ImageIcon icon = new ImageIcon("img/logo.png");
     Image scaleIcon = icon.getImage().getScaledInstance(200, 100, Image.SCALE_DEFAULT);*/   //scaled image
 
+
+    int sw = 1;
+    int repaint = 1;
     int diceNumber = 1;
     int x1 = 750, y1 = 675;
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
-    Font font64 = new Font("Century", Font.PLAIN, 64);
     Font font40 = new Font("Century", Font.PLAIN, 40);
-    Font font32 = new Font("Century", Font.PLAIN, 32);
-    Font font24 = new Font("Century", Font.PLAIN, 24);
 
     String player_name;
     String player_werewolf = new String("Werewolf");
@@ -26,12 +26,12 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
     Random rand = new Random();
 
-    JButton button;
+    Button nextButton, continueButton, newGameButton, quitButton;
 
     JLabel dice;
 
 
-    Image desert, backgroundColor;
+    Image firstPage, desert, backgroundColor;
     Image castle, wall, treasure, loot;
     Image trap1, trap2;
     Image market1, market2, market3, market4;
@@ -49,8 +49,6 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Panel() {
 
         dice = new JLabel();
-        ImageIcon diceIcon = new ImageIcon("img/dice.png");
-        dice.setIcon(diceIcon);
         dice.setHorizontalAlignment(JLabel.CENTER);
         dice.setVerticalAlignment(JLabel.CENTER);
         dice.setOpaque(true);
@@ -59,20 +57,17 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         dice.addMouseListener(diceMouse);
 
 
-        button = new JButton();
-        button.setBounds(766, 450, 100, 70);
-        button.addActionListener(this);
-        button.setFocusable(true);
-        button.setVisible(true);
-        button.setText("Next");
-        button.setHorizontalTextPosition(JButton.CENTER);
-        button.setVerticalTextPosition(JButton.CENTER);
-        button.setFont(font24);
-        button.setForeground(Color.BLACK);
-        button.setBackground(new Color(180, 150, 0));//if you add an image for background of button comment this line
-        button.setEnabled(true);//if you want to disable the button change (true) to (false)
+        nextButton = new Button(766, 450, 100, 70, "Next", new Color(180, 150, 0));
+        nextButton.addActionListener(this);
+        continueButton = new Button(1200, 15, 250, 50, "Continue", new Color(100, 100, 100));
+        continueButton.addActionListener(this);
+        newGameButton = new Button(1200, 80, 250, 50, "New Game", new Color(100, 100, 100));
+        newGameButton.addActionListener(this);
+        quitButton = new Button(1200, 145, 250, 50, "Quit", new Color(100, 100, 100));
+        quitButton.addActionListener(this);
 
 
+        firstPage = new ImageIcon("img/firstPage.png").getImage();
         desert = new ImageIcon("img/desert.png").getImage();
         backgroundColor = new ImageIcon("img/backgroundColor.png").getImage();
         castle = new ImageIcon("img/building/castle.png").getImage();
@@ -138,8 +133,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         dice6 = new ImageIcon("img/dice/dice6.png");
 
         this.setLayout(null);
-        this.add(dice);
-        this.add(button);
+
         this.setPreferredSize(new Dimension(1500, 750));
     }
 
@@ -151,83 +145,107 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         g2D.setStroke(new BasicStroke(4));//thickness
         g2D.setFont(font40);
 
+        switch (sw) {
 
-        g2D.drawImage(desert, 0, 0, null);
-        g2D.drawImage(backgroundColor, 750, 0, null);
-        g2D.drawImage(castle, 5 * 75, 5 * 75, null);
-        g2D.drawImage(wall, 2 * 75, 2 * 75, null);
-        g2D.drawImage(wall, 7 * 75, 6 * 75, null);
-        g2D.drawImage(trap1, 3 * 75, 8 * 75, null);
-        g2D.drawImage(trap1, 5 * 75, 1 * 75, null);
-        g2D.drawImage(trap2, 6 * 75, 3 * 75, null);
-        g2D.drawImage(trap2, 0 * 75, 0 * 75, null);
-        g2D.drawImage(treasure, 4 * 75, 2 * 75, null);
-        g2D.drawImage(treasure, 8 * 75, 7 * 75, null);
-        g2D.drawImage(loot, 1 * 75, 5 * 75, null);
-        g2D.drawImage(loot, 3 * 75, 4 * 75, null);
-        g2D.drawImage(market1, 0 * 75, 7 * 75, null);
-        g2D.drawImage(market2, 2 * 75, 0 * 75, null);
-        g2D.drawImage(market3, 6 * 75, 1 * 75, null);
-        g2D.drawImage(market4, 9 * 75, 5 * 75, null);
-        g2D.drawImage(market1, 6 * 75, 9 * 75, null);
+            case 1:
 
-        g2D.drawImage(statusBoard, 760, 10, null);
-        g2D.drawRoundRect(760, 10, 500, 300, 10, 10);
-        g2D.drawImage(inventory, 880, 330, null);
-        g2D.drawRoundRect(880, 330, 600, 400, 10, 10);
-
-        g2D.drawImage(ring, 1393, 355, null);
-        g2D.drawImage(sword, 1407, 445, null);
-        g2D.drawImage(goldenGlass, 1400, 540, null);
-        g2D.drawImage(glassCup, 1397, 635, null);
-        g2D.drawImage(bow, 1330, 351, null);
-        g2D.drawImage(shield, 1314, 445, null);
-        g2D.drawImage(key, 1325, 545, null);
-        g2D.drawImage(scroll, 1314, 635, null);
-
-        g2D.drawImage(lostObject_1, 1235, 445, null);
-        g2D.drawImage(lostObject_2, 1235, 540, null);
-        g2D.drawImage(lostObject_3, 1235, 635, null);
-        g2D.drawImage(lostObject_4, 1157, 445, null);
-        g2D.drawImage(lostObject_5, 1157, 540, null);
-        g2D.drawImage(lostObject_6, 1157, 635, null);
-        g2D.drawImage(lostObject_7, 1079, 445, null);
-        g2D.drawImage(lostObject_8, 1079, 540, null);
-        g2D.drawImage(lostObject_9, 1079, 635, null);
-        g2D.drawImage(lostObject_10, 1000, 350, null);
-        g2D.drawImage(lostObject_11, 1000, 445, null);
-        g2D.drawImage(lostObject_12, 1000, 540, null);
-        g2D.drawImage(lostObject_13, 1000, 635, null);
-
-        g2D.drawImage(weapon1, 926, 350, null);
-        g2D.drawImage(weapon2, 935, 445, null);
-        g2D.drawImage(weapon3, 932, 540, null);
-        g2D.drawImage(weapon4, 926, 635, null);
+                this.add(continueButton);
+                this.add(newGameButton);
+                this.add(quitButton);
 
 
-        g2D.drawImage(playerImage, 1250, 20, null);
-        g2D.setPaint(new Color(160, 160, 160));
-        //g2D.drawString("Werewolf", 1290, 300);
+                g2D.drawImage(firstPage, 0, 0, null);
 
-        g2D.setPaint(Color.BLACK);
+                break;
+            case 2:
 
-        g2D.drawImage(player, x1, y1, null);
-        g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
+                if (repaint == 1) {
+                    repaint();
+                    repaint = 0;
+                }
 
-        g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
+                this.add(dice);
+                this.add(nextButton);
 
 
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                g2D.drawRoundRect(75 * i, 75 * j, 75, 75, 10, 10);
-            }
+                g2D.drawImage(desert, 0, 0, null);
+                g2D.drawImage(backgroundColor, 750, 0, null);
+                g2D.drawImage(castle, 5 * 75, 5 * 75, null);
+                g2D.drawImage(wall, 2 * 75, 2 * 75, null);
+                g2D.drawImage(wall, 7 * 75, 6 * 75, null);
+                g2D.drawImage(trap1, 3 * 75, 8 * 75, null);
+                g2D.drawImage(trap1, 5 * 75, 1 * 75, null);
+                g2D.drawImage(trap2, 6 * 75, 3 * 75, null);
+                g2D.drawImage(trap2, 0 * 75, 0 * 75, null);
+                g2D.drawImage(treasure, 4 * 75, 2 * 75, null);
+                g2D.drawImage(treasure, 8 * 75, 7 * 75, null);
+                g2D.drawImage(loot, 1 * 75, 5 * 75, null);
+                g2D.drawImage(loot, 3 * 75, 4 * 75, null);
+                g2D.drawImage(market1, 0 * 75, 7 * 75, null);
+                g2D.drawImage(market2, 2 * 75, 0 * 75, null);
+                g2D.drawImage(market3, 6 * 75, 1 * 75, null);
+                g2D.drawImage(market4, 9 * 75, 5 * 75, null);
+                g2D.drawImage(market1, 6 * 75, 9 * 75, null);
+
+                g2D.drawImage(statusBoard, 760, 10, null);
+                g2D.drawRoundRect(760, 10, 500, 300, 10, 10);
+                g2D.drawImage(inventory, 880, 330, null);
+                g2D.drawRoundRect(880, 330, 600, 400, 10, 10);
+
+                g2D.drawImage(ring, 1393, 355, null);
+                g2D.drawImage(sword, 1407, 445, null);
+                g2D.drawImage(goldenGlass, 1400, 540, null);
+                g2D.drawImage(glassCup, 1397, 635, null);
+                g2D.drawImage(bow, 1330, 351, null);
+                g2D.drawImage(shield, 1314, 445, null);
+                g2D.drawImage(key, 1325, 545, null);
+                g2D.drawImage(scroll, 1314, 635, null);
+
+                g2D.drawImage(lostObject_1, 1235, 445, null);
+                g2D.drawImage(lostObject_2, 1235, 540, null);
+                g2D.drawImage(lostObject_3, 1235, 635, null);
+                g2D.drawImage(lostObject_4, 1157, 445, null);
+                g2D.drawImage(lostObject_5, 1157, 540, null);
+                g2D.drawImage(lostObject_6, 1157, 635, null);
+                g2D.drawImage(lostObject_7, 1079, 445, null);
+                g2D.drawImage(lostObject_8, 1079, 540, null);
+                g2D.drawImage(lostObject_9, 1079, 635, null);
+                g2D.drawImage(lostObject_10, 1000, 350, null);
+                g2D.drawImage(lostObject_11, 1000, 445, null);
+                g2D.drawImage(lostObject_12, 1000, 540, null);
+                g2D.drawImage(lostObject_13, 1000, 635, null);
+
+                g2D.drawImage(weapon1, 926, 350, null);
+                g2D.drawImage(weapon2, 935, 445, null);
+                g2D.drawImage(weapon3, 932, 540, null);
+                g2D.drawImage(weapon4, 926, 635, null);
+
+
+                g2D.drawImage(playerImage, 1250, 20, null);
+                g2D.setPaint(new Color(160, 160, 160));
+                //g2D.drawString("Werewolf", 1290, 300);
+
+                g2D.setPaint(Color.BLACK);
+
+                g2D.drawImage(player, x1, y1, null);
+                g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
+
+                g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
+
+
+                for (int i = 0; i < 10; i++) {
+                    for (int j = 0; j < 10; j++) {
+                        g2D.drawRoundRect(75 * i, 75 * j, 75, 75, 10, 10);
+                    }
+                }
+
+
+                g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
+
+                break;
+
         }
-
-
-        g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
-
     }
-
 
     MouseListener diceMouse = new MouseListener() {
         @Override
@@ -256,6 +274,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
                     dice.setIcon(dice6);
                     break;
             }
+
         }
 
         @Override
@@ -281,47 +300,27 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
 
     @Override
-    public void keyTyped(KeyEvent e) {
-
-        /*switch (e.getKeyChar()) {
-            case 'w':
-                y1 -= 75;
-                break;
-            case 's':
-                y1 += 75;
-                break;
-            case 'a':
-                x1 -= 75;
-                break;
-            case 'd':
-                x1 += 75;
-                break;
-        }//move with wsad*/
-
-        if (e.getKeyChar() != 'w') {
-            System.out.println(x1);
-        }
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-        if (e.getKeyChar() == 'w') {
-            System.out.println(x1);
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
-
-
-    @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == button) {
+        if (e.getSource() == continueButton) {
+
+        }
+
+        if (e.getSource() == newGameButton) {
+
+            sw = 2;
+
+            continueButton.setEnabled(false);
+            newGameButton.setEnabled(false);
+            quitButton.setEnabled(false);
+        }
+
+        if (e.getSource() == quitButton) {
+            System.exit(0);
+        }
+
+
+        if (e.getSource() == nextButton) {
 
             if (player == werewolf) {
                 playerImage = angelImage;
@@ -332,6 +331,9 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
             }
         }
 
+
         repaint();
+
+
     }
 }
