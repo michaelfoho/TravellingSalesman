@@ -8,7 +8,7 @@ public class ProgressBarDemo {
         bar.setBounds(1310, 10, 150, 10);
         bar.setStringPainted(true);
         bar.setFont(new Font("Century", Font.PLAIN, 10));
-        bar.setForeground(new Color(255, 0, 0));
+        bar.setForeground(new Color(0, 150, 255));
         bar.setBackground(new Color(0, 0, 0));
 
 

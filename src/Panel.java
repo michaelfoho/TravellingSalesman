@@ -234,10 +234,13 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         public void mouseClicked(MouseEvent e) {
 
             diceNumber = rand.nextInt(6) + 1;
-
-            ImageIcon i = new ImageIcon("img/dice4.png");
-            dice.setIcon(i);
-
+            if (diceNumber % 2 == 0) {
+                ImageIcon i = new ImageIcon("img/dice/dice4.png");
+                dice.setIcon(i);
+            }else{
+                ImageIcon i = new ImageIcon("img/dice/dice5.png");
+                dice.setIcon(i);
+            }
         }
 
         @Override

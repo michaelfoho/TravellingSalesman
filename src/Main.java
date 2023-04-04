@@ -53,46 +53,6 @@ public class Main {
         };
         dice1.addMouseListener(diceMouse1);
 
-        JLabel dice2 = new JLabel();
-        dice2.setText("" + diceNumber);
-        dice2.setHorizontalAlignment(JLabel.CENTER);
-        dice2.setVerticalAlignment(JLabel.CENTER);
-        dice2.setFont(font64);
-        dice2.setBackground(new Color(255, 0, 0, 70));//background color
-        dice2.setOpaque(true);//display background color
-        dice2.setBounds(17, 340, 100, 100);
-        dice2.setBorder(border);
-        MouseListener diceMouse2 = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                System.out.println("0");
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-        dice2.addMouseListener(diceMouse2);
-
-
-
-
 
         /*JLabel player_1 = new JLabel();
         player_1.setHorizontalTextPosition(JLabel.CENTER);
@@ -100,15 +60,7 @@ public class Main {
         ImageIcon player_1_Icon = new ImageIcon("img/hero/player_1.png");
         player_1.setIcon(player_1_Icon);
         player_1.setBounds(0, 675, 75, 75);
-        player_1.setBorder(border);
-
-        JLabel player_2 = new JLabel();
-        player_2.setHorizontalTextPosition(JLabel.CENTER);
-        player_2.setVerticalTextPosition(JLabel.CENTER);
-        ImageIcon player_2_Icon = new ImageIcon("img/hero/player_2.png");
-        player_2.setIcon(player_2_Icon);
-        player_2.setBounds(0, 675, 75, 75);
-        player_2.setBorder(border);*/
+        player_1.setBorder(border);*/
 
 
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);//0 is min & 500 is max
