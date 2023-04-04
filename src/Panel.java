@@ -19,9 +19,9 @@ public class Panel extends JPanel implements ActionListener {
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
     Font font40 = new Font("Century", Font.PLAIN, 40);
 
-    String player_name;
-    String player_werewolf = new String("Werewolf");
-    String player_angel = new String("Angel");
+    String playerName;//pn --> player name
+    String pnWerewolf = new String("Werewolf");
+    String pnAngel = new String("Angel");
 
 
     Random rand = new Random();
@@ -124,6 +124,8 @@ public class Panel extends JPanel implements ActionListener {
         playerImage = werewolfImage;
         player = werewolf;
 
+        playerName = pnWerewolf;
+
 
         dice1 = new ImageIcon("img/dice/dice1.png");
         dice2 = new ImageIcon("img/dice/dice2.png");
@@ -223,7 +225,16 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(playerImage, 1250, 20, null);
                 g2D.setPaint(new Color(160, 160, 160));
-                //g2D.drawString("Werewolf", 1290, 300);
+                switch (playerName) {
+
+                    case "Werewolf":
+                        g2D.drawString(playerName, 1290, 300);
+                        break;
+                    case "Angel":
+                        g2D.drawString(playerName, 1325, 300);
+                        break;
+
+                }
 
                 g2D.setPaint(Color.BLACK);
 
@@ -326,11 +337,13 @@ public class Panel extends JPanel implements ActionListener {
 
                 playerImage = angelImage;
                 player = angel;
+                playerName = "Angel";
 
             } else {
 
                 playerImage = werewolfImage;
                 player = werewolf;
+                playerName = "Werewolf";
 
             }
         }
