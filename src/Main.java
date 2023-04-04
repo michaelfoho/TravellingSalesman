@@ -16,28 +16,8 @@ public class Main {
         Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
-        /*TreasureLoot ring = new TreasureLoot("img/treasure/ring.png", 646, 350, 50, 70);
-        TreasureLoot sword = new TreasureLoot("img/treasure/sword.png", 660, 445, 50, 70);
-        TreasureLoot goldenGlass = new TreasureLoot("img/treasure/goldenGlass.png", 655, 540, 50, 70);
-        TreasureLoot glassCup = new TreasureLoot("img/treasure/glassCup.png", 652, 635, 50, 70);
-        TreasureLoot bow = new TreasureLoot("img/treasure/bow.png", 583, 350, 50, 70);
-        TreasureLoot shield = new TreasureLoot("img/treasure/shield.png", 567, 447, 50, 70);
-        TreasureLoot key = new TreasureLoot("img/treasure/key.png", 580, 540, 50, 70);
-        TreasureLoot scroll = new TreasureLoot("img/treasure/scroll.png", 567, 637, 50, 70);
 
-        TreasureLoot lostObject_1 = new TreasureLoot("img/lostObject/lostObject_1.png", 490, 445, 50, 70);
-        TreasureLoot lostObject_2 = new TreasureLoot("img/lostObject/lostObject_2.png", 490, 540, 50, 70);
-        TreasureLoot lostObject_3 = new TreasureLoot("img/lostObject/lostObject_3.png", 490, 635, 50, 70);
-        TreasureLoot lostObject_4 = new TreasureLoot("img/lostObject/lostObject_4.png", 411, 445, 50, 70);
-        TreasureLoot lostObject_5 = new TreasureLoot("img/lostObject/lostObject_5.png", 411, 540, 50, 70);
-        TreasureLoot lostObject_6 = new TreasureLoot("img/lostObject/lostObject_6.png", 411, 635, 50, 70);
-        TreasureLoot lostObject_7 = new TreasureLoot("img/lostObject/lostObject_7.png", 332, 447, 50, 70);
-        TreasureLoot lostObject_8 = new TreasureLoot("img/lostObject/lostObject_8.png", 332, 540, 50, 70);
-        TreasureLoot lostObject_9 = new TreasureLoot("img/lostObject/lostObject_9.png", 332, 635, 50, 70);
-        TreasureLoot lostObject_10 = new TreasureLoot("img/lostObject/lostObject_10.png", 253, 540, 50, 70);
-        TreasureLoot lostObject_11 = new TreasureLoot("img/lostObject/lostObject_11.png", 253, 635, 50, 70);
-        TreasureLoot lostObject_12 = new TreasureLoot("img/lostObject/lostObject_12.png", 175, 540, 50, 70);
-        TreasureLoot lostObject_13 = new TreasureLoot("img/lostObject/lostObject_13.png", 175, 637, 50, 70);*/
+
 
        /* JLabel statusBoard1 = new JLabel();
         statusBoard1.setText("Status Board");
