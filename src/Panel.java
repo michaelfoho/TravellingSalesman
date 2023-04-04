@@ -20,9 +20,6 @@ public class Panel extends JPanel implements ActionListener {
     Font font40 = new Font("Century", Font.PLAIN, 40);
 
     String playerName;//pn --> player name
-    String pnWerewolf = new String("Werewolf");
-    String pnAngel = new String("Angel");
-
 
     Random rand = new Random();
 
@@ -123,8 +120,6 @@ public class Panel extends JPanel implements ActionListener {
 
         playerImage = werewolfImage;
         player = werewolf;
-
-        playerName = pnWerewolf;
 
 
         dice1 = new ImageIcon("img/dice/dice1.png");
