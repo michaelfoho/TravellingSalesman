@@ -44,6 +44,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Image weapon1, weapon2, weapon3, weapon4;
     Image dice_image;
 
+    ImageIcon dice1, dice2, dice3, dice4, dice5, dice6;
+
     Panel() {
 
         dice = new JLabel();
@@ -127,6 +129,13 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         player = werewolf;
 
 
+        dice1 = new ImageIcon("img/dice/dice1.png");
+        dice2 = new ImageIcon("img/dice/dice2.png");
+        dice3 = new ImageIcon("img/dice/dice3.png");
+        dice4 = new ImageIcon("img/dice/dice4.png");
+        dice5 = new ImageIcon("img/dice/dice5.png");
+        dice6 = new ImageIcon("img/dice/dice6.png");
+
         this.setLayout(null);
         this.add(dice);
         this.add(button);
@@ -195,10 +204,6 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         g2D.drawImage(weapon4, 926, 635, null);
 
 
-        //g2D.drawImage(dice_image,765,340,null);
-        //g2D.drawRoundRect(765, 340, 100, 100, 10, 10);
-
-
         g2D.drawImage(playerImage, 1250, 20, null);
         g2D.setPaint(new Color(160, 160, 160));
         //g2D.drawString("Werewolf", 1290, 300);
@@ -218,13 +223,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         }
 
 
-       /* g2D.setPaint(new Color(5, 100, 125));
-        g2D.fillRoundRect(766, 340, 100, 100, 10, 10);//dice
-        g2D.setPaint(new Color(0, 0, 0));*/
         g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
-       /* g2D.setFont(font64);//font
-        g2D.drawString("1", 798, 410);*/
-
 
     }
 
@@ -234,12 +233,27 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         public void mouseClicked(MouseEvent e) {
 
             diceNumber = rand.nextInt(6) + 1;
-            if (diceNumber % 2 == 0) {
-                ImageIcon i = new ImageIcon("img/dice/dice4.png");
-                dice.setIcon(i);
-            }else{
-                ImageIcon i = new ImageIcon("img/dice/dice5.png");
-                dice.setIcon(i);
+
+
+            switch (diceNumber) {
+                case 1:
+                    dice.setIcon(dice1);
+                    break;
+                case 2:
+                    dice.setIcon(dice2);
+                    break;
+                case 3:
+                    dice.setIcon(dice3);
+                    break;
+                case 4:
+                    dice.setIcon(dice4);
+                    break;
+                case 5:
+                    dice.setIcon(dice5);
+                    break;
+                case 6:
+                    dice.setIcon(dice6);
+                    break;
             }
         }
 
