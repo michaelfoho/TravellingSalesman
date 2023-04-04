@@ -26,10 +26,8 @@ public class Frame extends JFrame implements ActionListener {
 
         this.setTitle("Travelling Salesman");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         this.add(panel);
         this.pack();
-
         this.setSize(1514, 810);
         this.setResizable(false);
         this.setLocationRelativeTo(null);//load frame in the center of screen instead the top corner
@@ -58,7 +56,6 @@ public class Frame extends JFrame implements ActionListener {
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
-        //this.setBackground(new Color(50, 50, 50));
     }
 
 
@@ -82,4 +79,7 @@ public class Frame extends JFrame implements ActionListener {
             System.exit(0);
         }
     }
+
+
+
 }
