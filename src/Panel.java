@@ -46,15 +46,14 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
 
     Panel() {
 
-        /*dice = new JLabel();
-        dice.setText("" + diceNumber);
+        dice = new JLabel();
+        ImageIcon diceIcon = new ImageIcon("img/dice.png");
+        dice.setIcon(diceIcon);
         dice.setHorizontalAlignment(JLabel.CENTER);
         dice.setVerticalAlignment(JLabel.CENTER);
-        dice.setFont(font64);
-        dice.setBackground(new Color(150, 150, 0));//background color
-        dice.setOpaque(true);//display background color
+        dice.setOpaque(true);
         dice.setBounds(765, 340, 100, 100);
-        dice.addMouseListener(diceMouse);*/
+        dice.addMouseListener(diceMouse);
 
 
         button = new JButton();
@@ -128,9 +127,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         player = werewolf;
 
 
-
         this.setLayout(null);
-        //this.add(dice);
+        this.add(dice);
         this.add(button);
         this.setPreferredSize(new Dimension(1500, 750));
     }
@@ -197,8 +195,8 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         g2D.drawImage(weapon4, 926, 635, null);
 
 
-        g2D.drawImage(dice_image,765,340,null);
-        g2D.drawRoundRect(765, 340, 100, 100, 10, 10);
+        //g2D.drawImage(dice_image,765,340,null);
+        //g2D.drawRoundRect(765, 340, 100, 100, 10, 10);
 
 
         g2D.drawImage(playerImage, 1250, 20, null);
@@ -223,7 +221,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
        /* g2D.setPaint(new Color(5, 100, 125));
         g2D.fillRoundRect(766, 340, 100, 100, 10, 10);//dice
         g2D.setPaint(new Color(0, 0, 0));*/
-        //g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
+        g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
        /* g2D.setFont(font64);//font
         g2D.drawString("1", 798, 410);*/
 
@@ -236,7 +234,10 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         public void mouseClicked(MouseEvent e) {
 
             diceNumber = rand.nextInt(6) + 1;
-            dice.setText("" + diceNumber);
+
+            ImageIcon i = new ImageIcon("img/dice4.png");
+            dice.setIcon(i);
+
         }
 
         @Override

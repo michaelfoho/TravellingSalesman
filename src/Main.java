@@ -16,72 +16,6 @@ public class Main {
         Font font24 = new Font("Century", Font.PLAIN, 24);
 
 
-
-
-
-       /* JLabel statusBoard1 = new JLabel();
-        statusBoard1.setText("Status Board");
-        statusBoard1.setHorizontalTextPosition(JLabel.CENTER);
-        statusBoard1.setVerticalTextPosition(JLabel.TOP);
-        statusBoard1.setIconTextGap(-35);//distance between image & text
-        statusBoard1.setFont(font32);
-        ImageIcon statusBoardIcon1 = new ImageIcon("img/statusBoard.png");
-        statusBoard1.setIcon(statusBoardIcon1);
-        statusBoard1.setBounds(10, 10, 500, 300);
-        statusBoard1.setBorder(border);*/
-
-        /*JLabel statusBoard2 = new JLabel();
-        statusBoard2.setText("Status Board");
-        statusBoard2.setHorizontalTextPosition(JLabel.CENTER);
-        statusBoard2.setVerticalTextPosition(JLabel.TOP);
-        statusBoard2.setIconTextGap(-35);//distance between image & text
-        statusBoard2.setFont(font32);
-        ImageIcon statusBoardIcon2 = new ImageIcon("img/statusBoard.png");
-        statusBoard2.setIcon(statusBoardIcon2);
-        statusBoard2.setBounds(10, 10, 500, 300);
-        statusBoard2.setBorder(border);*/
-
-        /*JLabel inventory1 = new JLabel();
-        inventory1.setText("In              ry");
-        inventory1.setHorizontalTextPosition(JLabel.CENTER);
-        inventory1.setVerticalTextPosition(JLabel.TOP);
-        inventory1.setIconTextGap(-68);//distance between image & text
-        inventory1.setFont(font32);
-        inventory1.setForeground(Color.WHITE);
-        ImageIcon inventoryIcon1 = new ImageIcon("img/inventory.png");
-        inventory1.setIcon(inventoryIcon1);
-        inventory1.setBounds(130, 330, 600, 400);
-        inventory1.setBorder(border);*/
-
-        /*JLabel inventory2 = new JLabel();
-        inventory2.setText("In              ry");
-        inventory2.setHorizontalTextPosition(JLabel.CENTER);
-        inventory2.setVerticalTextPosition(JLabel.TOP);
-        inventory2.setIconTextGap(-68);//distance between image & text
-        inventory2.setFont(font32);
-        inventory2.setForeground(Color.WHITE);
-        ImageIcon inventoryIcon2 = new ImageIcon("img/inventory.png");
-        inventory2.setIcon(inventoryIcon2);
-        inventory2.setBounds(130, 330, 600, 400);
-        inventory2.setBorder(border);*/
-
-       /* Text textVen1 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
-        Text textVen2 = new Text("ven", font32, Color.WHITE, 409, 340, 100, 50);
-        Text textTo1 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
-        Text textTo2 = new Text("to", font32, Color.WHITE, 421, 370, 100, 50);
-        Text textquest1 = new Text("quest:", font32, Color.BLACK, 245, 30, 300, 100);
-        Text textquest2 = new Text("quest:", font32, Color.BLACK, 245, 30, 300, 100);
-        Text text_treasure_number_1 = new Text("treasure number:", font24, Color.WHITE, 245, 70, 300, 100);
-        Text text_treasure_number_2 = new Text("treasure number:", font24, Color.WHITE, 245, 70, 300, 100);
-        Text text_treasure_score_1 = new Text("treasure score:", font24, Color.WHITE, 245, 110, 300, 100);
-        Text textT_treasure_score_2 = new Text("treasure score:", font24, Color.WHITE, 245, 110, 300, 100);
-        Text textpower1 = new Text("power:", font24, Color.WHITE, 245, 150, 300, 100);
-        Text textpower2 = new Text("power:", font24, Color.WHITE, 245, 150, 300, 100);
-        Text textmoney1 = new Text("money:", font24, Color.WHITE, 245, 190, 300, 100);
-        Text textmoney2 = new Text("money:", font24, Color.WHITE, 245, 190, 300, 100);
-        Text texttime1 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);
-        Text texttime2 = new Text("time:", font24, Color.WHITE, 245, 230, 300, 100);*/
-
         JLabel dice1 = new JLabel();
         dice1.setText("" + diceNumber);
         dice1.setHorizontalAlignment(JLabel.CENTER);
@@ -157,25 +91,7 @@ public class Main {
         dice2.addMouseListener(diceMouse2);
 
 
-        /*JLabel player_1_Image = new JLabel();
-        player_1_Image.setText("Werewolf");
-        player_1_Image.setForeground(Color.BLACK);
-        player_1_Image.setHorizontalTextPosition(JLabel.CENTER);
-        player_1_Image.setVerticalTextPosition(JLabel.BOTTOM);
-        player_1_Image.setFont(font32);
-        ImageIcon player_1_image_Icon = new ImageIcon("img/hero/player_1_image.png");
-        player_1_Image.setIcon(player_1_image_Icon);
-        player_1_Image.setBounds(500, 0, 300, 320);
 
-        JLabel player_2_Image = new JLabel();
-        player_2_Image.setText("Angel");
-        player_2_Image.setForeground(Color.BLACK);
-        player_2_Image.setHorizontalTextPosition(JLabel.CENTER);
-        player_2_Image.setVerticalTextPosition(JLabel.BOTTOM);
-        player_2_Image.setFont(font32);
-        ImageIcon player_2_image_Icon = new ImageIcon("img/hero/player_2_image.png");
-        player_2_Image.setIcon(player_2_image_Icon);
-        player_2_Image.setBounds(500, 0, 300, 320);*/
 
 
         /*JLabel player_1 = new JLabel();
