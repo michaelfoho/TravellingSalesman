@@ -18,15 +18,13 @@ public class Panel extends JPanel implements ActionListener {
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
     Font font40 = new Font("Century", Font.PLAIN, 40);
-
-    String playerName;//pn --> player name
-
     Random rand = new Random();
 
     Button nextButton, continueButton, newGameButton, quitButton;
 
     JLabel dice;
 
+    String playerName;//pn --> player name
 
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasure, loot;
@@ -120,6 +118,7 @@ public class Panel extends JPanel implements ActionListener {
 
         playerImage = werewolfImage;
         player = werewolf;
+        playerName="Werewolf";
 
 
         dice1 = new ImageIcon("img/dice/dice1.png");
@@ -345,7 +344,5 @@ public class Panel extends JPanel implements ActionListener {
 
 
         repaint();
-
-
     }
 }
