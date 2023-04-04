@@ -19,6 +19,10 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Font font32 = new Font("Century", Font.PLAIN, 32);
     Font font24 = new Font("Century", Font.PLAIN, 24);
 
+    String player_name;
+    String player_werewolf = new String("Werewolf");
+    String player_angel = new String("Angel");
+
 
     Random rand = new Random();
 
@@ -38,10 +42,11 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
     Image lostObject_1, lostObject_2, lostObject_3, lostObject_4, lostObject_5, lostObject_6;
     Image lostObject_7, lostObject_8, lostObject_9, lostObject_10, lostObject_11, lostObject_12, lostObject_13;
     Image weapon1, weapon2, weapon3, weapon4;
+    Image dice_image;
 
     Panel() {
 
-        dice = new JLabel();
+        /*dice = new JLabel();
         dice.setText("" + diceNumber);
         dice.setHorizontalAlignment(JLabel.CENTER);
         dice.setVerticalAlignment(JLabel.CENTER);
@@ -49,14 +54,14 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         dice.setBackground(new Color(150, 150, 0));//background color
         dice.setOpaque(true);//display background color
         dice.setBounds(765, 340, 100, 100);
-        dice.addMouseListener(diceMouse);
+        dice.addMouseListener(diceMouse);*/
 
 
         button = new JButton();
         button.setBounds(766, 450, 100, 70);
         button.addActionListener(this);
         button.setFocusable(true);
-        //button.setVisible(true);
+        button.setVisible(true);
         button.setText("Next");
         button.setHorizontalTextPosition(JButton.CENTER);
         button.setVerticalTextPosition(JButton.CENTER);
@@ -116,12 +121,16 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         werewolf = new ImageIcon("img/hero/small/werewolf.png").getImage();
         angel = new ImageIcon("img/hero/small/angel.png").getImage();
 
+
+        dice_image = new ImageIcon("img/dice.png").getImage();
+
         playerImage = werewolfImage;
         player = werewolf;
 
 
+
         this.setLayout(null);
-        this.add(dice);
+        //this.add(dice);
         this.add(button);
         this.setPreferredSize(new Dimension(1500, 750));
     }
@@ -187,9 +196,14 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
         g2D.drawImage(weapon3, 932, 540, null);
         g2D.drawImage(weapon4, 926, 635, null);
 
+
+        g2D.drawImage(dice_image,765,340,null);
+        g2D.drawRoundRect(765, 340, 100, 100, 10, 10);
+
+
         g2D.drawImage(playerImage, 1250, 20, null);
         g2D.setPaint(new Color(160, 160, 160));
-        g2D.drawString("Werewolf", 1290, 300);
+        //g2D.drawString("Werewolf", 1290, 300);
 
         g2D.setPaint(Color.BLACK);
 
@@ -209,7 +223,7 @@ public class Panel extends JPanel implements ActionListener, KeyListener {
        /* g2D.setPaint(new Color(5, 100, 125));
         g2D.fillRoundRect(766, 340, 100, 100, 10, 10);//dice
         g2D.setPaint(new Color(0, 0, 0));*/
-        g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
+        //g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
        /* g2D.setFont(font64);//font
         g2D.drawString("1", 798, 410);*/
 
