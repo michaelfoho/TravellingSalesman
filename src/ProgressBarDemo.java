@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ProgressBarDemo {
+public class ProgressBarDemo  {
     ProgressBarDemo(JProgressBar bar) {
 
         bar.setValue(0);
@@ -34,4 +34,6 @@ public class ProgressBarDemo {
 
         bar.setString("Max");//when the bar is 100% shows the text
     }
+
+
 }

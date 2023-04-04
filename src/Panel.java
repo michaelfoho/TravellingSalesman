@@ -24,7 +24,7 @@ public class Panel extends JPanel implements ActionListener {
 
     JLabel dice;
 
-    String playerName;//pn --> player name
+    String playerName;
 
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasure, loot;
@@ -52,14 +52,17 @@ public class Panel extends JPanel implements ActionListener {
         dice.addMouseListener(diceMouse);
 
 
-        nextButton = new Button(766, 450, 100, 70, "Next", new Color(180, 150, 0));
-        nextButton.addActionListener(this);
         continueButton = new Button(1200, 15, 250, 50, "Continue", new Color(100, 100, 100));
         continueButton.addActionListener(this);
+
         newGameButton = new Button(1200, 80, 250, 50, "New Game", new Color(100, 100, 100));
         newGameButton.addActionListener(this);
+
         quitButton = new Button(1200, 145, 250, 50, "Quit", new Color(100, 100, 100));
         quitButton.addActionListener(this);
+
+        nextButton = new Button(766, 450, 100, 70, "Next", new Color(180, 150, 0));
+        nextButton.addActionListener(this);
 
 
         firstPage = new ImageIcon("img/firstPage.png").getImage();
@@ -118,7 +121,7 @@ public class Panel extends JPanel implements ActionListener {
 
         playerImage = werewolfImage;
         player = werewolf;
-        playerName="Werewolf";
+        playerName = "Werewolf";
 
 
         dice1 = new ImageIcon("img/dice/dice1.png");
@@ -132,6 +135,8 @@ public class Panel extends JPanel implements ActionListener {
 
         this.setPreferredSize(new Dimension(1500, 750));
     }
+
+
 
     public void paint(Graphics g) {
 
@@ -235,6 +240,7 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(player, x1, y1, null);
                 g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
+                g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
                 g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
 
 
@@ -245,7 +251,6 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
-                g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
 
                 break;
 
@@ -282,6 +287,7 @@ public class Panel extends JPanel implements ActionListener {
 
         }
 
+
         @Override
         public void mousePressed(MouseEvent e) {
 
@@ -301,6 +307,7 @@ public class Panel extends JPanel implements ActionListener {
         public void mouseExited(MouseEvent e) {
 
         }
+
     };
 
 
@@ -345,4 +352,5 @@ public class Panel extends JPanel implements ActionListener {
 
         repaint();
     }
+
 }
