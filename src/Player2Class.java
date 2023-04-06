@@ -14,20 +14,11 @@ public class Player2Class implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
 
-        switch (e.getKeyCode()) {
-            case 38:
-                y -= 75;
-                break;
-            case 40:
-                y += 75;
-                break;
-            case 37:
-                x -= 75;
-                break;
-            case 39:
-                x += 75;
-                break;
-        }//move with the arrows
+        if (e.getKeyCode() == 38 && y - 75 >= 0) y -= 75;
+        if (e.getKeyCode() == 40 && y + 75 <= 675) y += 75;
+        if (e.getKeyCode() == 37 && x - 75 >= 0) x -= 75;
+        if (e.getKeyCode() == 39 && x + 75 < 750) x += 75;
+
     }
 
     @Override

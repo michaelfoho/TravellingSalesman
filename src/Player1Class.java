@@ -9,21 +9,11 @@ public class Player1Class implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
 
-        switch (e.getKeyChar()) {
+        if (e.getKeyChar() == 'w' && y - 75 >= 0) y -= 75;
+        if (e.getKeyChar() == 's' && y + 75 <= 675) y += 75;
+        if (e.getKeyChar() == 'a' && x - 75 >= 0) x -= 75;
+        if (e.getKeyChar() == 'd' && x + 75 < 750) x += 75;
 
-            case 'w':
-                y -= 75;
-                break;
-            case 's':
-                y += 75;
-                break;
-            case 'a':
-                x -= 75;
-                break;
-            case 'd':
-                x += 75;
-                break;
-        }
     }
 
     @Override
