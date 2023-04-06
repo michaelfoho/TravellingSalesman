@@ -20,9 +20,8 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    Key_Listener player1Coordinates = new Key_Listener();
-    Key_Listener player2Coordinates = new Key_Listener();
-
+    Player1Class player1Coordinates;
+    Player2Class player2Coordinates;
 
     Button nextButton, continueButton, newGameButton, quitButton;
 
@@ -45,6 +44,10 @@ public class Panel extends JPanel implements ActionListener {
     ImageIcon dice1, dice2, dice3, dice4, dice5, dice6;
 
     Panel() {
+
+        player1Coordinates = new Player1Class();
+        player2Coordinates = new Player2Class();
+
 
         dice = new JLabel();
         dice.setHorizontalAlignment(JLabel.CENTER);
@@ -355,6 +358,4 @@ public class Panel extends JPanel implements ActionListener {
 
         repaint();
     }
-
-
 }

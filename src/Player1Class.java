@@ -1,7 +1,7 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Key_Listener implements KeyListener {
+public class Player1Class implements KeyListener {
 
     int x = 750;
     int y = 675;
@@ -35,4 +35,5 @@ public class Key_Listener implements KeyListener {
     public void keyReleased(KeyEvent e) {
 
     }
+
 }
