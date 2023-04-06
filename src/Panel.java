@@ -13,12 +13,16 @@ public class Panel extends JPanel implements ActionListener {
     int sw = 1;
     int repaint = 1;
     int diceNumber = 1;
-    int x1 = 750, y1 = 675;
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Random rand = new Random();
+
+
+    Key_Listener player1Coordinates = new Key_Listener();
+    Key_Listener player2Coordinates = new Key_Listener();
+
 
     Button nextButton, continueButton, newGameButton, quitButton;
 
@@ -32,12 +36,11 @@ public class Panel extends JPanel implements ActionListener {
     Image market1, market2, market3, market4;
     Image statusBoard, inventory;
     Image playerImage, werewolfImage, angelImage;
-    Image player, werewolf, angel;
+    Image player1, player2, werewolf, angel;
     Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
     Image lostObject_1, lostObject_2, lostObject_3, lostObject_4, lostObject_5, lostObject_6;
     Image lostObject_7, lostObject_8, lostObject_9, lostObject_10, lostObject_11, lostObject_12, lostObject_13;
     Image weapon1, weapon2, weapon3, weapon4;
-    Image dice_image;
 
     ImageIcon dice1, dice2, dice3, dice4, dice5, dice6;
 
@@ -116,11 +119,9 @@ public class Panel extends JPanel implements ActionListener {
         werewolf = new ImageIcon("img/hero/small/werewolf.png").getImage();
         angel = new ImageIcon("img/hero/small/angel.png").getImage();
 
-
-        dice_image = new ImageIcon("img/dice.png").getImage();
-
         playerImage = werewolfImage;
-        player = werewolf;
+        player1 = werewolf;
+        player2 = angel;
         playerName = "Werewolf";
 
 
@@ -132,10 +133,11 @@ public class Panel extends JPanel implements ActionListener {
         dice6 = new ImageIcon("img/dice/dice6.png");
 
         this.setLayout(null);
-
+        this.setFocusable(true);
         this.setPreferredSize(new Dimension(1500, 750));
+        this.addKeyListener(player1Coordinates);
+        this.addKeyListener(player2Coordinates);
     }
-
 
 
     public void paint(Graphics g) {
@@ -237,7 +239,8 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.setPaint(Color.BLACK);
 
-                g2D.drawImage(player, x1, y1, null);
+                g2D.drawImage(player1, player1Coordinates.x, player1Coordinates.y, null);
+                g2D.drawImage(player2, player2Coordinates.x, player2Coordinates.y, null);
                 g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
                 g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
@@ -251,11 +254,13 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
+                repaint();
 
                 break;
 
         }
     }
+
 
     MouseListener diceMouse = new MouseListener() {
         @Override
@@ -334,16 +339,14 @@ public class Panel extends JPanel implements ActionListener {
 
         if (e.getSource() == nextButton) {
 
-            if (player == werewolf) {
+            if (playerImage == werewolfImage) {
 
                 playerImage = angelImage;
-                player = angel;
                 playerName = "Angel";
 
             } else {
 
                 playerImage = werewolfImage;
-                player = werewolf;
                 playerName = "Werewolf";
 
             }
@@ -352,5 +355,6 @@ public class Panel extends JPanel implements ActionListener {
 
         repaint();
     }
+
 
 }
