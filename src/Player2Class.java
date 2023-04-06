@@ -14,7 +14,7 @@ public class Player2Class implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
 
-        if (e.getKeyCode() == 38 && y - 75 >= 0) y -= 75;
+        if (e.getKeyCode() == 38 && y - 75 >= 0 && x != 750) y -= 75;
         if (e.getKeyCode() == 40 && y + 75 <= 675) y += 75;
         if (e.getKeyCode() == 37 && x - 75 >= 0) x -= 75;
         if (e.getKeyCode() == 39 && x + 75 < 750) x += 75;
