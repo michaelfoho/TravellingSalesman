@@ -5,10 +5,6 @@ public class Player2Class implements KeyListener {
 
     int x = 750;
     int y = 675;
-    int player_tnumber = 0;
-    int player_tscore = 0;
-    int player_money = 0;
-    int player_power = 0;
 
 
     @Override
