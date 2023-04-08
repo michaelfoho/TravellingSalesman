@@ -13,7 +13,7 @@ public class PlayerInfo implements KeyListener {
     int x = 750;
     int y = 675;
     int money = 0;
-    int power = 0;
+    int power = 10;
 
     boolean[] treasureBool = new boolean[8];//if true shown
     boolean[] lostObjectBool = new boolean[13];//if true shown
