@@ -12,7 +12,7 @@ public class Panel extends JPanel implements ActionListener {
 
     int sw = 2;
     int repaint = 1;//for repaint after firstpage
-    Dice d = new Dice();
+    Pointer dicePrt = new Pointer();
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
@@ -23,7 +23,7 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    Player1Class player1Coordinates = new Player1Class(d);
+    Player1Class player1Coordinates = new Player1Class(dicePrt);
     Player2Class player2Coordinates = new Player2Class();
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
@@ -167,7 +167,7 @@ public class Panel extends JPanel implements ActionListener {
                 break;
             case 2:
 
-                if (d.diceNumber != 0) repaint();
+                if (dicePrt.diceNumber != 0) repaint();
 
 
                 if (repaint == 1) {
@@ -256,10 +256,9 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Quest:", 975, 100);
                 g2D.setFont(font24);
                 g2D.setPaint(Color.white);
-                g2D.drawString("Treasure Number:", 975, 150);
-                g2D.drawString("Treasure Score:", 975, 185);
-                g2D.drawString("Power:", 975, 220);
-                g2D.drawString("Money:", 975, 255);
+                g2D.drawString("Treasure Score:", 975, 155);
+                g2D.drawString("Power:", 975, 200);
+                g2D.drawString("Money:", 975, 245);
                 g2D.drawString("Time:", 975, 290);
 
 
@@ -333,9 +332,9 @@ public class Panel extends JPanel implements ActionListener {
 
         if (e.getSource() == diceButton) {
 
-            d.diceNumber = rand.nextInt(6) + 1;
+            dicePrt.diceNumber = rand.nextInt(6) + 1;
 
-            switch (d.diceNumber) {
+            switch (dicePrt.diceNumber) {
                 case 1:
                     dice = dice1;
                     break;

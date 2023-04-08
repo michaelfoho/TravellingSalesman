@@ -10,9 +10,9 @@ public class Player1Class implements KeyListener {
     int treasureScore = 0;
     int money = 0;
     int power = 0;
-    Dice d;
+    Pointer d;
 
-    Player1Class(Dice d) {
+    Player1Class(Pointer d) {
 
         this.d = d;
     }
