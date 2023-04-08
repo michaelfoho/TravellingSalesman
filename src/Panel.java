@@ -24,8 +24,8 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber);
-    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber);
+    Player player1 = new Player(1, mainTurn, diceNumber);
+    Player player2 = new Player(2, mainTurn, diceNumber);
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
@@ -38,7 +38,7 @@ public class Panel extends JPanel implements ActionListener {
     Image market1, market2, market3, market4;
     Image statusBoard, inventory;
     Image playerImage, werewolfImage, angelImage;
-    Image player1, player2, werewolf, angel;
+    Image player1_image, player2_image, werewolf, angel;
     Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
     Image lostObject_1, lostObject_2, lostObject_3, lostObject_4, lostObject_5, lostObject_6;
     Image lostObject_7, lostObject_8, lostObject_9, lostObject_10, lostObject_11, lostObject_12, lostObject_13;
@@ -120,8 +120,8 @@ public class Panel extends JPanel implements ActionListener {
         angel = new ImageIcon("img/hero/small/angel.png").getImage();
 
         playerImage = werewolfImage;
-        player1 = werewolf;
-        player2 = angel;
+        player1_image = werewolf;
+        player2_image = angel;
         playerName = "Werewolf";
 
 
@@ -141,8 +141,8 @@ public class Panel extends JPanel implements ActionListener {
         this.setLayout(null);
         this.setFocusable(true);
         this.setPreferredSize(new Dimension(1500, 750));
-        this.addKeyListener(player1Info);
-        this.addKeyListener(player2Info);
+        this.addKeyListener(player1);
+        this.addKeyListener(player2);
     }
 
 
@@ -263,9 +263,9 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Time:", 975, 290);
 
                 g2D.setPaint(Color.BLACK);
-                g2D.drawString(String.valueOf(player1Info.money),1060,245);
+                g2D.drawString(String.valueOf(player1.money),1060,245);
                 g2D.setPaint(Color.BLUE);
-                g2D.drawString(String.valueOf(player1Info.power),1060,200);
+                g2D.drawString(String.valueOf(player1.power),1060,200);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -287,8 +287,8 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.setPaint(Color.BLACK);
 
-                g2D.drawImage(player1, player1Info.x, player1Info.y, null);
-                g2D.drawImage(player2, player2Info.x, player2Info.y, null);
+                g2D.drawImage(player1_image, player1.x, player1.y, null);
+                g2D.drawImage(player2_image, player2.x, player2.y, null);
                 g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
                 g2D.drawString("Click", 768, 402);
