@@ -24,8 +24,9 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber);
-    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber);
+    PlayerInfo playerInfo;
+    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf");
+    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel");
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
@@ -122,8 +123,8 @@ public class Panel extends JPanel implements ActionListener {
         playerImage = werewolfImage;
         player1 = werewolf;
         player2 = angel;
-        playerName = "Werewolf";
 
+        playerInfo = player1Info;
 
         dice1 = new ImageIcon("img/dice/dice1.png").getImage();
         dice2 = new ImageIcon("img/dice/dice2.png").getImage();
@@ -132,10 +133,10 @@ public class Panel extends JPanel implements ActionListener {
         dice5 = new ImageIcon("img/dice/dice5.png").getImage();
         dice6 = new ImageIcon("img/dice/dice6.png").getImage();
 
-        weap1 = new Weapon("1", 400);
-        weap2 = new Weapon("1", 300);
-        weap3 = new Weapon("1", 200);
-        weap4 = new Weapon("1", 100);
+        weap1 = new Weapon(400);
+        weap2 = new Weapon(300);
+        weap3 = new Weapon(200);
+        weap4 = new Weapon(100);
 
 
         this.setLayout(null);
@@ -239,10 +240,10 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setFont(font16);
 
 
-                g2D.drawString(weap1.number, 960, 420);
-                g2D.drawString(weap2.number, 960, 514);
-                g2D.drawString(weap3.number, 960, 608);
-                g2D.drawString(weap4.number, 960, 702);
+                //g2D.drawString(player1Info.weaponNumber[1], 960, 420);
+                //g2D.drawString(player1Info.weaponNumber[2], 960, 514);
+                //g2D.drawString(player1Info.weaponNumber[3], 960, 608);
+                //g2D.drawString(player1Info.weaponNumber[4], 960, 702);
 
                 g2D.drawString("4", 920, 420);
                 g2D.drawString("3", 920, 514);
@@ -269,7 +270,7 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(playerImage, 1250, 20, null);
                 g2D.setPaint(new Color(160, 160, 160));
-                switch (playerName) {
+                switch (playerInfo.name) {
 
                     case "Werewolf":
                         g2D.drawString(playerName, 1290, 300);
@@ -370,8 +371,18 @@ public class Panel extends JPanel implements ActionListener {
 
             }
 
-            if (mainTurn.prt == 1) mainTurn.prt = 2;
-            else mainTurn.prt = 1;
+            if (mainTurn.prt == 1) {
+
+                mainTurn.prt = 2;
+                playerInfo = player2Info;
+
+            } else {
+
+                mainTurn.prt = 1;
+                playerInfo = player1Info;
+
+            }
+
 
             dice = null;
         }
