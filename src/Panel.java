@@ -18,9 +18,10 @@ public class Panel extends JPanel implements ActionListener {
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
     Font font40 = new Font("Century", Font.PLAIN, 40);
-    Font font16 = new Font("Century", Font.PLAIN, 16);
     Font font36 = new Font("Century", Font.PLAIN, 36);
     Font font24 = new Font("Century", Font.PLAIN, 24);
+    Font font16 = new Font("Century", Font.PLAIN, 16);
+
     Random rand = new Random();
 
 
@@ -380,6 +381,9 @@ public class Panel extends JPanel implements ActionListener {
                 playerImage = werewolfImage;
 
             }
+
+            player1Info.weaponNumber[3] = 5;
+            player1Info.treasureBool[0] = true;
 
 
             dice = null;
