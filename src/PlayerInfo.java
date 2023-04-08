@@ -9,10 +9,10 @@ public class PlayerInfo implements KeyListener {
 
 
     String name;
-
     boolean[] treasureBool = new boolean[8];
     boolean[] lostObjectBool = new boolean[13];
     int[] weaponNumber = new int[4];
+
 
     int x = 750;
     int y = 675;

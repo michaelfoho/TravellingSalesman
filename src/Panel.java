@@ -202,34 +202,33 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(inventory, 880, 330, null);
                 g2D.drawRoundRect(880, 330, 600, 400, 10, 10);
 
-                g2D.drawImage(ring, 1393, 355, null);
-                g2D.drawImage(sword, 1407, 445, null);
-                g2D.drawImage(goldenGlass, 1400, 540, null);
-                g2D.drawImage(glassCup, 1397, 635, null);
-                g2D.drawImage(bow, 1330, 351, null);
-                g2D.drawImage(shield, 1314, 445, null);
-                g2D.drawImage(key, 1325, 545, null);
-                g2D.drawImage(scroll, 1314, 635, null);
+                if (playerInfo.treasureBool[0]) g2D.drawImage(ring, 1393, 355, null);
+                if (playerInfo.treasureBool[1]) g2D.drawImage(sword, 1407, 445, null);
+                if (playerInfo.treasureBool[2]) g2D.drawImage(goldenGlass, 1400, 540, null);
+                if (playerInfo.treasureBool[3]) g2D.drawImage(glassCup, 1397, 635, null);
+                if (playerInfo.treasureBool[4]) g2D.drawImage(bow, 1330, 351, null);
+                if (playerInfo.treasureBool[5]) g2D.drawImage(shield, 1314, 445, null);
+                if (playerInfo.treasureBool[6]) g2D.drawImage(key, 1325, 545, null);
+                if (playerInfo.treasureBool[7]) g2D.drawImage(scroll, 1314, 635, null);
 
-                g2D.drawImage(lostObject_1, 1235, 445, null);
-                g2D.drawImage(lostObject_2, 1235, 540, null);
-                g2D.drawImage(lostObject_3, 1235, 635, null);
-                g2D.drawImage(lostObject_4, 1157, 445, null);
-                g2D.drawImage(lostObject_5, 1157, 540, null);
-                g2D.drawImage(lostObject_6, 1157, 635, null);
-                g2D.drawImage(lostObject_7, 1079, 445, null);
-                g2D.drawImage(lostObject_8, 1079, 540, null);
-                g2D.drawImage(lostObject_9, 1079, 635, null);
-                g2D.drawImage(lostObject_10, 1000, 350, null);
-                g2D.drawImage(lostObject_11, 1000, 445, null);
-                g2D.drawImage(lostObject_12, 1000, 540, null);
-                g2D.drawImage(lostObject_13, 1000, 635, null);
+                if (playerInfo.lostObjectBool[0]) g2D.drawImage(lostObject_1, 1235, 445, null);
+                if (playerInfo.lostObjectBool[1]) g2D.drawImage(lostObject_2, 1235, 540, null);
+                if (playerInfo.lostObjectBool[2]) g2D.drawImage(lostObject_3, 1235, 635, null);
+                if (playerInfo.lostObjectBool[3]) g2D.drawImage(lostObject_4, 1157, 445, null);
+                if (playerInfo.lostObjectBool[4]) g2D.drawImage(lostObject_5, 1157, 540, null);
+                if (playerInfo.lostObjectBool[5]) g2D.drawImage(lostObject_6, 1157, 635, null);
+                if (playerInfo.lostObjectBool[6]) g2D.drawImage(lostObject_7, 1079, 445, null);
+                if (playerInfo.lostObjectBool[7]) g2D.drawImage(lostObject_8, 1079, 540, null);
+                if (playerInfo.lostObjectBool[8]) g2D.drawImage(lostObject_9, 1079, 635, null);
+                if (playerInfo.lostObjectBool[9]) g2D.drawImage(lostObject_10, 1000, 350, null);
+                if (playerInfo.lostObjectBool[10]) g2D.drawImage(lostObject_11, 1000, 445, null);
+                if (playerInfo.lostObjectBool[11]) g2D.drawImage(lostObject_12, 1000, 540, null);
+                if (playerInfo.lostObjectBool[12]) g2D.drawImage(lostObject_13, 1000, 635, null);
 
-
-                g2D.drawImage(weapon1, 935, 350, null);
-                g2D.drawImage(weapon2, 926, 445, null);
-                g2D.drawImage(weapon3, 926, 540, null);
-                g2D.drawImage(weapon4, 932, 635, null);
+                if (playerInfo.weaponNumber[0] > 0) g2D.drawImage(weapon1, 935, 350, null);
+                if (playerInfo.weaponNumber[1] > 0) g2D.drawImage(weapon2, 926, 445, null);
+                if (playerInfo.weaponNumber[2] > 0) g2D.drawImage(weapon3, 926, 540, null);
+                if (playerInfo.weaponNumber[3] > 0) g2D.drawImage(weapon4, 932, 635, null);
 
 
                 g2D.setPaint(Color.white);
