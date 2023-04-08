@@ -11,7 +11,7 @@ public class PlayerInfo implements KeyListener {
     int x = 750;
     int y = 675;
     int money = 0;
-    int power = 0;
+    int power = 10;
 
 
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice) {

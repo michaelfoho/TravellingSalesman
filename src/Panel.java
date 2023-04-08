@@ -262,6 +262,11 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Money:", 975, 245);
                 g2D.drawString("Time:", 975, 290);
 
+                g2D.setPaint(Color.BLACK);
+                g2D.drawString(String.valueOf(player1Info.money),1060,245);
+                g2D.setPaint(Color.BLUE);
+                g2D.drawString(String.valueOf(player1Info.power),1060,200);
+
 
                 g2D.setPaint(Color.BLACK);
                 g2D.setStroke(new BasicStroke(4));//thickness
