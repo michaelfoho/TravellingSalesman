@@ -10,6 +10,10 @@ public class PlayerInfo implements KeyListener {
 
     String name;
 
+    boolean[] treasureBool = new boolean[8];
+    boolean[] lostObjectBool = new boolean[13];
+    int[] weaponNumber = new int[4];
+
     int x = 750;
     int y = 675;
     int money = 0;
@@ -23,6 +27,10 @@ public class PlayerInfo implements KeyListener {
         this.dice = dice;
 
         this.name = name;
+
+        for (int i = 0; i < 8; i++) treasureBool[i] = false;
+        for (int i = 0; i < 13; i++) lostObjectBool[i] = false;
+        for (int i = 0; i < 4; i++) weaponNumber[i] = 1;
     }
 
 

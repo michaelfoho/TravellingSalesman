@@ -237,10 +237,11 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setFont(font16);
 
 
-                //g2D.drawString(player1Info.weaponNumber[1], 960, 420);
-                //g2D.drawString(player1Info.weaponNumber[2], 960, 514);
-                //g2D.drawString(player1Info.weaponNumber[3], 960, 608);
-                //g2D.drawString(player1Info.weaponNumber[4], 960, 702);
+                g2D.drawString(String.valueOf(playerInfo.weaponNumber[0]), 960, 420);
+                g2D.drawString(String.valueOf(playerInfo.weaponNumber[1]), 960, 514);
+                g2D.drawString(String.valueOf(playerInfo.weaponNumber[2]), 960, 608);
+                g2D.drawString(String.valueOf(playerInfo.weaponNumber[3]), 960, 702);
+
 
                 g2D.drawString("4", 920, 420);
                 g2D.drawString("3", 920, 514);
