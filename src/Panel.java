@@ -11,8 +11,8 @@ public class Panel extends JPanel implements ActionListener {
 
 
     int sw = 1;
-    int repaint = 1;
-    int diceNumber = 1;
+    int repaint = 1;//for repaint after firstpage
+    Dice d = new Dice();
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
@@ -20,10 +20,10 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    Player1Class player1Coordinates = new Player1Class();
+    Player1Class player1Coordinates = new Player1Class(d);
     Player2Class player2Coordinates = new Player2Class();
 
-    Button nextButton, continueButton, newGameButton, quitButton;
+    Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
     JLabel dice;
 
@@ -63,7 +63,10 @@ public class Panel extends JPanel implements ActionListener {
         quitButton = new Button(1200, 145, 250, 50, "Quit", new Color(100, 100, 100));
         quitButton.addActionListener(this);
 
-        nextButton = new Button(766, 450, 100, 70, "Next", new Color(180, 150, 0));
+        diceButton = new Button(766, 450, 100, 70, "Dice", new Color(180, 150, 0));
+        diceButton.addActionListener(this);
+
+        nextButton = new Button(766, 530, 100, 70, "Next", new Color(100, 100, 100));
         nextButton.addActionListener(this);
 
 
@@ -161,12 +164,16 @@ public class Panel extends JPanel implements ActionListener {
                 break;
             case 2:
 
+                if (d.diceNumber != 0) repaint();
+
+
                 if (repaint == 1) {
                     repaint();
                     repaint = 0;
                 }
 
                 this.add(dice);
+                this.add(diceButton);
                 this.add(nextButton);
 
 
@@ -245,7 +252,6 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
                 g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
 
-
                 for (int i = 0; i < 10; i++) {
                     for (int j = 0; j < 10; j++) {
                         g2D.drawRoundRect(75 * i, 75 * j, 75, 75, 10, 10);
@@ -253,10 +259,7 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
-                repaint();
-
                 break;
-
         }
     }
 
@@ -265,10 +268,10 @@ public class Panel extends JPanel implements ActionListener {
         @Override
         public void mouseClicked(MouseEvent e) {
 
-            diceNumber = rand.nextInt(6) + 1;
+            d.diceNumber = rand.nextInt(6) + 1;
 
 
-            switch (diceNumber) {
+            switch (d.diceNumber) {
                 case 1:
                     dice.setIcon(dice1);
                     break;
@@ -321,7 +324,6 @@ public class Panel extends JPanel implements ActionListener {
         if (e.getSource() == continueButton) {
 
         }
-
         if (e.getSource() == newGameButton) {
 
             sw = 2;
@@ -330,12 +332,13 @@ public class Panel extends JPanel implements ActionListener {
             newGameButton.setEnabled(false);
             quitButton.setEnabled(false);
         }
-
         if (e.getSource() == quitButton) {
             System.exit(0);
         }
 
+        if (e.getSource() == diceButton) {
 
+        }
         if (e.getSource() == nextButton) {
 
             if (playerImage == werewolfImage) {
