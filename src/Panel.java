@@ -10,13 +10,16 @@ public class Panel extends JPanel implements ActionListener {
     Image scaleIcon = icon.getImage().getScaledInstance(200, 100, Image.SCALE_DEFAULT);*/   //scaled image
 
 
-    int sw = 1;
+    int sw = 2;
     int repaint = 1;//for repaint after firstpage
     Dice d = new Dice();
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
     Font font40 = new Font("Century", Font.PLAIN, 40);
+    Font font16 = new Font("Century", Font.PLAIN, 16);
+    Font font36 = new Font("Century", Font.PLAIN, 36);
+    Font font24 = new Font("Century", Font.PLAIN, 24);
     Random rand = new Random();
 
 
@@ -25,7 +28,6 @@ public class Panel extends JPanel implements ActionListener {
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
-    JLabel dice;
 
     String playerName;
 
@@ -40,18 +42,13 @@ public class Panel extends JPanel implements ActionListener {
     Image lostObject_1, lostObject_2, lostObject_3, lostObject_4, lostObject_5, lostObject_6;
     Image lostObject_7, lostObject_8, lostObject_9, lostObject_10, lostObject_11, lostObject_12, lostObject_13;
     Image weapon1, weapon2, weapon3, weapon4;
+    Image dice;
 
-    ImageIcon dice1, dice2, dice3, dice4, dice5, dice6;
+    Image dice1, dice2, dice3, dice4, dice5, dice6;
+
+    Weapon weap1, weap2, weap3, weap4;
 
     Panel() {
-
-        dice = new JLabel();
-        dice.setHorizontalAlignment(JLabel.CENTER);
-        dice.setVerticalAlignment(JLabel.CENTER);
-        dice.setOpaque(true);
-        dice.setBounds(765, 340, 100, 100);
-        dice.setBorder(border);
-        dice.addMouseListener(diceMouse);
 
 
         continueButton = new Button(1200, 15, 250, 50, "Continue", new Color(100, 100, 100));
@@ -63,10 +60,10 @@ public class Panel extends JPanel implements ActionListener {
         quitButton = new Button(1200, 145, 250, 50, "Quit", new Color(100, 100, 100));
         quitButton.addActionListener(this);
 
-        diceButton = new Button(766, 450, 100, 70, "Dice", new Color(180, 150, 0));
+        diceButton = new Button(767, 341, 98, 98, "", new Color(50, 50, 50));
         diceButton.addActionListener(this);
 
-        nextButton = new Button(766, 530, 100, 70, "Next", new Color(100, 100, 100));
+        nextButton = new Button(767, 450, 98, 70, "Next", new Color(180, 150, 0));
         nextButton.addActionListener(this);
 
 
@@ -127,12 +124,18 @@ public class Panel extends JPanel implements ActionListener {
         playerName = "Werewolf";
 
 
-        dice1 = new ImageIcon("img/dice/dice1.png");
-        dice2 = new ImageIcon("img/dice/dice2.png");
-        dice3 = new ImageIcon("img/dice/dice3.png");
-        dice4 = new ImageIcon("img/dice/dice4.png");
-        dice5 = new ImageIcon("img/dice/dice5.png");
-        dice6 = new ImageIcon("img/dice/dice6.png");
+        dice1 = new ImageIcon("img/dice/dice1.png").getImage();
+        dice2 = new ImageIcon("img/dice/dice2.png").getImage();
+        dice3 = new ImageIcon("img/dice/dice3.png").getImage();
+        dice4 = new ImageIcon("img/dice/dice4.png").getImage();
+        dice5 = new ImageIcon("img/dice/dice5.png").getImage();
+        dice6 = new ImageIcon("img/dice/dice6.png").getImage();
+
+        weap1 = new Weapon("1", 400);
+        weap2 = new Weapon("1", 300);
+        weap3 = new Weapon("1", 200);
+        weap4 = new Weapon("1", 100);
+
 
         this.setLayout(null);
         this.setFocusable(true);
@@ -172,7 +175,6 @@ public class Panel extends JPanel implements ActionListener {
                     repaint = 0;
                 }
 
-                this.add(dice);
                 this.add(diceButton);
                 this.add(nextButton);
 
@@ -224,11 +226,46 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(lostObject_12, 1000, 540, null);
                 g2D.drawImage(lostObject_13, 1000, 635, null);
 
-                g2D.drawImage(weapon1, 926, 350, null);
-                g2D.drawImage(weapon2, 935, 445, null);
-                g2D.drawImage(weapon3, 932, 540, null);
-                g2D.drawImage(weapon4, 926, 635, null);
 
+                g2D.drawImage(weapon1, 935, 350, null);
+                g2D.drawImage(weapon2, 926, 445, null);
+                g2D.drawImage(weapon3, 926, 540, null);
+                g2D.drawImage(weapon4, 932, 635, null);
+
+
+                g2D.setPaint(Color.white);
+                g2D.setStroke(new BasicStroke(3));//thickness
+                g2D.setFont(font16);
+
+
+                g2D.drawString(weap1.number, 960, 420);
+                g2D.drawString(weap2.number, 960, 514);
+                g2D.drawString(weap3.number, 960, 608);
+                g2D.drawString(weap4.number, 960, 702);
+
+                g2D.drawString("4", 920, 420);
+                g2D.drawString("3", 920, 514);
+                g2D.drawString("2", 920, 608);
+                g2D.drawString("1", 920, 702);
+
+                g2D.setFont(font40);
+                g2D.setPaint(Color.BLACK);
+                g2D.drawString("'StatusBoard'", 900, 45);
+                g2D.setFont(font36);
+                g2D.setPaint(Color.RED);
+                g2D.drawString("Quest:", 975, 100);
+                g2D.setFont(font24);
+                g2D.setPaint(Color.white);
+                g2D.drawString("treasure number:", 975, 150);
+                g2D.drawString("treasure score:", 975, 185);
+                g2D.drawString("power:", 975, 220);
+                g2D.drawString("money:", 975, 255);
+                g2D.drawString("time:", 975, 290);
+
+
+                g2D.setPaint(Color.BLACK);
+                g2D.setStroke(new BasicStroke(4));//thickness
+                g2D.setFont(font40);
 
                 g2D.drawImage(playerImage, 1250, 20, null);
                 g2D.setPaint(new Color(160, 160, 160));
@@ -249,6 +286,9 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(player2, player2Coordinates.x, player2Coordinates.y, null);
                 g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
+                g2D.drawString("Click", 768, 402);
+                g2D.drawImage(dice, 765, 340, null);//dice
+
                 g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
                 g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
 
@@ -259,63 +299,17 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
+               /* if (player1Coordinates.x == player2Coordinates.x && player1Coordinates.y == player2Coordinates.y && player1Coordinates.x != 750) {
+
+                    NewWindow fightWindow = new NewWindow();
+
+                    repaint();
+                }*/
+
+
                 break;
         }
     }
-
-
-    MouseListener diceMouse = new MouseListener() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-
-            d.diceNumber = rand.nextInt(6) + 1;
-
-
-            switch (d.diceNumber) {
-                case 1:
-                    dice.setIcon(dice1);
-                    break;
-                case 2:
-                    dice.setIcon(dice2);
-                    break;
-                case 3:
-                    dice.setIcon(dice3);
-                    break;
-                case 4:
-                    dice.setIcon(dice4);
-                    break;
-                case 5:
-                    dice.setIcon(dice5);
-                    break;
-                case 6:
-                    dice.setIcon(dice6);
-                    break;
-            }
-
-        }
-
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-
-    };
 
 
     @Override
@@ -331,6 +325,7 @@ public class Panel extends JPanel implements ActionListener {
             continueButton.setEnabled(false);
             newGameButton.setEnabled(false);
             quitButton.setEnabled(false);
+
         }
         if (e.getSource() == quitButton) {
             System.exit(0);
@@ -338,6 +333,28 @@ public class Panel extends JPanel implements ActionListener {
 
         if (e.getSource() == diceButton) {
 
+            d.diceNumber = rand.nextInt(6) + 1;
+
+            switch (d.diceNumber) {
+                case 1:
+                    dice = dice1;
+                    break;
+                case 2:
+                    dice = dice2;
+                    break;
+                case 3:
+                    dice = dice3;
+                    break;
+                case 4:
+                    dice = dice4;
+                    break;
+                case 5:
+                    dice = dice5;
+                    break;
+                case 6:
+                    dice = dice6;
+                    break;
+            }
         }
         if (e.getSource() == nextButton) {
 
@@ -352,6 +369,8 @@ public class Panel extends JPanel implements ActionListener {
                 playerName = "Werewolf";
 
             }
+
+            dice = null;
         }
 
 
