@@ -237,10 +237,14 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setFont(font16);
 
 
-                g2D.drawString(String.valueOf(playerInfo.weaponNumber[0]), 960, 420);
-                g2D.drawString(String.valueOf(playerInfo.weaponNumber[1]), 960, 514);
-                g2D.drawString(String.valueOf(playerInfo.weaponNumber[2]), 960, 608);
-                g2D.drawString(String.valueOf(playerInfo.weaponNumber[3]), 960, 702);
+                if (playerInfo.weaponNumber[0] > 0)
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[0]), 960, 420);
+                if (playerInfo.weaponNumber[1] > 0)
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[1]), 960, 514);
+                if (playerInfo.weaponNumber[2] > 0)
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[2]), 960, 608);
+                if (playerInfo.weaponNumber[3] > 0)
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[3]), 960, 702);
 
 
                 g2D.drawString("4", 920, 420);
@@ -386,6 +390,7 @@ public class Panel extends JPanel implements ActionListener {
             player1Info.treasureBool[0] = true;
 
             player2Info.power = 100;
+            player2Info.weaponNumber[2] = 0;
 
 
             dice = null;
