@@ -364,18 +364,17 @@ public class Panel extends JPanel implements ActionListener {
         }
         if (e.getSource() == nextButton) {
 
-            if (playerImage == werewolfImage) playerImage = angelImage;
-            else playerImage = werewolfImage;
-
             if (mainTurn.prt == 1) {
 
                 mainTurn.prt = 2;
                 playerInfo = player2Info;
+                playerImage = angelImage;
 
             } else {
 
                 mainTurn.prt = 1;
                 playerInfo = player1Info;
+                playerImage = werewolfImage;
 
             }
 
