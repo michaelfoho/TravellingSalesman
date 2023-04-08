@@ -49,7 +49,6 @@ public class Player1Class implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
 
-        System.out.println(d.diceNumber);
     }
 
 }
