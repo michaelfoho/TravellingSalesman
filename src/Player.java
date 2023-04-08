@@ -1,39 +1,26 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class PlayerInfo implements KeyListener {
+public class Player implements KeyListener {
 
     private int turn;
     Pointer mainTurn;
     Pointer dice;
 
 
-    String name;
-
     int x = 750;
     int y = 675;
     int money = 0;
     int power = 10;
 
-    boolean[] treasureBool = new boolean[8];//if true shown
-    boolean[] lostObjectBool = new boolean[13];//if true shown
-    int[] weaponNumber = new int[4];//if weaponBool[i]>0 shown
 
-
-    PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
+    Player(int turn, Pointer mainTurn, Pointer dice) {
 
         this.turn = turn;
         this.mainTurn = mainTurn;
         this.dice = dice;
-
-
-        this.name = name;
-
-
-        for (int i = 0; i < 8; i++) treasureBool[i] = false;
-        for (int i = 0; i < 13; i++) lostObjectBool[i] = false;
-        for (int i = 0; i < 4; i++) weaponNumber[i] = 1;
     }
+
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -59,6 +46,7 @@ public class PlayerInfo implements KeyListener {
             }
         }
     }
+
 
     @Override
     public void keyPressed(KeyEvent e) {
