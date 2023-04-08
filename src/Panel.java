@@ -264,9 +264,9 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Time:", 975, 290);
 
                 g2D.setPaint(Color.BLACK);
-                g2D.drawString(String.valueOf(player1Info.money),1060,245);
+                g2D.drawString(String.valueOf(player1Info.money), 1060, 245);
                 g2D.setPaint(Color.BLUE);
-                g2D.drawString(String.valueOf(player1Info.power),1060,200);
+                g2D.drawString(String.valueOf(player1Info.power), 1060, 200);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -278,10 +278,10 @@ public class Panel extends JPanel implements ActionListener {
                 switch (playerInfo.name) {
 
                     case "Werewolf":
-                        g2D.drawString(playerName, 1290, 300);
+                        g2D.drawString(playerInfo.name, 1290, 300);
                         break;
                     case "Angel":
-                        g2D.drawString(playerName, 1325, 300);
+                        g2D.drawString(playerInfo.name, 1325, 300);
                         break;
 
                 }
@@ -364,17 +364,8 @@ public class Panel extends JPanel implements ActionListener {
         }
         if (e.getSource() == nextButton) {
 
-            if (playerImage == werewolfImage) {
-
-                playerImage = angelImage;
-                playerName = "Angel";
-
-            } else {
-
-                playerImage = werewolfImage;
-                playerName = "Werewolf";
-
-            }
+            if (playerImage == werewolfImage) playerImage = angelImage;
+            else playerImage = werewolfImage;
 
             if (mainTurn.prt == 1) {
 
