@@ -30,9 +30,6 @@ public class Panel extends JPanel implements ActionListener {
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
-
-    String playerName;
-
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasure, loot;
     Image trap1, trap2;
@@ -288,8 +285,14 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.setPaint(Color.BLACK);
 
-                g2D.drawImage(player1, player1Info.x, player1Info.y, null);
-                g2D.drawImage(player2, player2Info.x, player2Info.y, null);
+                if (player1Info.x == 750 && player2Info.x == 750) {
+                    g2D.drawImage(player1, player1Info.x, player1Info.y, null);
+                } else {
+                    g2D.drawImage(player1, player1Info.x, player1Info.y, null);
+                    g2D.drawImage(player2, player2Info.x, player2Info.y, null);
+                }
+
+
                 g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
                 g2D.drawString("Click", 768, 402);
