@@ -262,9 +262,9 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Time:", 975, 290);
 
                 g2D.setPaint(Color.BLACK);
-                g2D.drawString(String.valueOf(player1Info.money), 1060, 245);
+                g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
                 g2D.setPaint(Color.BLUE);
-                g2D.drawString(String.valueOf(player1Info.power), 1060, 200);
+                g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -384,6 +384,8 @@ public class Panel extends JPanel implements ActionListener {
 
             player1Info.weaponNumber[3] = 5;
             player1Info.treasureBool[0] = true;
+
+            player2Info.power = 100;
 
 
             dice = null;
