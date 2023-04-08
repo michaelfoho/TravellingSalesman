@@ -1,12 +1,14 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Player implements KeyListener {
+public class PlayerInfo implements KeyListener {
 
     private int turn;
     Pointer mainTurn;
     Pointer dice;
 
+
+    String name;
 
     int x = 750;
     int y = 675;
@@ -14,11 +16,13 @@ public class Player implements KeyListener {
     int power = 10;
 
 
-    Player(int turn, Pointer mainTurn, Pointer dice) {
+    PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
 
         this.turn = turn;
         this.mainTurn = mainTurn;
         this.dice = dice;
+
+        this.name = name;
     }
 
 
