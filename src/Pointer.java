@@ -1,3 +1,11 @@
 public class Pointer {
-    int diceNumber = 0;
+    int prt = 0;
+
+    Pointer() {
+
+    }
+
+    Pointer(int prt) {
+        this.prt = prt;
+    }
 }

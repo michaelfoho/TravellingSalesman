@@ -12,7 +12,8 @@ public class Panel extends JPanel implements ActionListener {
 
     int sw = 2;
     int repaint = 1;//for repaint after firstpage
-    Pointer dicePrt = new Pointer();
+    Pointer mainTurn = new Pointer(1);
+    Pointer diceNumber = new Pointer();
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
@@ -23,7 +24,7 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    Player1Class player1Coordinates = new Player1Class(dicePrt);
+    Player1Class player1Coordinates = new Player1Class(1, mainTurn, diceNumber);
     Player2Class player2Coordinates = new Player2Class();
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
@@ -167,7 +168,7 @@ public class Panel extends JPanel implements ActionListener {
                 break;
             case 2:
 
-                if (dicePrt.diceNumber != 0) repaint();
+                if (diceNumber.prt != 0) repaint();
 
 
                 if (repaint == 1) {
@@ -332,9 +333,9 @@ public class Panel extends JPanel implements ActionListener {
 
         if (e.getSource() == diceButton) {
 
-            dicePrt.diceNumber = rand.nextInt(6) + 1;
+            diceNumber.prt = rand.nextInt(6) + 1;
 
-            switch (dicePrt.diceNumber) {
+            switch (diceNumber.prt) {
                 case 1:
                     dice = dice1;
                     break;
@@ -368,6 +369,9 @@ public class Panel extends JPanel implements ActionListener {
                 playerName = "Werewolf";
 
             }
+
+            if (mainTurn.prt == 1) mainTurn.prt = 2;
+            if (mainTurn.prt == 2) mainTurn.prt = 1;
 
             dice = null;
         }
