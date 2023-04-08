@@ -9,34 +9,34 @@ public class Player1Class implements KeyListener {
     int power = 0;
 
 
-    Pointer d;
+    Pointer dice;
 
-    Player1Class(Pointer d) {
+    Player1Class(Pointer dice) {
 
-        this.d = d;
+        this.dice = dice;
     }
 
 
     @Override
     public void keyTyped(KeyEvent e) {
 
-        if (d.diceNumber > 0) {
+        if (dice.diceNumber > 0) {
 
             if (e.getKeyChar() == 'w' && y - 75 >= 0 && x != 750) {
                 y -= 75;
-                d.diceNumber -= 1;
+                dice.diceNumber -= 1;
             }
             if (e.getKeyChar() == 's' && y + 75 <= 675) {
                 y += 75;
-                d.diceNumber -= 1;
+                dice.diceNumber -= 1;
             }
             if (e.getKeyChar() == 'a' && x - 75 >= 0) {
                 x -= 75;
-                d.diceNumber -= 1;
+                dice.diceNumber -= 1;
             }
             if (e.getKeyChar() == 'd' && x + 75 < 750) {
                 x += 75;
-                d.diceNumber -= 1;
+                dice.diceNumber -= 1;
             }
         }
     }
