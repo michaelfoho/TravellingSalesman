@@ -5,11 +5,10 @@ public class Player1Class implements KeyListener {
 
     int x = 750;
     int y = 675;
-
-    int treasureNumber = 0;
-    int treasureScore = 0;
     int money = 0;
     int power = 0;
+
+
     Pointer d;
 
     Player1Class(Pointer d) {
