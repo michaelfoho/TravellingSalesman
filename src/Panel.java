@@ -23,6 +23,7 @@ public class Panel extends JPanel implements ActionListener {
     Font font16 = new Font("Century", Font.PLAIN, 16);
 
     Random rand = new Random();
+    Timer timer = new Timer(1000, this);
 
 
     PlayerInfo playerInfo;
@@ -49,6 +50,10 @@ public class Panel extends JPanel implements ActionListener {
     Weapon weap1, weap2, weap3, weap4;
 
     Panel() {
+
+
+        timer.setRepeats(false);
+        timer.start();
 
 
         continueButton = new Button(1200, 15, 250, 50, "Continue", new Color(100, 100, 100));
@@ -252,6 +257,7 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("2", 920, 608);
                 g2D.drawString("1", 920, 702);
 
+
                 g2D.setFont(font40);
                 g2D.setPaint(Color.BLACK);
                 g2D.drawString("'StatusBoard'", 900, 45);
@@ -269,6 +275,8 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
                 g2D.setPaint(Color.BLUE);
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
+                g2D.setPaint(Color.BLACK);
+                g2D.drawString(String.valueOf(timer), 1060, 290);
 
 
                 g2D.setPaint(Color.BLACK);
