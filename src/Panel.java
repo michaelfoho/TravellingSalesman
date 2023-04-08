@@ -24,8 +24,8 @@ public class Panel extends JPanel implements ActionListener {
     Random rand = new Random();
 
 
-    Player1Class player1Coordinates = new Player1Class(1, mainTurn, diceNumber);
-    Player2Class player2Coordinates = new Player2Class();
+    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber);
+    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber);
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
@@ -141,8 +141,8 @@ public class Panel extends JPanel implements ActionListener {
         this.setLayout(null);
         this.setFocusable(true);
         this.setPreferredSize(new Dimension(1500, 750));
-        this.addKeyListener(player1Coordinates);
-        this.addKeyListener(player2Coordinates);
+        this.addKeyListener(player1Info);
+        this.addKeyListener(player2Info);
     }
 
 
@@ -282,8 +282,8 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.setPaint(Color.BLACK);
 
-                g2D.drawImage(player1, player1Coordinates.x, player1Coordinates.y, null);
-                g2D.drawImage(player2, player2Coordinates.x, player2Coordinates.y, null);
+                g2D.drawImage(player1, player1Info.x, player1Info.y, null);
+                g2D.drawImage(player2, player2Info.x, player2Info.y, null);
                 g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
 
                 g2D.drawString("Click", 768, 402);
@@ -371,7 +371,7 @@ public class Panel extends JPanel implements ActionListener {
             }
 
             if (mainTurn.prt == 1) mainTurn.prt = 2;
-            if (mainTurn.prt == 2) mainTurn.prt = 1;
+            else mainTurn.prt = 1;
 
             dice = null;
         }

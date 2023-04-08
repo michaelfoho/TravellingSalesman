@@ -1,9 +1,9 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Player1Class implements KeyListener {
+public class PlayerInfo implements KeyListener {
 
-    int turn;
+    private int turn;
     Pointer mainTurn;
     Pointer dice;
 
@@ -14,8 +14,7 @@ public class Player1Class implements KeyListener {
     int power = 0;
 
 
-
-    Player1Class(int turn, Pointer mainTurn, Pointer dice) {
+    PlayerInfo(int turn, Pointer mainTurn, Pointer dice) {
 
         this.turn = turn;
         this.mainTurn = mainTurn;
@@ -26,7 +25,8 @@ public class Player1Class implements KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
 
-        if (dice.prt > 0) {
+
+        if (mainTurn.prt == turn) if (dice.prt > 0) {
 
             if (e.getKeyChar() == 'w' && y - 75 >= 0 && x != 750) {
                 y -= 75;
@@ -46,6 +46,7 @@ public class Player1Class implements KeyListener {
             }
         }
     }
+
 
     @Override
     public void keyPressed(KeyEvent e) {
