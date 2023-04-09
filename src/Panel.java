@@ -143,8 +143,8 @@ public class Panel extends JPanel implements ActionListener {
 
     public void fight(PlayerInfo player1Info, PlayerInfo player2Info) {
 
-        player1Info.money += ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
-        player2Info.money -= ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
+        player1Info.money += (int) ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
+        player2Info.money -= (int) ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
         player1Info.power -= player2Info.power;
         player2Info.power = 0;
         player2Info.x = 750;
