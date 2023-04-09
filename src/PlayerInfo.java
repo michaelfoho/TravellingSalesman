@@ -4,6 +4,10 @@ import java.awt.event.KeyListener;
 public class PlayerInfo implements KeyListener {
 
     private final int turn;
+    int x = 750;
+    int y = 675;
+    int money = 100;
+    int power = 10;
     Pointer mainTurn;
     Pointer dice;
 
@@ -16,10 +20,9 @@ public class PlayerInfo implements KeyListener {
     /*boolean[] marketBool = new boolean[];
     boolean[] wallBool = new boolean[];*/
 
-    int x = 750;
-    int y = 675;
-    int money = 100;
-    int power = 10;
+
+
+
 
 
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
