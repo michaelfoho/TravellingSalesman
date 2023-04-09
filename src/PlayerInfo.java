@@ -18,8 +18,8 @@ public class PlayerInfo implements KeyListener {
 
     int x = 750;
     int y = 675;
-    double money=100;
-    double power=10;
+    double money = 100;
+    double power = 10;
 
 
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
