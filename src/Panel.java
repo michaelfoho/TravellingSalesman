@@ -326,41 +326,11 @@ public class Panel extends JPanel implements ActionListener {
 
 
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
-                    if (player1Info.power > player2Info.power) {
-                        fight(player1Info, player2Info);
-                       /* player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-                        player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-                        player1Info.power -= player2Info.power;
-                        player2Info.power = 0;
-                        player2Info.x = 750;
-                        player2Info.y = 675;*/
-                    } else if (player2Info.power > player1Info.power) {
-                        fight(player2Info, player1Info);
-                        /*player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
-                        player1Info.money -= (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
-                        player2Info.power -= player1Info.power;
-                        player1Info.power = 0;
-                        player1Info.x = 750;
-                        player1Info.y = 675;*/
-                    } else if (player1Info.power == player2Info.power) {
-                        if (mainTurn.prt == 1) {
-                            fight(player1Info, player2Info);
-                            /*player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-                            player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-                            player1Info.power -= player2Info.power;
-                            player2Info.power = 0;
-                            player2Info.x = 750;
-                            player2Info.y = 675;*/
-                        } else {
-                            fight(player2Info, player1Info);
-                            /*player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
-                            player1Info.money -= (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
-                            player2Info.power -= player1Info.power;
-                            player1Info.power = 0;
-                            player1Info.x = 750;
-                            player1Info.y = 675;*/
-                        }
-                    }
+                    if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
+                    else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
+                    else if (player1Info.power == player2Info.power)
+                        if (mainTurn.prt == 1) fight(player1Info, player2Info);
+                        else fight(player2Info, player1Info);
 
                     repaint();
                 }
