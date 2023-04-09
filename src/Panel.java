@@ -18,7 +18,7 @@ public class Panel extends JPanel implements ActionListener {
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
-    DecimalFormat df = new DecimalFormat("#.##");
+    // DecimalFormat df = new DecimalFormat("#.##");
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Font font16 = new Font("Century", Font.PLAIN, 16);
     Font font36 = new Font("Century", Font.PLAIN, 36);
@@ -143,12 +143,13 @@ public class Panel extends JPanel implements ActionListener {
 
     public void fight(PlayerInfo player1Info, PlayerInfo player2Info) {
 
-        player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-        player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+        player1Info.money += ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
+        player2Info.money -= ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
         player1Info.power -= player2Info.power;
         player2Info.power = 0;
         player2Info.x = 750;
         player2Info.y = 675;
+
     }
 
 
@@ -274,10 +275,10 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setPaint(new Color(0, 0, 0));
                 g2D.drawString("Time:", 975, 290);
 
-                g2D.setPaint(Color.BLUE);
+                g2D.setPaint(new Color(0, 0, 255));
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
                 g2D.setPaint(new Color(20, 130, 0));
-                g2D.drawString(df.format(playerInfo.money), 1060, 245);
+                g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -381,7 +382,7 @@ public class Panel extends JPanel implements ActionListener {
 
             player2Info.weaponNumber[1] = 1;
 
-            player1Info.money = 50;
+            player1Info.power = 7;
 
 
             dice = null;
