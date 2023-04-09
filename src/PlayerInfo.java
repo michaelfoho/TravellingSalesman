@@ -21,10 +21,6 @@ public class PlayerInfo implements KeyListener {
     boolean[] wallBool = new boolean[];*/
 
 
-
-
-
-
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
 
         this.turn = turn;
