@@ -265,21 +265,23 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.setFont(font40);
                 g2D.setPaint(Color.BLACK);
-                g2D.drawString("'StatusBoard'", 900, 45);
+                g2D.drawString("'Status Board'", 900, 45);
                 g2D.setFont(font36);
-                g2D.setPaint(Color.RED);
+                g2D.setPaint(new Color(100,0,0));
                 g2D.drawString("Quest:", 975, 100);
                 g2D.setFont(font24);
-                g2D.setPaint(Color.white);
+                g2D.setPaint(new Color(100,100,100));
                 g2D.drawString("Treasure Score:", 975, 155);
+                g2D.setPaint(new Color(80,80,80));
                 g2D.drawString("Power:", 975, 200);
+                g2D.setPaint(new Color(50,50,50));
                 g2D.drawString("Money:", 975, 245);
+                g2D.setPaint(new Color(0,0,0));
                 g2D.drawString("Time:", 975, 290);
-
 
                 g2D.setPaint(Color.BLUE);
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
-                g2D.setPaint(Color.BLACK);
+                g2D.setPaint(new Color(190,150,0));
                 g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
 
 
