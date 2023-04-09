@@ -41,11 +41,11 @@ public class Panel extends JPanel implements ActionListener {
     Image player1, player2, werewolf, angel;
     Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
     Image[] lostObject = new Image[13];
-    Image weapon1, weapon2, weapon3, weapon4;
+    Image[] weapon = new Image[4];
     Image dice;
-
     Image[] diceImage = new Image[6];
-    Weapon[] weapon = new Weapon[4];
+
+    Weapon[] weap = new Weapon[4];
 
     Panel() {
 
@@ -110,10 +110,10 @@ public class Panel extends JPanel implements ActionListener {
         lostObject[11] = new ImageIcon("img/lostObject/lostObject_12.png").getImage();
         lostObject[12] = new ImageIcon("img/lostObject/lostObject_13.png").getImage();
 
-        weapon1 = new ImageIcon("img/weapon/weapon1.png").getImage();
-        weapon2 = new ImageIcon("img/weapon/weapon2.png").getImage();
-        weapon3 = new ImageIcon("img/weapon/weapon3.png").getImage();
-        weapon4 = new ImageIcon("img/weapon/weapon4.png").getImage();
+        weapon[0] = new ImageIcon("img/weapon/weapon1.png").getImage();
+        weapon[1] = new ImageIcon("img/weapon/weapon2.png").getImage();
+        weapon[2] = new ImageIcon("img/weapon/weapon3.png").getImage();
+        weapon[3] = new ImageIcon("img/weapon/weapon4.png").getImage();
 
         werewolfImage = new ImageIcon("img/hero/big/werewolf.png").getImage();
         angelImage = new ImageIcon("img/hero/big/angel.png").getImage();
@@ -134,10 +134,10 @@ public class Panel extends JPanel implements ActionListener {
         diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
         diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
-        weapon[0] = new Weapon(400);
-        weapon[1] = new Weapon(300);
-        weapon[2] = new Weapon(200);
-        weapon[3] = new Weapon(100);
+        weap[0] = new Weapon(400);
+        weap[1] = new Weapon(300);
+        weap[2] = new Weapon(200);
+        weap[3] = new Weapon(100);
 
 
         this.setLayout(null);
@@ -229,10 +229,10 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.lostObjectBool[11]) g2D.drawImage(lostObject[11], 1000, 540, null);
                 if (playerInfo.lostObjectBool[12]) g2D.drawImage(lostObject[12], 1000, 635, null);
 
-                if (playerInfo.weaponNumber[0] > 0) g2D.drawImage(weapon1, 935, 350, null);
-                if (playerInfo.weaponNumber[1] > 0) g2D.drawImage(weapon2, 926, 445, null);
-                if (playerInfo.weaponNumber[2] > 0) g2D.drawImage(weapon3, 926, 540, null);
-                if (playerInfo.weaponNumber[3] > 0) g2D.drawImage(weapon4, 932, 635, null);
+                if (playerInfo.weaponNumber[0] > 0) g2D.drawImage(weapon[0], 935, 350, null);
+                if (playerInfo.weaponNumber[1] > 0) g2D.drawImage(weapon[1], 926, 445, null);
+                if (playerInfo.weaponNumber[2] > 0) g2D.drawImage(weapon[2], 926, 540, null);
+                if (playerInfo.weaponNumber[3] > 0) g2D.drawImage(weapon[3], 932, 635, null);
 
 
                 g2D.setPaint(Color.white);
