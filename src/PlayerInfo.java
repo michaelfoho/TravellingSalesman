@@ -3,29 +3,32 @@ import java.awt.event.KeyListener;
 
 public class PlayerInfo implements KeyListener {
 
-    private int turn;
+    private final int turn;
     Pointer mainTurn;
     Pointer dice;
 
 
     String name;
+    boolean[] treasureBool = new boolean[8];
+    boolean[] lostObjectBool = new boolean[13];
+    int[] weaponNumber = new int[4];
+
+    /*boolean[] marketBool = new boolean[];
+    boolean[] wallBool = new boolean[];*/
 
     int x = 750;
     int y = 675;
-    double money;
-    double power;
+    double money=100;
+    double power=10;
 
 
-    PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name,double money,double power) {
+    PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
 
         this.turn = turn;
         this.mainTurn = mainTurn;
         this.dice = dice;
 
         this.name = name;
-
-        this.money = money;
-        this.power = power;
     }
 
 

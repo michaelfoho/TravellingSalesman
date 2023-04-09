@@ -18,6 +18,7 @@ public class Panel extends JPanel implements ActionListener {
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
+    DecimalFormat df = new DecimalFormat("#.##");
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Font font16 = new Font("Century", Font.PLAIN, 16);
     Font font36 = new Font("Century", Font.PLAIN, 36);
@@ -26,10 +27,8 @@ public class Panel extends JPanel implements ActionListener {
 
 
     PlayerInfo playerInfo;
-    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf", 100, 7);
-    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel", 200, 10);
-    DecimalFormat df = new DecimalFormat("#.##");
-    String player_money;
+    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf");
+    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel");
 
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
@@ -41,14 +40,12 @@ public class Panel extends JPanel implements ActionListener {
     Image playerImage, werewolfImage, angelImage;
     Image player1, player2, werewolf, angel;
     Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
-    Image lostObject_1, lostObject_2, lostObject_3, lostObject_4, lostObject_5, lostObject_6;
-    Image lostObject_7, lostObject_8, lostObject_9, lostObject_10, lostObject_11, lostObject_12, lostObject_13;
-    Image weapon1, weapon2, weapon3, weapon4;
+    Image[] lostObject = new Image[13];
+    Image[] weapon = new Image[4];
     Image dice;
 
-    Image dice1, dice2, dice3, dice4, dice5, dice6;
-
-    Weapon weap1, weap2, weap3, weap4;
+    Image[] diceImage = new Image[6];
+    Weapon[] weap = new Weapon[4];
 
     Panel() {
 
@@ -95,24 +92,24 @@ public class Panel extends JPanel implements ActionListener {
         key = new ImageIcon("img/treasure/key.png").getImage();
         scroll = new ImageIcon("img/treasure/scroll.png").getImage();
 
-        lostObject_1 = new ImageIcon("img/lostObject/lostObject_1.png").getImage();
-        lostObject_2 = new ImageIcon("img/lostObject/lostObject_2.png").getImage();
-        lostObject_3 = new ImageIcon("img/lostObject/lostObject_3.png").getImage();
-        lostObject_4 = new ImageIcon("img/lostObject/lostObject_4.png").getImage();
-        lostObject_5 = new ImageIcon("img/lostObject/lostObject_5.png").getImage();
-        lostObject_6 = new ImageIcon("img/lostObject/lostObject_6.png").getImage();
-        lostObject_7 = new ImageIcon("img/lostObject/lostObject_7.png").getImage();
-        lostObject_8 = new ImageIcon("img/lostObject/lostObject_8.png").getImage();
-        lostObject_9 = new ImageIcon("img/lostObject/lostObject_9.png").getImage();
-        lostObject_10 = new ImageIcon("img/lostObject/lostObject_10.png").getImage();
-        lostObject_11 = new ImageIcon("img/lostObject/lostObject_11.png").getImage();
-        lostObject_12 = new ImageIcon("img/lostObject/lostObject_12.png").getImage();
-        lostObject_13 = new ImageIcon("img/lostObject/lostObject_13.png").getImage();
+        lostObject[0] = new ImageIcon("img/lostObject/lostObject_1.png").getImage();
+        lostObject[1] = new ImageIcon("img/lostObject/lostObject_2.png").getImage();
+        lostObject[2] = new ImageIcon("img/lostObject/lostObject_3.png").getImage();
+        lostObject[3] = new ImageIcon("img/lostObject/lostObject_4.png").getImage();
+        lostObject[4] = new ImageIcon("img/lostObject/lostObject_5.png").getImage();
+        lostObject[5] = new ImageIcon("img/lostObject/lostObject_6.png").getImage();
+        lostObject[6] = new ImageIcon("img/lostObject/lostObject_7.png").getImage();
+        lostObject[7] = new ImageIcon("img/lostObject/lostObject_8.png").getImage();
+        lostObject[8] = new ImageIcon("img/lostObject/lostObject_9.png").getImage();
+        lostObject[9] = new ImageIcon("img/lostObject/lostObject_10.png").getImage();
+        lostObject[10] = new ImageIcon("img/lostObject/lostObject_11.png").getImage();
+        lostObject[11] = new ImageIcon("img/lostObject/lostObject_12.png").getImage();
+        lostObject[12] = new ImageIcon("img/lostObject/lostObject_13.png").getImage();
 
-        weapon1 = new ImageIcon("img/weapon/weapon1.png").getImage();
-        weapon2 = new ImageIcon("img/weapon/weapon2.png").getImage();
-        weapon3 = new ImageIcon("img/weapon/weapon3.png").getImage();
-        weapon4 = new ImageIcon("img/weapon/weapon4.png").getImage();
+        weapon[0] = new ImageIcon("img/weapon/weapon1.png").getImage();
+        weapon[1] = new ImageIcon("img/weapon/weapon2.png").getImage();
+        weapon[2] = new ImageIcon("img/weapon/weapon3.png").getImage();
+        weapon[3] = new ImageIcon("img/weapon/weapon4.png").getImage();
 
         werewolfImage = new ImageIcon("img/hero/big/werewolf.png").getImage();
         angelImage = new ImageIcon("img/hero/big/angel.png").getImage();
@@ -126,17 +123,17 @@ public class Panel extends JPanel implements ActionListener {
 
         playerInfo = player1Info;
 
-        dice1 = new ImageIcon("img/dice/dice1.png").getImage();
-        dice2 = new ImageIcon("img/dice/dice2.png").getImage();
-        dice3 = new ImageIcon("img/dice/dice3.png").getImage();
-        dice4 = new ImageIcon("img/dice/dice4.png").getImage();
-        dice5 = new ImageIcon("img/dice/dice5.png").getImage();
-        dice6 = new ImageIcon("img/dice/dice6.png").getImage();
+        diceImage[0] = new ImageIcon("img/dice/dice1.png").getImage();
+        diceImage[1] = new ImageIcon("img/dice/dice2.png").getImage();
+        diceImage[2] = new ImageIcon("img/dice/dice3.png").getImage();
+        diceImage[3] = new ImageIcon("img/dice/dice4.png").getImage();
+        diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
+        diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
-        weap1 = new Weapon(400);
-        weap2 = new Weapon(300);
-        weap3 = new Weapon(200);
-        weap4 = new Weapon(100);
+        weap[0] = new Weapon(400);
+        weap[1] = new Weapon(300);
+        weap[2] = new Weapon(200);
+        weap[3] = new Weapon(100);
 
 
         this.setLayout(null);
@@ -147,13 +144,13 @@ public class Panel extends JPanel implements ActionListener {
     }
 
 
-    public void fight(PlayerInfo player1Info,PlayerInfo player2Info) {
-            player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-            player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
-            player1Info.power -= player2Info.power;
-            player2Info.power = 0;
-            player2Info.x = 750;
-            player2Info.y = 675;
+    public void fight(PlayerInfo player1Info, PlayerInfo player2Info) {
+        player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+        player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+        player1Info.power -= player2Info.power;
+        player2Info.power = 0;
+        player2Info.x = 750;
+        player2Info.y = 675;
     }
 
 
@@ -215,45 +212,51 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(inventory, 880, 330, null);
                 g2D.drawRoundRect(880, 330, 600, 400, 10, 10);
 
-                g2D.drawImage(ring, 1393, 355, null);
-                g2D.drawImage(sword, 1407, 445, null);
-                g2D.drawImage(goldenGlass, 1400, 540, null);
-                g2D.drawImage(glassCup, 1397, 635, null);
-                g2D.drawImage(bow, 1330, 351, null);
-                g2D.drawImage(shield, 1314, 445, null);
-                g2D.drawImage(key, 1325, 545, null);
-                g2D.drawImage(scroll, 1314, 635, null);
+                if (playerInfo.treasureBool[0]) g2D.drawImage(ring, 1393, 355, null);
+                if (playerInfo.treasureBool[1]) g2D.drawImage(sword, 1407, 445, null);
+                if (playerInfo.treasureBool[2]) g2D.drawImage(goldenGlass, 1400, 540, null);
+                if (playerInfo.treasureBool[3]) g2D.drawImage(glassCup, 1397, 635, null);
+                if (playerInfo.treasureBool[4]) g2D.drawImage(bow, 1330, 351, null);
+                if (playerInfo.treasureBool[5]) g2D.drawImage(shield, 1314, 445, null);
+                if (playerInfo.treasureBool[6]) g2D.drawImage(key, 1325, 545, null);
+                if (playerInfo.treasureBool[7]) g2D.drawImage(scroll, 1314, 635, null);
 
-                g2D.drawImage(lostObject_1, 1235, 445, null);
-                g2D.drawImage(lostObject_2, 1235, 540, null);
-                g2D.drawImage(lostObject_3, 1235, 635, null);
-                g2D.drawImage(lostObject_4, 1157, 445, null);
-                g2D.drawImage(lostObject_5, 1157, 540, null);
-                g2D.drawImage(lostObject_6, 1157, 635, null);
-                g2D.drawImage(lostObject_7, 1079, 445, null);
-                g2D.drawImage(lostObject_8, 1079, 540, null);
-                g2D.drawImage(lostObject_9, 1079, 635, null);
-                g2D.drawImage(lostObject_10, 1000, 350, null);
-                g2D.drawImage(lostObject_11, 1000, 445, null);
-                g2D.drawImage(lostObject_12, 1000, 540, null);
-                g2D.drawImage(lostObject_13, 1000, 635, null);
-
-
-                g2D.drawImage(weapon1, 935, 350, null);
-                g2D.drawImage(weapon2, 926, 445, null);
-                g2D.drawImage(weapon3, 926, 540, null);
-                g2D.drawImage(weapon4, 932, 635, null);
+                if (playerInfo.lostObjectBool[0]) g2D.drawImage(lostObject[0], 1235, 445, null);
+                if (playerInfo.lostObjectBool[1]) g2D.drawImage(lostObject[1], 1235, 540, null);
+                if (playerInfo.lostObjectBool[2]) g2D.drawImage(lostObject[2], 1235, 635, null);
+                if (playerInfo.lostObjectBool[3]) g2D.drawImage(lostObject[3], 1157, 445, null);
+                if (playerInfo.lostObjectBool[4]) g2D.drawImage(lostObject[4], 1157, 540, null);
+                if (playerInfo.lostObjectBool[5]) g2D.drawImage(lostObject[5], 1157, 635, null);
+                if (playerInfo.lostObjectBool[6]) g2D.drawImage(lostObject[6], 1079, 445, null);
+                if (playerInfo.lostObjectBool[7]) g2D.drawImage(lostObject[7], 1079, 540, null);
+                if (playerInfo.lostObjectBool[8]) g2D.drawImage(lostObject[8], 1079, 635, null);
+                if (playerInfo.lostObjectBool[9]) g2D.drawImage(lostObject[9], 1000, 350, null);
+                if (playerInfo.lostObjectBool[10]) g2D.drawImage(lostObject[10], 1000, 445, null);
+                if (playerInfo.lostObjectBool[11]) g2D.drawImage(lostObject[11], 1000, 540, null);
+                if (playerInfo.lostObjectBool[12]) g2D.drawImage(lostObject[12], 1000, 635, null);
 
 
                 g2D.setPaint(Color.white);
                 g2D.setStroke(new BasicStroke(3));//thickness
                 g2D.setFont(font16);
 
+                if (playerInfo.weaponNumber[0] > 0) {
+                    g2D.drawImage(weapon[0], 935, 350, null);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[0]), 960, 420);
+                }
+                if (playerInfo.weaponNumber[1] > 0) {
+                    g2D.drawImage(weapon[1], 926, 445, null);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[1]), 960, 514);
+                }
+                if (playerInfo.weaponNumber[2] > 0) {
+                    g2D.drawImage(weapon[2], 926, 540, null);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[2]), 960, 608);
+                }
+                if (playerInfo.weaponNumber[3] > 0) {
+                    g2D.drawImage(weapon[3], 932, 635, null);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[3]), 960, 702);
+                }
 
-                //g2D.drawString(player1Info.weaponNumber[1], 960, 420);
-                //g2D.drawString(player1Info.weaponNumber[2], 960, 514);
-                //g2D.drawString(player1Info.weaponNumber[3], 960, 608);
-                //g2D.drawString(player1Info.weaponNumber[4], 960, 702);
 
                 g2D.drawString("4", 920, 420);
                 g2D.drawString("3", 920, 514);
@@ -273,12 +276,11 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Money:", 975, 245);
                 g2D.drawString("Time:", 975, 290);
 
-                player_money = df.format(playerInfo.money);
 
-                g2D.setPaint(Color.BLACK);
-                g2D.drawString(player_money, 1060, 245);
                 g2D.setPaint(Color.BLUE);
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
+                g2D.setPaint(Color.BLACK);
+                g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -325,7 +327,7 @@ public class Panel extends JPanel implements ActionListener {
 
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                     if (player1Info.power > player2Info.power) {
-                        fight(player1Info,player2Info);
+                        fight(player1Info, player2Info);
                        /* player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                         player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                         player1Info.power -= player2Info.power;
@@ -333,7 +335,7 @@ public class Panel extends JPanel implements ActionListener {
                         player2Info.x = 750;
                         player2Info.y = 675;*/
                     } else if (player2Info.power > player1Info.power) {
-                        fight(player2Info,player1Info);
+                        fight(player2Info, player1Info);
                         /*player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                         player1Info.money -= (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                         player2Info.power -= player1Info.power;
@@ -342,7 +344,7 @@ public class Panel extends JPanel implements ActionListener {
                         player1Info.y = 675;*/
                     } else if (player1Info.power == player2Info.power) {
                         if (mainTurn.prt == 1) {
-                            fight(player1Info,player2Info);
+                            fight(player1Info, player2Info);
                             /*player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                             player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                             player1Info.power -= player2Info.power;
@@ -350,7 +352,7 @@ public class Panel extends JPanel implements ActionListener {
                             player2Info.x = 750;
                             player2Info.y = 675;*/
                         } else {
-                            fight(player2Info,player1Info);
+                            fight(player2Info, player1Info);
                             /*player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                             player1Info.money -= (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                             player2Info.power -= player1Info.power;
@@ -391,27 +393,8 @@ public class Panel extends JPanel implements ActionListener {
         if (e.getSource() == diceButton) {
 
             diceNumber.prt = rand.nextInt(6) + 1;
+            dice = diceImage[diceNumber.prt - 1];
 
-            switch (diceNumber.prt) {
-                case 1:
-                    dice = dice1;
-                    break;
-                case 2:
-                    dice = dice2;
-                    break;
-                case 3:
-                    dice = dice3;
-                    break;
-                case 4:
-                    dice = dice4;
-                    break;
-                case 5:
-                    dice = dice5;
-                    break;
-                case 6:
-                    dice = dice6;
-                    break;
-            }
         }
         if (e.getSource() == nextButton) {
 
@@ -428,6 +411,8 @@ public class Panel extends JPanel implements ActionListener {
                 playerImage = werewolfImage;
 
             }
+
+            player2Info.weaponNumber[1] = 1;
 
 
             dice = null;
