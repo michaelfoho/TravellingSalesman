@@ -40,16 +40,12 @@ public class Panel extends JPanel implements ActionListener {
     Image playerImage, werewolfImage, angelImage;
     Image player1, player2, werewolf, angel;
     Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
-    Image lostObject_1, lostObject_2, lostObject_3, lostObject_4, lostObject_5, lostObject_6;
-    Image lostObject_7, lostObject_8, lostObject_9, lostObject_10, lostObject_11, lostObject_12, lostObject_13;
+    Image[] lostObject = new Image[13];
     Image weapon1, weapon2, weapon3, weapon4;
     Image dice;
 
-    //Image dice1, dice2, dice3, dice4, dice5, dice6;
-
     Image[] diceImage = new Image[6];
-
-    Weapon weap1, weap2, weap3, weap4;
+    Weapon[] weapon = new Weapon[4];
 
     Panel() {
 
@@ -100,19 +96,19 @@ public class Panel extends JPanel implements ActionListener {
         key = new ImageIcon("img/treasure/key.png").getImage();
         scroll = new ImageIcon("img/treasure/scroll.png").getImage();
 
-        lostObject_1 = new ImageIcon("img/lostObject/lostObject_1.png").getImage();
-        lostObject_2 = new ImageIcon("img/lostObject/lostObject_2.png").getImage();
-        lostObject_3 = new ImageIcon("img/lostObject/lostObject_3.png").getImage();
-        lostObject_4 = new ImageIcon("img/lostObject/lostObject_4.png").getImage();
-        lostObject_5 = new ImageIcon("img/lostObject/lostObject_5.png").getImage();
-        lostObject_6 = new ImageIcon("img/lostObject/lostObject_6.png").getImage();
-        lostObject_7 = new ImageIcon("img/lostObject/lostObject_7.png").getImage();
-        lostObject_8 = new ImageIcon("img/lostObject/lostObject_8.png").getImage();
-        lostObject_9 = new ImageIcon("img/lostObject/lostObject_9.png").getImage();
-        lostObject_10 = new ImageIcon("img/lostObject/lostObject_10.png").getImage();
-        lostObject_11 = new ImageIcon("img/lostObject/lostObject_11.png").getImage();
-        lostObject_12 = new ImageIcon("img/lostObject/lostObject_12.png").getImage();
-        lostObject_13 = new ImageIcon("img/lostObject/lostObject_13.png").getImage();
+        lostObject[0] = new ImageIcon("img/lostObject/lostObject_1.png").getImage();
+        lostObject[1] = new ImageIcon("img/lostObject/lostObject_2.png").getImage();
+        lostObject[2] = new ImageIcon("img/lostObject/lostObject_3.png").getImage();
+        lostObject[3] = new ImageIcon("img/lostObject/lostObject_4.png").getImage();
+        lostObject[4] = new ImageIcon("img/lostObject/lostObject_5.png").getImage();
+        lostObject[5] = new ImageIcon("img/lostObject/lostObject_6.png").getImage();
+        lostObject[6] = new ImageIcon("img/lostObject/lostObject_7.png").getImage();
+        lostObject[7] = new ImageIcon("img/lostObject/lostObject_8.png").getImage();
+        lostObject[8] = new ImageIcon("img/lostObject/lostObject_9.png").getImage();
+        lostObject[9] = new ImageIcon("img/lostObject/lostObject_10.png").getImage();
+        lostObject[10] = new ImageIcon("img/lostObject/lostObject_11.png").getImage();
+        lostObject[11] = new ImageIcon("img/lostObject/lostObject_12.png").getImage();
+        lostObject[12] = new ImageIcon("img/lostObject/lostObject_13.png").getImage();
 
         weapon1 = new ImageIcon("img/weapon/weapon1.png").getImage();
         weapon2 = new ImageIcon("img/weapon/weapon2.png").getImage();
@@ -138,10 +134,10 @@ public class Panel extends JPanel implements ActionListener {
         diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
         diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
-        weap1 = new Weapon(400);
-        weap2 = new Weapon(300);
-        weap3 = new Weapon(200);
-        weap4 = new Weapon(100);
+        weapon[0] = new Weapon(400);
+        weapon[1] = new Weapon(300);
+        weapon[2] = new Weapon(200);
+        weapon[3] = new Weapon(100);
 
 
         this.setLayout(null);
@@ -218,19 +214,20 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.treasureBool[6]) g2D.drawImage(key, 1325, 545, null);
                 if (playerInfo.treasureBool[7]) g2D.drawImage(scroll, 1314, 635, null);
 
-                if (playerInfo.lostObjectBool[0]) g2D.drawImage(lostObject_1, 1235, 445, null);
-                if (playerInfo.lostObjectBool[1]) g2D.drawImage(lostObject_2, 1235, 540, null);
-                if (playerInfo.lostObjectBool[2]) g2D.drawImage(lostObject_3, 1235, 635, null);
-                if (playerInfo.lostObjectBool[3]) g2D.drawImage(lostObject_4, 1157, 445, null);
-                if (playerInfo.lostObjectBool[4]) g2D.drawImage(lostObject_5, 1157, 540, null);
-                if (playerInfo.lostObjectBool[5]) g2D.drawImage(lostObject_6, 1157, 635, null);
-                if (playerInfo.lostObjectBool[6]) g2D.drawImage(lostObject_7, 1079, 445, null);
-                if (playerInfo.lostObjectBool[7]) g2D.drawImage(lostObject_8, 1079, 540, null);
-                if (playerInfo.lostObjectBool[8]) g2D.drawImage(lostObject_9, 1079, 635, null);
-                if (playerInfo.lostObjectBool[9]) g2D.drawImage(lostObject_10, 1000, 350, null);
-                if (playerInfo.lostObjectBool[10]) g2D.drawImage(lostObject_11, 1000, 445, null);
-                if (playerInfo.lostObjectBool[11]) g2D.drawImage(lostObject_12, 1000, 540, null);
-                if (playerInfo.lostObjectBool[12]) g2D.drawImage(lostObject_13, 1000, 635, null);
+
+                if (playerInfo.lostObjectBool[0]) g2D.drawImage(lostObject[0], 1235, 445, null);
+                if (playerInfo.lostObjectBool[1]) g2D.drawImage(lostObject[1], 1235, 540, null);
+                if (playerInfo.lostObjectBool[2]) g2D.drawImage(lostObject[2], 1235, 635, null);
+                if (playerInfo.lostObjectBool[3]) g2D.drawImage(lostObject[3], 1157, 445, null);
+                if (playerInfo.lostObjectBool[4]) g2D.drawImage(lostObject[4], 1157, 540, null);
+                if (playerInfo.lostObjectBool[5]) g2D.drawImage(lostObject[5], 1157, 635, null);
+                if (playerInfo.lostObjectBool[6]) g2D.drawImage(lostObject[6], 1079, 445, null);
+                if (playerInfo.lostObjectBool[7]) g2D.drawImage(lostObject[7], 1079, 540, null);
+                if (playerInfo.lostObjectBool[8]) g2D.drawImage(lostObject[8], 1079, 635, null);
+                if (playerInfo.lostObjectBool[9]) g2D.drawImage(lostObject[9], 1000, 350, null);
+                if (playerInfo.lostObjectBool[10]) g2D.drawImage(lostObject[10], 1000, 445, null);
+                if (playerInfo.lostObjectBool[11]) g2D.drawImage(lostObject[11], 1000, 540, null);
+                if (playerInfo.lostObjectBool[12]) g2D.drawImage(lostObject[12], 1000, 635, null);
 
                 if (playerInfo.weaponNumber[0] > 0) g2D.drawImage(weapon1, 935, 350, null);
                 if (playerInfo.weaponNumber[1] > 0) g2D.drawImage(weapon2, 926, 445, null);
@@ -371,7 +368,6 @@ public class Panel extends JPanel implements ActionListener {
 
 
             for (int i = 0; i < 6; i++) {
-
                 if (diceNumber.prt - 1 == i) dice = diceImage[i];
             }
 
