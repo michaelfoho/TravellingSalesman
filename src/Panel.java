@@ -25,6 +25,7 @@ public class Panel extends JPanel implements ActionListener {
     Font font24 = new Font("Century", Font.PLAIN, 24);
     Random rand = new Random();
 
+
     PlayerInfo playerInfo;
     PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf");
     PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel");
@@ -34,7 +35,7 @@ public class Panel extends JPanel implements ActionListener {
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasure, loot;
     Image trap1, trap2;
-    Image market1, market2, market3, market4;
+    Image market1desert;
     Image statusBoard, inventory;
     Image playerImage, werewolfImage, angelImage;
     Image player1, player2, werewolf, angel;
@@ -74,10 +75,7 @@ public class Panel extends JPanel implements ActionListener {
         trap2 = new ImageIcon("img/trap2.png").getImage();
         treasure = new ImageIcon("img/treasure.png").getImage();
         loot = new ImageIcon("img/loot.png").getImage();
-        market1 = new ImageIcon("img/building/market1.png").getImage();
-        market2 = new ImageIcon("img/building/market2.png").getImage();
-        market3 = new ImageIcon("img/building/market3.png").getImage();
-        market4 = new ImageIcon("img/building/market4.png").getImage();
+        market1desert = new ImageIcon("img/building/market1desert.png").getImage();
 
         statusBoard = new ImageIcon("img/statusBoard.png").getImage();
         inventory = new ImageIcon("img/inventory.png").getImage();
@@ -200,11 +198,8 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(treasure, 8 * 75, 7 * 75, null);
                 g2D.drawImage(loot, 1 * 75, 5 * 75, null);
                 g2D.drawImage(loot, 3 * 75, 4 * 75, null);
-                g2D.drawImage(market1, 0 * 75, 7 * 75, null);
-                g2D.drawImage(market2, 2 * 75, 0 * 75, null);
-                g2D.drawImage(market3, 6 * 75, 1 * 75, null);
-                g2D.drawImage(market4, 9 * 75, 5 * 75, null);
-                g2D.drawImage(market1, 6 * 75, 9 * 75, null);
+                g2D.drawImage(market1desert, 0 * 75, 7 * 75, null);
+
 
                 g2D.drawImage(statusBoard, 760, 10, null);
                 g2D.drawRoundRect(760, 10, 500, 300, 10, 10);
@@ -264,22 +259,24 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.setFont(font40);
                 g2D.setPaint(Color.BLACK);
-                g2D.drawString("'StatusBoard'", 900, 45);
+                g2D.drawString("'Status Board'", 900, 45);
                 g2D.setFont(font36);
-                g2D.setPaint(Color.RED);
+                g2D.setPaint(new Color(100, 0, 0));
                 g2D.drawString("Quest:", 975, 100);
                 g2D.setFont(font24);
-                g2D.setPaint(Color.white);
+                g2D.setPaint(new Color(100, 100, 100));
                 g2D.drawString("Treasure Score:", 975, 155);
+                g2D.setPaint(new Color(80, 80, 80));
                 g2D.drawString("Power:", 975, 200);
+                g2D.setPaint(new Color(50, 50, 50));
                 g2D.drawString("Money:", 975, 245);
+                g2D.setPaint(new Color(0, 0, 0));
                 g2D.drawString("Time:", 975, 290);
-
 
                 g2D.setPaint(Color.BLUE);
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
-                g2D.setPaint(Color.BLACK);
-                g2D.drawString(df.format(playerInfo.money), 1060, 245);
+                g2D.setPaint(new Color(190, 150, 0));
+                g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -325,20 +322,12 @@ public class Panel extends JPanel implements ActionListener {
 
 
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
-                    if (player1Info.power > player2Info.power) {
-                        fight(player1Info, player2Info);
-                    }
-                    else if (player2Info.power > player1Info.power) {
-                        fight(player2Info, player1Info);
-                    }
-                    else if (player1Info.power == player2Info.power) {
-                        if (mainTurn.prt == 1) {
-                            fight(player1Info, player2Info);
-                        }
-                        else {
-                            fight(player2Info, player1Info);
-                        }
-                    }
+                    if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
+                    else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
+                    else if (player1Info.power == player2Info.power)
+                        if (mainTurn.prt == 1) fight(player1Info, player2Info);
+                        else fight(player2Info, player1Info);
+
                     repaint();
                 }
 
@@ -390,6 +379,9 @@ public class Panel extends JPanel implements ActionListener {
             }
 
             player2Info.weaponNumber[1] = 1;
+
+            player1Info.money = 50;
+
 
             dice = null;
         }

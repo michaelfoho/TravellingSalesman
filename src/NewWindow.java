@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class NewWindow {
-
     JFrame f = new JFrame();
     JLabel l = new JLabel();
 
