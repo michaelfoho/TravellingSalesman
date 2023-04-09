@@ -354,22 +354,7 @@ public class Panel extends JPanel implements ActionListener {
         if (e.getSource() == diceButton) {
 
             diceNumber.prt = rand.nextInt(6) + 1;
-
-            for (int i = 0; i < 30; i++) {
-
-                //dice = dice
-
-               /* try {
-                    Thread.sleep(50);
-                } catch (InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }*/
-            }
-
-
-            for (int i = 0; i < 6; i++) {
-                if (diceNumber.prt - 1 == i) dice = diceImage[i];
-            }
+            dice = diceImage[diceNumber.prt - 1];
 
         }
         if (e.getSource() == nextButton) {
