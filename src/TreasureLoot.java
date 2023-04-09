@@ -10,5 +10,4 @@ public class TreasureLoot {
         this.price = price;
     }
 
-
 }

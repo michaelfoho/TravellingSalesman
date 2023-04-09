@@ -276,7 +276,7 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setPaint(Color.BLUE);
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
                 g2D.setPaint(new Color(20, 130, 0));
-                g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
+                g2D.drawString(df.format(playerInfo.money), 1060, 245);
 
 
                 g2D.setPaint(Color.BLACK);
