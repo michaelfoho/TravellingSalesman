@@ -12,17 +12,20 @@ public class PlayerInfo implements KeyListener {
 
     int x = 750;
     int y = 675;
-    int money = 0;
-    int power = 10;
+    double money;
+    double power;
 
 
-    PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
+    PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name,double money,double power) {
 
         this.turn = turn;
         this.mainTurn = mainTurn;
         this.dice = dice;
 
         this.name = name;
+
+        this.money = money;
+        this.power = power;
     }
 
 
