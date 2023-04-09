@@ -1,5 +1,4 @@
 public class TreasureLoot {
-
     int x;
     int y;
     int price;
