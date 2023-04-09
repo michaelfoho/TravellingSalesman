@@ -26,8 +26,8 @@ public class Panel extends JPanel implements ActionListener {
 
 
     PlayerInfo playerInfo;
-    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf", 200, 10);
-    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel", 100, 7);
+    PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf", 100, 7);
+    PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel", 200, 10);
     DecimalFormat df = new DecimalFormat("#.##");
     String player_money;
 
@@ -147,6 +147,16 @@ public class Panel extends JPanel implements ActionListener {
     }
 
 
+    public void fight(PlayerInfo player1Info,PlayerInfo player2Info) {
+            player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+            player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+            player1Info.power -= player2Info.power;
+            player2Info.power = 0;
+            player2Info.x = 750;
+            player2Info.y = 675;
+    }
+
+
     public void paint(Graphics g) {
 
         Graphics2D g2D = (Graphics2D) g;
@@ -263,12 +273,12 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Money:", 975, 245);
                 g2D.drawString("Time:", 975, 290);
 
-                player_money = df.format(player1Info.money);
+                player_money = df.format(playerInfo.money);
 
                 g2D.setPaint(Color.BLACK);
                 g2D.drawString(player_money, 1060, 245);
                 g2D.setPaint(Color.BLUE);
-                g2D.drawString(String.valueOf(player1Info.power), 1060, 200);
+                g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -315,34 +325,38 @@ public class Panel extends JPanel implements ActionListener {
 
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                     if (player1Info.power > player2Info.power) {
-                        player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+                        fight(player1Info,player2Info);
+                       /* player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                         player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                         player1Info.power -= player2Info.power;
                         player2Info.power = 0;
                         player2Info.x = 750;
-                        player2Info.y = 675;
+                        player2Info.y = 675;*/
                     } else if (player2Info.power > player1Info.power) {
-                        player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
+                        fight(player2Info,player1Info);
+                        /*player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                         player1Info.money -= (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                         player2Info.power -= player1Info.power;
                         player1Info.power = 0;
                         player1Info.x = 750;
-                        player1Info.y = 675;
+                        player1Info.y = 675;*/
                     } else if (player1Info.power == player2Info.power) {
                         if (mainTurn.prt == 1) {
-                            player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
+                            fight(player1Info,player2Info);
+                            /*player1Info.money += (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                             player2Info.money -= (player1Info.power - player2Info.power) / (player1Info.power + player2Info.power) * player2Info.money;
                             player1Info.power -= player2Info.power;
                             player2Info.power = 0;
                             player2Info.x = 750;
-                            player2Info.y = 675;
+                            player2Info.y = 675;*/
                         } else {
-                            player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
+                            fight(player2Info,player1Info);
+                            /*player2Info.money += (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                             player1Info.money -= (player2Info.power - player1Info.power) / (player1Info.power + player2Info.power) * player1Info.money;
                             player2Info.power -= player1Info.power;
                             player1Info.power = 0;
                             player1Info.x = 750;
-                            player1Info.y = 675;
+                            player1Info.y = 675;*/
                         }
                     }
 
