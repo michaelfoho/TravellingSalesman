@@ -380,11 +380,6 @@ public class Panel extends JPanel implements ActionListener {
 
             }
 
-            player2Info.weaponNumber[1] = 1;
-
-            player1Info.power = 7;
-
-
             dice = null;
         }
 
