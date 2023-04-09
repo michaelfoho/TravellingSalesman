@@ -45,7 +45,9 @@ public class Panel extends JPanel implements ActionListener {
     Image weapon1, weapon2, weapon3, weapon4;
     Image dice;
 
-    Image dice1, dice2, dice3, dice4, dice5, dice6;
+    //Image dice1, dice2, dice3, dice4, dice5, dice6;
+
+    Image[] diceImage = new Image[6];
 
     Weapon weap1, weap2, weap3, weap4;
 
@@ -129,12 +131,12 @@ public class Panel extends JPanel implements ActionListener {
 
         playerInfo = player1Info;
 
-        dice1 = new ImageIcon("img/dice/dice1.png").getImage();
-        dice2 = new ImageIcon("img/dice/dice2.png").getImage();
-        dice3 = new ImageIcon("img/dice/dice3.png").getImage();
-        dice4 = new ImageIcon("img/dice/dice4.png").getImage();
-        dice5 = new ImageIcon("img/dice/dice5.png").getImage();
-        dice6 = new ImageIcon("img/dice/dice6.png").getImage();
+        diceImage[0] = new ImageIcon("img/dice/dice1.png").getImage();
+        diceImage[1] = new ImageIcon("img/dice/dice2.png").getImage();
+        diceImage[2] = new ImageIcon("img/dice/dice3.png").getImage();
+        diceImage[3] = new ImageIcon("img/dice/dice4.png").getImage();
+        diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
+        diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
         weap1 = new Weapon(400);
         weap2 = new Weapon(300);
@@ -173,7 +175,6 @@ public class Panel extends JPanel implements ActionListener {
             case 2:
 
                 if (diceNumber.prt != 0) repaint();
-
 
                 if (repaint == 1) {
                     repaint();
@@ -276,7 +277,7 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setPaint(Color.BLUE);
                 g2D.drawString(String.valueOf(playerInfo.power), 1060, 200);
                 g2D.setPaint(Color.BLACK);
-                g2D.drawString(String.valueOf(timer), 1060, 290);
+                //g2D.drawString(String.valueOf(timer), 1060, 290);
 
 
                 g2D.setPaint(Color.BLACK);
@@ -357,26 +358,23 @@ public class Panel extends JPanel implements ActionListener {
 
             diceNumber.prt = rand.nextInt(6) + 1;
 
-            switch (diceNumber.prt) {
-                case 1:
-                    dice = dice1;
-                    break;
-                case 2:
-                    dice = dice2;
-                    break;
-                case 3:
-                    dice = dice3;
-                    break;
-                case 4:
-                    dice = dice4;
-                    break;
-                case 5:
-                    dice = dice5;
-                    break;
-                case 6:
-                    dice = dice6;
-                    break;
+            for (int i = 0; i < 30; i++) {
+
+                //dice = dice
+
+               /* try {
+                    Thread.sleep(50);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }*/
             }
+
+
+            for (int i = 0; i < 6; i++) {
+
+                if (diceNumber.prt - 1 == i) dice = diceImage[i];
+            }
+
         }
         if (e.getSource() == nextButton) {
 
