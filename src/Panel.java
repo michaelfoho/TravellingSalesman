@@ -201,10 +201,10 @@ public class Panel extends JPanel implements ActionListener {
                     g2D.drawImage(treasure, playerInfo.ringmap.x, playerInfo.ringmap.y, null);
                 if (playerInfo.swordmap.show)
                     g2D.drawImage(treasure, playerInfo.swordmap.x, playerInfo.swordmap.y, null);
-                /*if (playerInfo.bowmap.show)
+                if (playerInfo.bowmap.show)
                     g2D.drawImage(treasure, playerInfo.bowmap.x, playerInfo.bowmap.y, null);
                 if (playerInfo.goldenGlassmap.show)
-                    g2D.drawImage(treasure, playerInfo.godenGlassmap.x, playerInfo.godenGlassmap.y, null);
+                    g2D.drawImage(treasure, playerInfo.goldenGlassmap.x, playerInfo.goldenGlassmap.y, null);
                 if (playerInfo.keymap.show)
                     g2D.drawImage(treasure, playerInfo.keymap.x, playerInfo.keymap.y, null);
                 if (playerInfo.scrollmap.show)
@@ -238,7 +238,7 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.loot12map.show)
                     g2D.drawImage(loot, playerInfo.loot12map.x, playerInfo.loot12map.y, null);
                 if (playerInfo.loot13map.show)
-                    g2D.drawImage(loot, playerInfo.loot13map.x, playerInfo.loot13map.y, null);*/
+                    g2D.drawImage(loot, playerInfo.loot13map.x, playerInfo.loot13map.y, null);
 
 
                 g2D.drawImage(backgroundColor, 750, 0, null);
