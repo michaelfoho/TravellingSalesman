@@ -1,34 +1,58 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Random;
 
 public class PlayerInfo implements KeyListener {
 
+    Random rand = new Random();
+    int[][] storedXY = new int[2][100];
+
+
     private final int turn;
-    Pointer mainTurn;
-    Pointer dice;
-
-
-    String name;
-    boolean[] treasureBool = new boolean[8];
-    boolean[] lostObjectBool = new boolean[13];
-    int[] weaponNumber = new int[4];
-
-    /*boolean[] marketBool = new boolean[];
-    boolean[] wallBool = new boolean[];*/
-
     int x = 750;
     int y = 675;
     int money = 100;
     int power = 10;
+    String name;
+    Pointer mainTurn;
+    Pointer dice;
+
+
+    boolean[] inventoryTreasureBool = new boolean[8];
+    boolean[] inventoryLostObjectBool = new boolean[13];
+    int[] inventoryWeaponNumber = new int[4];
+
+
+    TreasureLoot ringmap, swordmap;
 
 
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
 
+
         this.turn = turn;
         this.mainTurn = mainTurn;
         this.dice = dice;
-
         this.name = name;
+
+
+        int[] area = new int[4];
+
+        area[0] = rand.nextInt(4) + 1;
+        do {
+            area[1] = rand.nextInt(4) + 1;
+
+        } while (area[1] == area[0]);
+        do {
+            area[2] = rand.nextInt(4) + 1;
+
+        } while (area[2] == area[1] || area[2] == area[0]);
+        area[3] = 10 - area[0] - area[1] - area[2];
+
+
+        ringmap = new TreasureLoot(area[0], 5000, storedXY);
+        swordmap = new TreasureLoot(area[0], 4000, storedXY);
+
+
     }
 
 
