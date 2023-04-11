@@ -231,49 +231,49 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(inventory, 880, 330, null);
                 g2D.drawRoundRect(880, 330, 600, 400, 10, 10);
 
-                if (playerInfo.inventoryTreasureBool[0]) g2D.drawImage(ring, 1393, 355, null);
-                if (playerInfo.inventoryTreasureBool[1]) g2D.drawImage(sword, 1407, 445, null);
-                if (playerInfo.inventoryTreasureBool[2]) g2D.drawImage(goldenGlass, 1400, 540, null);
-                if (playerInfo.inventoryTreasureBool[3]) g2D.drawImage(glassCup, 1397, 635, null);
-                if (playerInfo.inventoryTreasureBool[4]) g2D.drawImage(bow, 1330, 351, null);
-                if (playerInfo.inventoryTreasureBool[5]) g2D.drawImage(shield, 1314, 445, null);
-                if (playerInfo.inventoryTreasureBool[6]) g2D.drawImage(key, 1325, 545, null);
-                if (playerInfo.inventoryTreasureBool[7]) g2D.drawImage(scroll, 1314, 635, null);
+                //if (playerInfo.treasure[0].show) g2D.drawImage(ring, 1393, 355, null);
+                //if (playerInfo.treasure[1].show) g2D.drawImage(sword, 1407, 445, null);
+                //if (playerInfo.treasure[2].show) g2D.drawImage(goldenGlass, 1400, 540, null);
+                //if (playerInfo.treasure[3].show) g2D.drawImage(glassCup, 1397, 635, null);
+                //if (playerInfo.treasure[4].show) g2D.drawImage(bow, 1330, 351, null);
+                //if (playerInfo.treasure[5].show) g2D.drawImage(shield, 1314, 445, null);
+                //if (playerInfo.treasure[6].show) g2D.drawImage(key, 1325, 545, null);
+                //if (playerInfo.treasure[7].show) g2D.drawImage(scroll, 1314, 635, null);
 
-                if (playerInfo.inventoryLootBool[0]) g2D.drawImage(lostObject[0], 1235, 445, null);
-                if (playerInfo.inventoryLootBool[1]) g2D.drawImage(lostObject[1], 1235, 540, null);
-                if (playerInfo.inventoryLootBool[2]) g2D.drawImage(lostObject[2], 1235, 635, null);
-                if (playerInfo.inventoryLootBool[3]) g2D.drawImage(lostObject[3], 1157, 445, null);
-                if (playerInfo.inventoryLootBool[4]) g2D.drawImage(lostObject[4], 1157, 540, null);
-                if (playerInfo.inventoryLootBool[5]) g2D.drawImage(lostObject[5], 1157, 635, null);
-                if (playerInfo.inventoryLootBool[6]) g2D.drawImage(lostObject[6], 1079, 445, null);
-                if (playerInfo.inventoryLootBool[7]) g2D.drawImage(lostObject[7], 1079, 540, null);
-                if (playerInfo.inventoryLootBool[8]) g2D.drawImage(lostObject[8], 1079, 635, null);
-                if (playerInfo.inventoryLootBool[9]) g2D.drawImage(lostObject[9], 1000, 350, null);
-                if (playerInfo.inventoryLootBool[10]) g2D.drawImage(lostObject[10], 1000, 445, null);
-                if (playerInfo.inventoryLootBool[11]) g2D.drawImage(lostObject[11], 1000, 540, null);
-                if (playerInfo.inventoryLootBool[12]) g2D.drawImage(lostObject[12], 1000, 635, null);
+                if (playerInfo.loot[0].show) g2D.drawImage(lostObject[0], 1235, 445, null);
+                if (playerInfo.loot[1].show) g2D.drawImage(lostObject[1], 1235, 540, null);
+                if (playerInfo.loot[2].show) g2D.drawImage(lostObject[2], 1235, 635, null);
+                if (playerInfo.loot[3].show) g2D.drawImage(lostObject[3], 1157, 445, null);
+                if (playerInfo.loot[4].show) g2D.drawImage(lostObject[4], 1157, 540, null);
+                if (playerInfo.loot[5].show) g2D.drawImage(lostObject[5], 1157, 635, null);
+                if (playerInfo.loot[6].show) g2D.drawImage(lostObject[6], 1079, 445, null);
+                if (playerInfo.loot[7].show) g2D.drawImage(lostObject[7], 1079, 540, null);
+                if (playerInfo.loot[8].show) g2D.drawImage(lostObject[8], 1079, 635, null);
+                if (playerInfo.loot[9].show) g2D.drawImage(lostObject[9], 1000, 350, null);
+                if (playerInfo.loot[10].show) g2D.drawImage(lostObject[10], 1000, 445, null);
+                if (playerInfo.loot[11].show) g2D.drawImage(lostObject[11], 1000, 540, null);
+                if (playerInfo.loot[12].show) g2D.drawImage(lostObject[12], 1000, 635, null);
 
 
                 g2D.setPaint(Color.white);
                 g2D.setStroke(new BasicStroke(3));//thickness
                 g2D.setFont(font16);
 
-                if (playerInfo.inventoryWeaponNumber[0] > 0) {
+                if (playerInfo.WeaponNumber[0] > 0) {
                     g2D.drawImage(weapon[0], 935, 350, null);
-                    g2D.drawString(String.valueOf(playerInfo.inventoryWeaponNumber[0]), 960, 420);
+                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[0]), 960, 420);
                 }
-                if (playerInfo.inventoryWeaponNumber[1] > 0) {
+                if (playerInfo.WeaponNumber[1] > 0) {
                     g2D.drawImage(weapon[1], 926, 445, null);
-                    g2D.drawString(String.valueOf(playerInfo.inventoryWeaponNumber[1]), 960, 514);
+                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[1]), 960, 514);
                 }
-                if (playerInfo.inventoryWeaponNumber[2] > 0) {
+                if (playerInfo.WeaponNumber[2] > 0) {
                     g2D.drawImage(weapon[2], 926, 540, null);
-                    g2D.drawString(String.valueOf(playerInfo.inventoryWeaponNumber[2]), 960, 608);
+                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[2]), 960, 608);
                 }
-                if (playerInfo.inventoryWeaponNumber[3] > 0) {
+                if (playerInfo.WeaponNumber[3] > 0) {
                     g2D.drawImage(weapon[3], 932, 635, null);
-                    g2D.drawString(String.valueOf(playerInfo.inventoryWeaponNumber[3]), 960, 702);
+                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[3]), 960, 702);
                 }
 
 
@@ -305,7 +305,7 @@ public class Panel extends JPanel implements ActionListener {
 
 
                 g2D.setPaint(Color.BLACK);
-                g2D.setStroke(new BasicStroke(4));//thickness
+                g2D.setStroke(new BasicStroke(2));//thickness
                 g2D.setFont(font40);
 
                 g2D.drawImage(playerImage, 1250, 20, null);
@@ -331,7 +331,7 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
-                g2D.drawRoundRect(750, 675, 75, 75, 10, 10);
+                g2D.drawRoundRect(750, 700, 50, 50, 10, 10);//start home
 
                 g2D.drawString("Click", 768, 402);
                 g2D.drawImage(dice, 765, 340, null);//dice
@@ -339,9 +339,10 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
                 g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
 
-                for (int i = 0; i < 10; i++) {
-                    for (int j = 0; j < 10; j++) {
-                        g2D.drawRoundRect(75 * i, 75 * j, 75, 75, 10, 10);
+
+                for (int i = 0; i < 15; i++) {
+                    for (int j = 0; j < 15; j++) {
+                        g2D.drawRoundRect(50 * i, 50 * j, 50, 50, 10, 10);
                     }
                 }
 
@@ -356,6 +357,30 @@ public class Panel extends JPanel implements ActionListener {
                     repaint();
                 }
 
+                /*for (int i = 0; i < 5; i++) {
+                    if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
+
+                    }
+                }
+
+                for (int i = 0; i < 5; i++) {
+                    if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
+                        playerInfo.power -= 1;
+                        playerInfo.money -= 10;
+                    }
+                }
+
+                for (int i = 0; i < 13; i++) {
+                    if (playerInfo.x == playerInfo.loot[i].x && playerInfo.y == playerInfo.loot[i].y) {
+
+                    }
+                }
+
+                for (int i = 0; i < 8; i++) {
+                    if (playerInfo.x == playerInfo.treasure[i].x && playerInfo.y == playerInfo.treasure[i].y) {
+
+                    }
+                }*/
 
                 break;
         }

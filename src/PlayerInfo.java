@@ -18,9 +18,7 @@ public class PlayerInfo implements KeyListener {
     Pointer dice;
 
 
-    boolean[] inventoryTreasureBool = new boolean[8];
-    boolean[] inventoryLootBool = new boolean[13];
-    int[] inventoryWeaponNumber = new int[4];
+    int[] WeaponNumber = new int[4];
 
 
     mapObject mapRing, mapSword, mapBow, mapGoldenGlass, mapKey, mapScroll, mapShield, mapGlassCup;
@@ -54,25 +52,25 @@ public class PlayerInfo implements KeyListener {
 
         map[5][5] = true;//castle
 
-        mapRing = new mapObject(map, area[0], 5000, true);
-        mapSword = new mapObject(map, area[0], 5000, true);
-        mapBow = new mapObject(map, area[1], 5000, true);
-        mapGoldenGlass = new mapObject(map, area[1], 5000, true);
-        mapKey = new mapObject(map, area[2], 5000, true);
-        mapScroll = new mapObject(map, area[2], 5000, true);
-        mapShield = new mapObject(map, area[3], 5000, true);
-        mapGlassCup = new mapObject(map, area[3], 5000, true);
+        mapRing = new mapObject(map, area[0], 5000, false);
+        mapSword = new mapObject(map, area[0], 5000, false);
+        mapBow = new mapObject(map, area[1], 5000, false);
+        mapGoldenGlass = new mapObject(map, area[1], 5000, false);
+        mapKey = new mapObject(map, area[2], 5000, false);
+        mapScroll = new mapObject(map, area[2], 5000, false);
+        mapShield = new mapObject(map, area[3], 5000, false);
+        mapGlassCup = new mapObject(map, area[3], 5000, false);
 
-        for (int i = 0; i < 3; i++) loot[i] = new mapObject(map, area[0], 500, true);
-        for (int i = 3; i < 6; i++) loot[i] = new mapObject(map, area[1], 500, true);
-        for (int i = 6; i < 9; i++) loot[i] = new mapObject(map, area[2], 500, true);
-        for (int i = 9; i < 13; i++) loot[i] = new mapObject(map, area[3], 500, true);
+        for (int i = 0; i < 3; i++) loot[i] = new mapObject(map, area[0], 500, false);
+        for (int i = 3; i < 6; i++) loot[i] = new mapObject(map, area[1], 500, false);
+        for (int i = 6; i < 9; i++) loot[i] = new mapObject(map, area[2], 500, false);
+        for (int i = 9; i < 13; i++) loot[i] = new mapObject(map, area[3], 500, false);
 
-        for (int i = 0; i < 4; i++) {
-            wall[i] = new mapObject(map, area[i], 0, true);
-            wall[i + 4] = new mapObject(map, area[i], 0, true);
-            market[i] = new mapObject(map, area[i], 0, true);
-            trap[i] = new mapObject(map, area[i], 0, true);
+        for (int i = 0; i < 5; i++) {
+            wall[i] = new mapObject(map, area[i], 0, false);
+            wall[i + 4] = new mapObject(map, area[i], 0, false);
+            market[i] = new mapObject(map, area[i], 0, false);
+            trap[i] = new mapObject(map, area[i], 0, false);
         }
     }
 
