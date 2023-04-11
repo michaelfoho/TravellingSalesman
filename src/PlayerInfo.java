@@ -54,34 +54,47 @@ public class PlayerInfo implements KeyListener {
 
         map[5][5] = true;//castle
 
+        mapRing = new mapObject(map, area[0], 5000, true);
+        mapSword = new mapObject(map, area[0], 5000, true);
+        mapBow = new mapObject(map, area[1], 5000, true);
+        mapGoldenGlass = new mapObject(map, area[1], 5000, true);
+        mapKey = new mapObject(map, area[2], 5000, true);
+        mapScroll = new mapObject(map, area[2], 5000, true);
+        mapShield = new mapObject(map, area[3], 5000, true);
+        mapGlassCup = new mapObject(map, area[3], 5000, true);
 
-        mapRing = new mapObject(map, area[0], 5000);
-        mapSword = new mapObject(map, area[0], 5000);
-        mapBow = new mapObject(map, area[1], 5000);
-        mapGoldenGlass = new mapObject(map, area[1], 5000);
-        mapKey = new mapObject(map, area[2], 5000);
-        mapScroll = new mapObject(map, area[2], 5000);
-        mapShield = new mapObject(map, area[3], 5000);
-        mapGlassCup = new mapObject(map, area[3], 5000);
+        for (int i = 0; i < 3; i++) loot[i] = new mapObject(map, area[0], 500, true);
+        for (int i = 3; i < 6; i++) loot[i] = new mapObject(map, area[1], 500, true);
+        for (int i = 6; i < 9; i++) loot[i] = new mapObject(map, area[2], 500, true);
+        for (int i = 9; i < 13; i++) loot[i] = new mapObject(map, area[3], 500, true);
 
-        for (int i = 0; i < 3; i++) loot[i] = new mapObject(map, area[0], 500);
-        for (int i = 3; i < 6; i++) loot[i] = new mapObject(map, area[1], 500);
-        for (int i = 6; i < 9; i++) loot[i] = new mapObject(map, area[2], 500);
-        for (int i = 9; i < 13; i++) loot[i] = new mapObject(map, area[3], 500);
-
-       /* for(int i=0;i<4;i++)*/
+        for (int i = 0; i < 4; i++) {
+            wall[i] = new mapObject(map, area[i], 0, true);
+            wall[i + 4] = new mapObject(map, area[i], 0, true);
+            market[i] = new mapObject(map, area[i], 0, true);
+            trap[i] = new mapObject(map, area[i], 0, true);
+        }
     }
 
 
     @Override
     public void keyTyped(KeyEvent e) {
 
+        int wallWarning = 0;
 
         if (mainTurn.prt == turn) if (dice.prt > 0) {
 
             if (e.getKeyChar() == 'w' && y - 75 >= 0 && x != 750) {
-                y -= 75;
-                dice.prt -= 1;
+                for (int i = 0; i < 8; i++) {
+                    if (this.x == wall[i].x && this.y - 75 == wall[i].y) {
+                        wallWarning = 1;
+                        break;
+                    }
+                }
+                if (wallWarning == 0) {
+                    y -= 75;
+                    dice.prt -= 1;
+                }
             }
             if (e.getKeyChar() == 's' && y + 75 <= 675) {
                 y += 75;
@@ -95,6 +108,8 @@ public class PlayerInfo implements KeyListener {
                 x += 75;
                 dice.prt -= 1;
             }
+
+            wallWarning = 0;
         }
     }
 

@@ -5,12 +5,11 @@ public class mapObject {
 
     int x;
     int y;
-    boolean show = true;//if show==ture -->draw image
+    boolean show;
     int price;
 
-    mapObject(boolean[][] map, int area, int price) {
+    mapObject(boolean[][] map, int area, int price, boolean show) {
         int i = 0, j = 0;
-
         if (area == 1) {
             i = 0;
             j = 0;
@@ -39,6 +38,7 @@ public class mapObject {
 
 
         this.price = price;
+        this.show = show;
     }
 
 }

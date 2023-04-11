@@ -33,7 +33,7 @@ public class Panel extends JPanel implements ActionListener {
 
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasureBox, lootBox;
-    Image trap1, trap2;
+    Image trapDesert;
     Image marketDesert;
     Image statusBoard, inventory;
     Image playerImage, werewolfImage, angelImage;
@@ -70,11 +70,10 @@ public class Panel extends JPanel implements ActionListener {
         backgroundColor = new ImageIcon("img/backgroundColor.png").getImage();
         castle = new ImageIcon("img/building/castle.png").getImage();
         wall = new ImageIcon("img/building/wall.png").getImage();
-        trap1 = new ImageIcon("img/trap1.png").getImage();
-        trap2 = new ImageIcon("img/trap2.png").getImage();
+        trapDesert = new ImageIcon("img/trap/trapDesert.png").getImage();
         treasureBox = new ImageIcon("img/treasureBox.png").getImage();
         lootBox = new ImageIcon("img/lootBox.png").getImage();
-        marketDesert = new ImageIcon("img/building/market1desert.png").getImage();
+        marketDesert = new ImageIcon("img/building/marketDesert.png").getImage();
 
         statusBoard = new ImageIcon("img/statusBoard.png").getImage();
         inventory = new ImageIcon("img/inventory.png").getImage();
@@ -205,64 +204,25 @@ public class Panel extends JPanel implements ActionListener {
                     g2D.drawImage(treasureBox, playerInfo.mapShield.x, playerInfo.mapShield.y, null);
                 if (playerInfo.mapGlassCup.show)
                     g2D.drawImage(treasureBox, playerInfo.mapGlassCup.x, playerInfo.mapGlassCup.y, null);
-                if (playerInfo.loot[0].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[0].x, playerInfo.loot[0].y, null);
-                if (playerInfo.loot[1].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[1].x, playerInfo.loot[1].y, null);
-                if (playerInfo.loot[2].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[2].x, playerInfo.loot[2].y, null);
-                if (playerInfo.loot[3].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[3].x, playerInfo.loot[3].y, null);
-                if (playerInfo.loot[4].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[4].x, playerInfo.loot[4].y, null);
-                if (playerInfo.loot[5].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[5].x, playerInfo.loot[5].y, null);
-                if (playerInfo.loot[6].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[6].x, playerInfo.loot[6].y, null);
-                if (playerInfo.loot[7].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[7].x, playerInfo.loot[7].y, null);
-                if (playerInfo.loot[8].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[8].x, playerInfo.loot[8].y, null);
-                if (playerInfo.loot[9].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[9].x, playerInfo.loot[9].y, null);
-                if (playerInfo.loot[10].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[10].x, playerInfo.loot[10].y, null);
-                if (playerInfo.loot[11].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[11].x, playerInfo.loot[11].y, null);
-                if (playerInfo.loot[12].show)
-                    g2D.drawImage(lootBox, playerInfo.loot[12].x, playerInfo.loot[12].y, null);
-                if (playerInfo.wall[0].show)
-                    g2D.drawImage(wall, playerInfo.wall[0].x, playerInfo.wall[0].y, null);
-                if (playerInfo.wall[1].show)
-                    g2D.drawImage(wall, playerInfo.wall[1].x, playerInfo.wall[1].y, null);
-                if (playerInfo.wall[2].show)
-                    g2D.drawImage(wall, playerInfo.wall[2].x, playerInfo.wall[2].y, null);
-                if (playerInfo.wall[3].show)
-                    g2D.drawImage(wall, playerInfo.wall[3].x, playerInfo.wall[3].y, null);
-                if (playerInfo.wall[4].show)
-                    g2D.drawImage(wall, playerInfo.wall[4].x, playerInfo.wall[4].y, null);
-                if (playerInfo.wall[5].show)
-                    g2D.drawImage(wall, playerInfo.wall[5].x, playerInfo.wall[5].y, null);
-                if (playerInfo.wall[6].show)
-                    g2D.drawImage(wall, playerInfo.loot[6].x, playerInfo.wall[6].y, null);
-                if (playerInfo.wall[7].show)
-                    g2D.drawImage(wall, playerInfo.wall[7].x, playerInfo.wall[7].y, null);
-                /*if (playerInfo.trap[0].show)
-                    g2D.drawImage(trapDesert, playerInfo.trap[0].x, playerInfo.trap[0].y, null);
-                if (playerInfo.trap[1].show)
-                    g2D.drawImage(trapDesert, playerInfo.trap[1].x, playerInfo.trap[1].y, null);
-                if (playerInfo.trap[2].show)
-                    g2D.drawImage(trapDesert, playerInfo.trap[2].x, playerInfo.trap[2].y, null);
-                if (playerInfo.trap[3].show)
-                    g2D.drawImage(trapDesert, playerInfo.trap[3].x, playerInfo.trap[3].y, null);*/
-                if (playerInfo.market[0].show)
-                    g2D.drawImage(marketDesert, playerInfo.market[0].x, playerInfo.market[0].y, null);
-                if (playerInfo.market[1].show)
-                    g2D.drawImage(marketDesert, playerInfo.market[1].x, playerInfo.market[1].y, null);
-                if (playerInfo.market[2].show)
-                    g2D.drawImage(marketDesert, playerInfo.market[2].x, playerInfo.market[2].y, null);
-                if (playerInfo.market[3].show)
-                    g2D.drawImage(marketDesert, playerInfo.market[3].x, playerInfo.market[3].y,null);
+
+
+                for (int i = 0; i < 13; i++) {
+                    if (playerInfo.loot[i].show)
+                        g2D.drawImage(lootBox, playerInfo.loot[i].x, playerInfo.loot[i].y, null);
+                }
+                for (int i = 0; i < 4; i++) {
+
+                    if (playerInfo.market[i].show)
+                        g2D.drawImage(marketDesert, playerInfo.market[i].x, playerInfo.market[i].y, null);
+
+                    if (playerInfo.trap[i].show)
+                        g2D.drawImage(trapDesert, playerInfo.trap[i].x, playerInfo.trap[i].y, null);
+                }
+                for (int i = 0; i < 8; i++) {
+
+                    if (playerInfo.wall[i].show)
+                        g2D.drawImage(wall, playerInfo.wall[i].x, playerInfo.wall[i].y, null);
+                }
 
 
                 g2D.drawImage(backgroundColor, 750, 0, null);
