@@ -32,6 +32,7 @@ public class PlayerInfo implements KeyListener {
         this.dice = dice;
         this.name = name;
 
+
         int[] area = new int[24];
         for (int i = 0; i < 24; i++) {
             area[i] = rand.nextInt(24);
@@ -57,16 +58,17 @@ public class PlayerInfo implements KeyListener {
         int lastX = x;
         int lastY = y;
 
+
         if (mainTurn.prt == turn) if (dice.prt > 0) {
 
+            move[dice.prt - 1][0] = x;
+            move[dice.prt - 1][1] = y;
+
             if (e.getKeyChar() == 'w' && y - 50 >= 0 && x != 750) {
-                move[dice.prt - 1][0] = x;
-                move[dice.prt - 1][1] = y;
                 y -= 50;
                 dice.prt -= 1;
             }
             if (e.getKeyChar() == 's' && y + 50 <= 700) {
-                move[dice.prt - 1][1] = y;
                 y += 50;
                 dice.prt -= 1;
             }
@@ -79,6 +81,15 @@ public class PlayerInfo implements KeyListener {
                 dice.prt -= 1;
             }
 
+
+            for (int i = 0; i < 6; i++) {
+                if (x == move[i][0] && y == move[i][1]) {
+                    x = lastX;
+                    y = lastY;
+                    dice.prt += 1;
+                    break;
+                }
+            }
             for (int i = 0; i < 24; i++) {
                 if (x == wall[i].x && y == wall[i].y) {
                     x = lastX;
@@ -87,6 +98,11 @@ public class PlayerInfo implements KeyListener {
                     break;
                 }
             }
+            if (dice.prt == 0) for (int i = 0; i < 6; i++) {
+                move[i][0] = 0;
+                move[i][1] = 0;
+            }
+
         }
     }
 

@@ -24,7 +24,6 @@ public class Panel extends JPanel implements ActionListener {
     Font font24 = new Font("Century", Font.PLAIN, 24);
     Random rand = new Random();
 
-
     PlayerInfo playerInfo;
     PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf");
     PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel");
@@ -41,13 +40,11 @@ public class Panel extends JPanel implements ActionListener {
     Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
     Image[] lostObject = new Image[13];
     Image[] weapon = new Image[4];
-    Image dice;
-
     Image[] diceImage = new Image[6];
+    Image dice;
     Weapon[] weap = new Weapon[4];
 
     Panel() {
-
 
         continueButton = new Button(1200, 15, 250, 50, "Continue", new Color(100, 100, 100));
         continueButton.addActionListener(this);
@@ -138,7 +135,6 @@ public class Panel extends JPanel implements ActionListener {
         this.addKeyListener(player2Info);
     }
 
-
     public void fight(PlayerInfo player1Info, PlayerInfo player2Info) {
 
         player1Info.money += (int) ((player1Info.power - player2Info.power) * player2Info.money) / (player1Info.power + player2Info.power);
@@ -147,9 +143,7 @@ public class Panel extends JPanel implements ActionListener {
         player2Info.power = 0;
         player2Info.x = 750;
         player2Info.y = 675;
-
     }
-
 
     public void paint(Graphics g) {
 
@@ -174,7 +168,6 @@ public class Panel extends JPanel implements ActionListener {
             case 2:
 
                 if (diceNumber.prt != 0) repaint();
-
 
                 if (repaint == 1) {
                     repaint();
@@ -239,6 +232,11 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.loot[11].show) g2D.drawImage(lostObject[11], 1000, 540, null);
                 if (playerInfo.loot[12].show) g2D.drawImage(lostObject[12], 1000, 635, null);
 
+
+                for (int i = 0; i < 6; i++) {
+                    if (playerInfo.move[i][0] != 0 && playerInfo.move[i][1] != 0)
+                        g2D.fillOval(playerInfo.move[i][0] + 20, playerInfo.move[i][1] + 20, 10, 10);
+                }
 
                 g2D.setPaint(Color.white);
                 g2D.setStroke(new BasicStroke(3));//thickness
@@ -351,7 +349,6 @@ public class Panel extends JPanel implements ActionListener {
                         }
                     }
                 }
-
                 for (int i = 0; i < 5; i++) {
                     if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
                         if (trap_bool) {
@@ -363,19 +360,16 @@ public class Panel extends JPanel implements ActionListener {
                         }
                     }
                 }
-
                 for (int j = 0; j < 13; j++) {
                     if (playerInfo.x == playerInfo.loot[j].x && playerInfo.y == playerInfo.loot[j].y) {
                         playerInfo.loot[j].show = true;
                     }
                 }
-
                 for (int k = 0; k < 8; k++) {
                     if (playerInfo.x == playerInfo.treasure[k].x && playerInfo.y == playerInfo.treasure[k].y) {
                         playerInfo.treasure[k].show = true;
                     }
                 }
-
                 if (castle_bool) {
                     if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
                         NewWindow castleWindow = new NewWindow();
@@ -389,6 +383,7 @@ public class Panel extends JPanel implements ActionListener {
 
 
                 repaint();
+
 
                 break;
         }

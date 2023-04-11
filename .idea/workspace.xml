@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at________Changes_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_۰۴_۰۴_۲۰۲۳_۰۵_۵۵_بعدازظهر_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_56_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_56_PM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/building/castle.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/building/castle.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/building/market1desert.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/building/market2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/building/market3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/building/market4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/building/wall.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/building/wall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hero/small/angel.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/angel.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/hero/small/werewolf.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/werewolf.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/lootBox.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/lootBox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/trap/trapDesert.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/trap/trapDesert.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/treasureBox.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/treasureBox.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapObject.java" afterDir="false" />
@@ -133,14 +122,8 @@
       <workItem from="1681217992704" duration="186000" />
       <workItem from="1681218278822" duration="82000" />
       <workItem from="1681218534892" duration="722000" />
-      <workItem from="1681230100094" duration="4637000" />
-    </task>
-    <task id="LOCAL-00026" summary="start">
-      <created>1680629268324</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1680629268324</updated>
+      <workItem from="1681230100094" duration="4943000" />
+      <workItem from="1681235183308" duration="506000" />
     </task>
     <task id="LOCAL-00027" summary="start">
       <created>1680630144553</created>
@@ -478,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681217231104</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="start">
+      <created>1681234933094</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1681234933095</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

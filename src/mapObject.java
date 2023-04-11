@@ -32,7 +32,6 @@ public class mapObject {
             j = 12;
         }
 
-
         do {
             x = (rand.nextInt(3) + i) * 50;
             y = (rand.nextInt(3) + j) * 50;
@@ -40,7 +39,6 @@ public class mapObject {
         } while (map[x / 50][y / 50]);//true means the home isn't empty
 
         map[x / 50][y / 50] = true;
-
 
         this.price = price;
         this.show = show;
