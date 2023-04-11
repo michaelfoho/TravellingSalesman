@@ -5,7 +5,7 @@ import java.util.Random;
 public class PlayerInfo implements KeyListener {
 
     Random rand = new Random();
-    int[][] storedXY = new int[2][100];
+    boolean[][] map = new boolean[10][10];
 
 
     private final int turn;
@@ -19,16 +19,18 @@ public class PlayerInfo implements KeyListener {
 
 
     boolean[] inventoryTreasureBool = new boolean[8];
-    boolean[] inventoryLostObjectBool = new boolean[13];
+    boolean[] inventoryLootBool = new boolean[13];
     int[] inventoryWeaponNumber = new int[4];
 
 
-    TreasureLoot ringmap, swordmap,bowmap,goldenGlassmap,scrollmap,glassCupmap,keymap,shieldmap;
-    TreasureLoot loot1map,loot2map,loot3map,loot4map,loot5map,loot6map,loot7map,loot8map,loot9map,loot10map,loot11map,loot12map,loot13map;
+    mapObject mapRing, mapSword, mapBow, mapGoldenGlass, mapKey, mapScroll, mapShield, mapGlassCup;
+    mapObject[] loot = new mapObject[13];
+    mapObject[] wall = new mapObject[8];
+    mapObject[] market = new mapObject[4];
+    mapObject[] trap = new mapObject[4];
 
 
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
-
 
         this.turn = turn;
         this.mainTurn = mainTurn;
@@ -50,29 +52,24 @@ public class PlayerInfo implements KeyListener {
         area[3] = 10 - area[0] - area[1] - area[2];
 
 
-        ringmap = new TreasureLoot(area[0], 5000, storedXY);
-        swordmap = new TreasureLoot(area[0], 4000, storedXY);
-        bowmap = new TreasureLoot(area[1],3000,storedXY);
-        goldenGlassmap= new TreasureLoot(area[1],2000,storedXY);
-        scrollmap = new TreasureLoot(area[2],1000,storedXY);
-        glassCupmap = new TreasureLoot(area[2],6000,storedXY);
-        keymap= new TreasureLoot(area[3],7000,storedXY);
-        shieldmap = new TreasureLoot(area[3],8000,storedXY);
-        loot1map = new TreasureLoot(area[0],0,storedXY);
-        loot2map = new TreasureLoot(area[0],0,storedXY);
-        loot3map = new TreasureLoot(area[0],0,storedXY);
-        loot4map = new TreasureLoot(area[1],0,storedXY);
-        loot5map = new TreasureLoot(area[1],0,storedXY);
-        loot6map = new TreasureLoot(area[1],0,storedXY);
-        loot7map = new TreasureLoot(area[2],0,storedXY);
-        loot8map = new TreasureLoot(area[2],0,storedXY);
-        loot9map = new TreasureLoot(area[2],0,storedXY);
-        loot10map = new TreasureLoot(area[3],0,storedXY);
-        loot11map = new TreasureLoot(area[3],0,storedXY);
-        loot12map = new TreasureLoot(area[3],0,storedXY);
-        loot13map = new TreasureLoot(area[3],0,storedXY);
+        map[5][5] = true;//castle
 
 
+        mapRing = new mapObject(map, area[0], 5000);
+        mapSword = new mapObject(map, area[0], 5000);
+        mapBow = new mapObject(map, area[1], 5000);
+        mapGoldenGlass = new mapObject(map, area[1], 5000);
+        mapKey = new mapObject(map, area[2], 5000);
+        mapScroll = new mapObject(map, area[2], 5000);
+        mapShield = new mapObject(map, area[3], 5000);
+        mapGlassCup = new mapObject(map, area[3], 5000);
+
+        for (int i = 0; i < 3; i++) loot[i] = new mapObject(map, area[0], 500);
+        for (int i = 3; i < 6; i++) loot[i] = new mapObject(map, area[1], 500);
+        for (int i = 6; i < 9; i++) loot[i] = new mapObject(map, area[2], 500);
+        for (int i = 9; i < 13; i++) loot[i] = new mapObject(map, area[3], 500);
+
+       /* for(int i=0;i<4;i++)*/
     }
 
 

@@ -2,7 +2,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
-import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Panel extends JPanel implements ActionListener {
@@ -33,9 +32,9 @@ public class Panel extends JPanel implements ActionListener {
     Button nextButton, diceButton, continueButton, newGameButton, quitButton;
 
     Image firstPage, desert, backgroundColor;
-    Image castle, wall, treasure, loot;
+    Image castle, wall, treasureBox, lootBox;
     Image trap1, trap2;
-    Image market1desert;
+    Image marketDesert;
     Image statusBoard, inventory;
     Image playerImage, werewolfImage, angelImage;
     Image player1, player2, werewolf, angel;
@@ -73,9 +72,9 @@ public class Panel extends JPanel implements ActionListener {
         wall = new ImageIcon("img/building/wall.png").getImage();
         trap1 = new ImageIcon("img/trap1.png").getImage();
         trap2 = new ImageIcon("img/trap2.png").getImage();
-        treasure = new ImageIcon("img/treasure.png").getImage();
-        loot = new ImageIcon("img/loot.png").getImage();
-        market1desert = new ImageIcon("img/building/market1desert.png").getImage();
+        treasureBox = new ImageIcon("img/treasureBox.png").getImage();
+        lootBox = new ImageIcon("img/lootBox.png").getImage();
+        marketDesert = new ImageIcon("img/building/market1desert.png").getImage();
 
         statusBoard = new ImageIcon("img/statusBoard.png").getImage();
         inventory = new ImageIcon("img/inventory.png").getImage();
@@ -189,56 +188,81 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(desert, 0, 0, null);
                 g2D.drawImage(castle, 5 * 75, 5 * 75, null);
-                g2D.drawImage(wall,3*75,2*75,null);
-                g2D.drawImage(wall,1*75,4*75,null);
-                g2D.drawImage(wall,6*75,2*75,null);
-                g2D.drawImage(wall,8*75,4*75,null);
-                g2D.drawImage(wall,4*75,9*75,null);
-                g2D.drawImage(wall,1*75,6*75,null);
-                g2D.drawImage(wall,7*75,7*75,null);
-                g2D.drawImage(wall,8*75,6*75,null);
-                if (playerInfo.ringmap.show)
-                    g2D.drawImage(treasure, playerInfo.ringmap.x, playerInfo.ringmap.y, null);
-                if (playerInfo.swordmap.show)
-                    g2D.drawImage(treasure, playerInfo.swordmap.x, playerInfo.swordmap.y, null);
-                if (playerInfo.bowmap.show)
-                    g2D.drawImage(treasure, playerInfo.bowmap.x, playerInfo.bowmap.y, null);
-                if (playerInfo.goldenGlassmap.show)
-                    g2D.drawImage(treasure, playerInfo.goldenGlassmap.x, playerInfo.goldenGlassmap.y, null);
-                if (playerInfo.keymap.show)
-                    g2D.drawImage(treasure, playerInfo.keymap.x, playerInfo.keymap.y, null);
-                if (playerInfo.scrollmap.show)
-                    g2D.drawImage(treasure, playerInfo.scrollmap.x, playerInfo.scrollmap.y, null);
-                if (playerInfo.shieldmap.show)
-                    g2D.drawImage(treasure, playerInfo.shieldmap.x, playerInfo.shieldmap.y, null);
-                if (playerInfo.glassCupmap.show)
-                    g2D.drawImage(treasure, playerInfo.glassCupmap.x, playerInfo.glassCupmap.y, null);
-                if (playerInfo.loot1map.show)
-                    g2D.drawImage(loot, playerInfo.loot1map.x, playerInfo.loot1map.y, null);
-                if (playerInfo.loot2map.show)
-                    g2D.drawImage(loot, playerInfo.loot2map.x, playerInfo.loot2map.y, null);
-                if (playerInfo.loot3map.show)
-                    g2D.drawImage(loot, playerInfo.loot3map.x, playerInfo.loot3map.y, null);
-                if (playerInfo.loot4map.show)
-                    g2D.drawImage(loot, playerInfo.loot4map.x, playerInfo.loot4map.y, null);
-                if (playerInfo.loot5map.show)
-                    g2D.drawImage(loot, playerInfo.loot5map.x, playerInfo.loot5map.y, null);
-                if (playerInfo.loot6map.show)
-                    g2D.drawImage(loot, playerInfo.loot6map.x, playerInfo.loot6map.y, null);
-                if (playerInfo.loot7map.show)
-                    g2D.drawImage(loot, playerInfo.loot7map.x, playerInfo.loot7map.y, null);
-                if (playerInfo.loot8map.show)
-                    g2D.drawImage(loot, playerInfo.loot8map.x, playerInfo.loot8map.y, null);
-                if (playerInfo.loot9map.show)
-                    g2D.drawImage(loot, playerInfo.loot9map.x, playerInfo.loot9map.y, null);
-                if (playerInfo.loot10map.show)
-                    g2D.drawImage(loot, playerInfo.loot10map.x, playerInfo.loot10map.y, null);
-                if (playerInfo.loot11map.show)
-                    g2D.drawImage(loot, playerInfo.loot11map.x, playerInfo.loot11map.y, null);
-                if (playerInfo.loot12map.show)
-                    g2D.drawImage(loot, playerInfo.loot12map.x, playerInfo.loot12map.y, null);
-                if (playerInfo.loot13map.show)
-                    g2D.drawImage(loot, playerInfo.loot13map.x, playerInfo.loot13map.y, null);
+
+                if (playerInfo.mapRing.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapRing.x, playerInfo.mapRing.y, null);
+                if (playerInfo.mapSword.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapSword.x, playerInfo.mapSword.y, null);
+                if (playerInfo.mapBow.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapBow.x, playerInfo.mapBow.y, null);
+                if (playerInfo.mapGoldenGlass.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapGoldenGlass.x, playerInfo.mapGoldenGlass.y, null);
+                if (playerInfo.mapKey.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapKey.x, playerInfo.mapKey.y, null);
+                if (playerInfo.mapScroll.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapScroll.x, playerInfo.mapScroll.y, null);
+                if (playerInfo.mapShield.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapShield.x, playerInfo.mapShield.y, null);
+                if (playerInfo.mapGlassCup.show)
+                    g2D.drawImage(treasureBox, playerInfo.mapGlassCup.x, playerInfo.mapGlassCup.y, null);
+                if (playerInfo.loot[0].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[0].x, playerInfo.loot[0].y, null);
+                if (playerInfo.loot[1].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[1].x, playerInfo.loot[1].y, null);
+                if (playerInfo.loot[2].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[2].x, playerInfo.loot[2].y, null);
+                if (playerInfo.loot[3].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[3].x, playerInfo.loot[3].y, null);
+                if (playerInfo.loot[4].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[4].x, playerInfo.loot[4].y, null);
+                if (playerInfo.loot[5].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[5].x, playerInfo.loot[5].y, null);
+                if (playerInfo.loot[6].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[6].x, playerInfo.loot[6].y, null);
+                if (playerInfo.loot[7].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[7].x, playerInfo.loot[7].y, null);
+                if (playerInfo.loot[8].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[8].x, playerInfo.loot[8].y, null);
+                if (playerInfo.loot[9].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[9].x, playerInfo.loot[9].y, null);
+                if (playerInfo.loot[10].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[10].x, playerInfo.loot[10].y, null);
+                if (playerInfo.loot[11].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[11].x, playerInfo.loot[11].y, null);
+                if (playerInfo.loot[12].show)
+                    g2D.drawImage(lootBox, playerInfo.loot[12].x, playerInfo.loot[12].y, null);
+                if (playerInfo.wall[0].show)
+                    g2D.drawImage(wall, playerInfo.wall[0].x, playerInfo.wall[0].y, null);
+                if (playerInfo.wall[1].show)
+                    g2D.drawImage(wall, playerInfo.wall[1].x, playerInfo.wall[1].y, null);
+                if (playerInfo.wall[2].show)
+                    g2D.drawImage(wall, playerInfo.wall[2].x, playerInfo.wall[2].y, null);
+                if (playerInfo.wall[3].show)
+                    g2D.drawImage(wall, playerInfo.wall[3].x, playerInfo.wall[3].y, null);
+                if (playerInfo.wall[4].show)
+                    g2D.drawImage(wall, playerInfo.wall[4].x, playerInfo.wall[4].y, null);
+                if (playerInfo.wall[5].show)
+                    g2D.drawImage(wall, playerInfo.wall[5].x, playerInfo.wall[5].y, null);
+                if (playerInfo.wall[6].show)
+                    g2D.drawImage(wall, playerInfo.loot[6].x, playerInfo.wall[6].y, null);
+                if (playerInfo.wall[7].show)
+                    g2D.drawImage(wall, playerInfo.wall[7].x, playerInfo.wall[7].y, null);
+                /*if (playerInfo.trap[0].show)
+                    g2D.drawImage(trapDesert, playerInfo.trap[0].x, playerInfo.trap[0].y, null);
+                if (playerInfo.trap[1].show)
+                    g2D.drawImage(trapDesert, playerInfo.trap[1].x, playerInfo.trap[1].y, null);
+                if (playerInfo.trap[2].show)
+                    g2D.drawImage(trapDesert, playerInfo.trap[2].x, playerInfo.trap[2].y, null);
+                if (playerInfo.trap[3].show)
+                    g2D.drawImage(trapDesert, playerInfo.trap[3].x, playerInfo.trap[3].y, null);*/
+                if (playerInfo.market[0].show)
+                    g2D.drawImage(marketDesert, playerInfo.market[0].x, playerInfo.market[0].y, null);
+                if (playerInfo.market[1].show)
+                    g2D.drawImage(marketDesert, playerInfo.market[1].x, playerInfo.market[1].y, null);
+                if (playerInfo.market[2].show)
+                    g2D.drawImage(marketDesert, playerInfo.market[2].x, playerInfo.market[2].y, null);
+                if (playerInfo.market[3].show)
+                    g2D.drawImage(marketDesert, playerInfo.market[3].x, playerInfo.market[3].y,null);
 
 
                 g2D.drawImage(backgroundColor, 750, 0, null);
@@ -256,19 +280,19 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.inventoryTreasureBool[6]) g2D.drawImage(key, 1325, 545, null);
                 if (playerInfo.inventoryTreasureBool[7]) g2D.drawImage(scroll, 1314, 635, null);
 
-                if (playerInfo.inventoryLostObjectBool[0]) g2D.drawImage(lostObject[0], 1235, 445, null);
-                if (playerInfo.inventoryLostObjectBool[1]) g2D.drawImage(lostObject[1], 1235, 540, null);
-                if (playerInfo.inventoryLostObjectBool[2]) g2D.drawImage(lostObject[2], 1235, 635, null);
-                if (playerInfo.inventoryLostObjectBool[3]) g2D.drawImage(lostObject[3], 1157, 445, null);
-                if (playerInfo.inventoryLostObjectBool[4]) g2D.drawImage(lostObject[4], 1157, 540, null);
-                if (playerInfo.inventoryLostObjectBool[5]) g2D.drawImage(lostObject[5], 1157, 635, null);
-                if (playerInfo.inventoryLostObjectBool[6]) g2D.drawImage(lostObject[6], 1079, 445, null);
-                if (playerInfo.inventoryLostObjectBool[7]) g2D.drawImage(lostObject[7], 1079, 540, null);
-                if (playerInfo.inventoryLostObjectBool[8]) g2D.drawImage(lostObject[8], 1079, 635, null);
-                if (playerInfo.inventoryLostObjectBool[9]) g2D.drawImage(lostObject[9], 1000, 350, null);
-                if (playerInfo.inventoryLostObjectBool[10]) g2D.drawImage(lostObject[10], 1000, 445, null);
-                if (playerInfo.inventoryLostObjectBool[11]) g2D.drawImage(lostObject[11], 1000, 540, null);
-                if (playerInfo.inventoryLostObjectBool[12]) g2D.drawImage(lostObject[12], 1000, 635, null);
+                if (playerInfo.inventoryLootBool[0]) g2D.drawImage(lostObject[0], 1235, 445, null);
+                if (playerInfo.inventoryLootBool[1]) g2D.drawImage(lostObject[1], 1235, 540, null);
+                if (playerInfo.inventoryLootBool[2]) g2D.drawImage(lostObject[2], 1235, 635, null);
+                if (playerInfo.inventoryLootBool[3]) g2D.drawImage(lostObject[3], 1157, 445, null);
+                if (playerInfo.inventoryLootBool[4]) g2D.drawImage(lostObject[4], 1157, 540, null);
+                if (playerInfo.inventoryLootBool[5]) g2D.drawImage(lostObject[5], 1157, 635, null);
+                if (playerInfo.inventoryLootBool[6]) g2D.drawImage(lostObject[6], 1079, 445, null);
+                if (playerInfo.inventoryLootBool[7]) g2D.drawImage(lostObject[7], 1079, 540, null);
+                if (playerInfo.inventoryLootBool[8]) g2D.drawImage(lostObject[8], 1079, 635, null);
+                if (playerInfo.inventoryLootBool[9]) g2D.drawImage(lostObject[9], 1000, 350, null);
+                if (playerInfo.inventoryLootBool[10]) g2D.drawImage(lostObject[10], 1000, 445, null);
+                if (playerInfo.inventoryLootBool[11]) g2D.drawImage(lostObject[11], 1000, 540, null);
+                if (playerInfo.inventoryLootBool[12]) g2D.drawImage(lostObject[12], 1000, 635, null);
 
 
                 g2D.setPaint(Color.white);

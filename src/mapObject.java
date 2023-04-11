@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class TreasureLoot {
+public class mapObject {
     Random rand = new Random();
 
     int x;
@@ -8,7 +8,7 @@ public class TreasureLoot {
     boolean show = true;//if show==ture -->draw image
     int price;
 
-    TreasureLoot(int area, int price, int[][] storedXY) {
+    mapObject(boolean[][] map, int area, int price) {
         int i = 0, j = 0;
 
         if (area == 1) {
@@ -27,6 +27,15 @@ public class TreasureLoot {
             i = 5;
             j = 5;
         }
+
+        do {
+
+            x = (rand.nextInt(5) + i) * 75;
+            y = (rand.nextInt(5) + j) * 75;
+
+        } while (map[x / 75][y / 75]);//true means the home isn't empty
+
+        map[x / 75][y / 75] = true;
 
 
         this.price = price;
