@@ -23,6 +23,7 @@ public class Panel extends JPanel implements ActionListener {
     Font font36 = new Font("Century", Font.PLAIN, 36);
     Font font24 = new Font("Century", Font.PLAIN, 24);
     Random rand = new Random();
+    NewWindow marketwindow ;
 
 
     PlayerInfo playerInfo;
@@ -188,7 +189,7 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(desert, 0, 0, null);
                 g2D.drawImage(castle, 5 * 75, 5 * 75, null);
 
-                if (playerInfo.mapRing.show)
+                /*if (playerInfo.mapRing.show)
                     g2D.drawImage(treasureBox, playerInfo.mapRing.x, playerInfo.mapRing.y, null);
                 if (playerInfo.mapSword.show)
                     g2D.drawImage(treasureBox, playerInfo.mapSword.x, playerInfo.mapSword.y, null);
@@ -203,7 +204,7 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.mapShield.show)
                     g2D.drawImage(treasureBox, playerInfo.mapShield.x, playerInfo.mapShield.y, null);
                 if (playerInfo.mapGlassCup.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapGlassCup.x, playerInfo.mapGlassCup.y, null);
+                    g2D.drawImage(treasureBox, playerInfo.mapGlassCup.x, playerInfo.mapGlassCup.y, null);*/
 
 
                 for (int i = 0; i < 13; i++) {
@@ -222,6 +223,11 @@ public class Panel extends JPanel implements ActionListener {
 
                     if (playerInfo.wall[i].show)
                         g2D.drawImage(wall, playerInfo.wall[i].x, playerInfo.wall[i].y, null);
+                }
+                for (int i = 0; i < 8; i++) {
+
+                    /*if (playerInfo.treasure[i].show)
+                        g2D.drawImage(treasureBox, playerInfo.treasure[i].x, playerInfo.treasure[i].y, null);*/
                 }
 
 
@@ -347,6 +353,7 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
+                //fight
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                     if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
                     else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
@@ -357,9 +364,11 @@ public class Panel extends JPanel implements ActionListener {
                     repaint();
                 }
 
-                /*for (int i = 0; i < 5; i++) {
-                    if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
 
+                //events at homes
+                for (int i = 0; i < 5; i++) {
+                    if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
+                          marketwindow=new NewWindow();
                     }
                 }
 
@@ -372,13 +381,13 @@ public class Panel extends JPanel implements ActionListener {
 
                 for (int i = 0; i < 13; i++) {
                     if (playerInfo.x == playerInfo.loot[i].x && playerInfo.y == playerInfo.loot[i].y) {
-
+                        playerInfo.loot[i].show = true;
                     }
                 }
 
-                for (int i = 0; i < 8; i++) {
+                /*for (int i = 0; i < 8; i++) {
                     if (playerInfo.x == playerInfo.treasure[i].x && playerInfo.y == playerInfo.treasure[i].y) {
-
+                        playerInfo.treasure[i].show = true;
                     }
                 }*/
 
