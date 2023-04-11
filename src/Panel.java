@@ -9,7 +9,7 @@ public class Panel extends JPanel implements ActionListener {
     /*ImageIcon icon = new ImageIcon("img/logo.png");
     Image scaleIcon = icon.getImage().getScaledInstance(200, 100, Image.SCALE_DEFAULT);*/   //scaled image
 
-
+    boolean market_bool = true, trap_bool = true, castle_bool = true;
     int sw = 2;
     int repaint = 1;//for repaint after firstpage
     Pointer mainTurn = new Pointer(1);
@@ -23,7 +23,6 @@ public class Panel extends JPanel implements ActionListener {
     Font font36 = new Font("Century", Font.PLAIN, 36);
     Font font24 = new Font("Century", Font.PLAIN, 24);
     Random rand = new Random();
-    NewWindow marketwindow ;
 
 
     PlayerInfo playerInfo;
@@ -187,47 +186,27 @@ public class Panel extends JPanel implements ActionListener {
 
 
                 g2D.drawImage(desert, 0, 0, null);
-                g2D.drawImage(castle, 5 * 75, 5 * 75, null);
+                g2D.drawImage(castle, 7 * 50, 7 * 50, null);
 
-                /*if (playerInfo.mapRing.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapRing.x, playerInfo.mapRing.y, null);
-                if (playerInfo.mapSword.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapSword.x, playerInfo.mapSword.y, null);
-                if (playerInfo.mapBow.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapBow.x, playerInfo.mapBow.y, null);
-                if (playerInfo.mapGoldenGlass.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapGoldenGlass.x, playerInfo.mapGoldenGlass.y, null);
-                if (playerInfo.mapKey.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapKey.x, playerInfo.mapKey.y, null);
-                if (playerInfo.mapScroll.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapScroll.x, playerInfo.mapScroll.y, null);
-                if (playerInfo.mapShield.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapShield.x, playerInfo.mapShield.y, null);
-                if (playerInfo.mapGlassCup.show)
-                    g2D.drawImage(treasureBox, playerInfo.mapGlassCup.x, playerInfo.mapGlassCup.y, null);*/
-
-
+                for (int i = 0; i < 24; i++) {
+                    if (PlayerInfo.wall[i].show)
+                        g2D.drawImage(wall, PlayerInfo.wall[i].x, PlayerInfo.wall[i].y, null);
+                }
+                for (int i = 0; i < 8; i++) {
+                    if (playerInfo.treasure[i].show)
+                        g2D.drawImage(treasureBox, playerInfo.treasure[i].x, playerInfo.treasure[i].y, null);
+                }
                 for (int i = 0; i < 13; i++) {
                     if (playerInfo.loot[i].show)
                         g2D.drawImage(lootBox, playerInfo.loot[i].x, playerInfo.loot[i].y, null);
                 }
-                for (int i = 0; i < 4; i++) {
-
+                for (int i = 0; i < 5; i++) {
                     if (playerInfo.market[i].show)
                         g2D.drawImage(marketDesert, playerInfo.market[i].x, playerInfo.market[i].y, null);
-
+                }
+                for (int i = 0; i < 10; i++) {
                     if (playerInfo.trap[i].show)
                         g2D.drawImage(trapDesert, playerInfo.trap[i].x, playerInfo.trap[i].y, null);
-                }
-                for (int i = 0; i < 8; i++) {
-
-                    if (playerInfo.wall[i].show)
-                        g2D.drawImage(wall, playerInfo.wall[i].x, playerInfo.wall[i].y, null);
-                }
-                for (int i = 0; i < 8; i++) {
-
-                    /*if (playerInfo.treasure[i].show)
-                        g2D.drawImage(treasureBox, playerInfo.treasure[i].x, playerInfo.treasure[i].y, null);*/
                 }
 
 
@@ -237,14 +216,14 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(inventory, 880, 330, null);
                 g2D.drawRoundRect(880, 330, 600, 400, 10, 10);
 
-                //if (playerInfo.treasure[0].show) g2D.drawImage(ring, 1393, 355, null);
-                //if (playerInfo.treasure[1].show) g2D.drawImage(sword, 1407, 445, null);
-                //if (playerInfo.treasure[2].show) g2D.drawImage(goldenGlass, 1400, 540, null);
-                //if (playerInfo.treasure[3].show) g2D.drawImage(glassCup, 1397, 635, null);
-                //if (playerInfo.treasure[4].show) g2D.drawImage(bow, 1330, 351, null);
-                //if (playerInfo.treasure[5].show) g2D.drawImage(shield, 1314, 445, null);
-                //if (playerInfo.treasure[6].show) g2D.drawImage(key, 1325, 545, null);
-                //if (playerInfo.treasure[7].show) g2D.drawImage(scroll, 1314, 635, null);
+                if (playerInfo.treasure[0].show) g2D.drawImage(ring, 1393, 355, null);
+                if (playerInfo.treasure[1].show) g2D.drawImage(sword, 1407, 445, null);
+                if (playerInfo.treasure[2].show) g2D.drawImage(goldenGlass, 1400, 540, null);
+                if (playerInfo.treasure[3].show) g2D.drawImage(glassCup, 1397, 635, null);
+                if (playerInfo.treasure[4].show) g2D.drawImage(bow, 1330, 351, null);
+                if (playerInfo.treasure[5].show) g2D.drawImage(shield, 1314, 445, null);
+                if (playerInfo.treasure[6].show) g2D.drawImage(key, 1325, 545, null);
+                if (playerInfo.treasure[7].show) g2D.drawImage(scroll, 1314, 635, null);
 
                 if (playerInfo.loot[0].show) g2D.drawImage(lostObject[0], 1235, 445, null);
                 if (playerInfo.loot[1].show) g2D.drawImage(lostObject[1], 1235, 540, null);
@@ -265,21 +244,21 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setStroke(new BasicStroke(3));//thickness
                 g2D.setFont(font16);
 
-                if (playerInfo.WeaponNumber[0] > 0) {
+                if (playerInfo.weaponNumber[0] > 0) {
                     g2D.drawImage(weapon[0], 935, 350, null);
-                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[0]), 960, 420);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[0]), 960, 420);
                 }
-                if (playerInfo.WeaponNumber[1] > 0) {
+                if (playerInfo.weaponNumber[1] > 0) {
                     g2D.drawImage(weapon[1], 926, 445, null);
-                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[1]), 960, 514);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[1]), 960, 514);
                 }
-                if (playerInfo.WeaponNumber[2] > 0) {
+                if (playerInfo.weaponNumber[2] > 0) {
                     g2D.drawImage(weapon[2], 926, 540, null);
-                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[2]), 960, 608);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[2]), 960, 608);
                 }
-                if (playerInfo.WeaponNumber[3] > 0) {
+                if (playerInfo.weaponNumber[3] > 0) {
                     g2D.drawImage(weapon[3], 932, 635, null);
-                    g2D.drawString(String.valueOf(playerInfo.WeaponNumber[3]), 960, 702);
+                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[3]), 960, 702);
                 }
 
 
@@ -337,14 +316,13 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
-                g2D.drawRoundRect(750, 700, 50, 50, 10, 10);//start home
+                g2D.drawRoundRect(750, 700, 50, 50, 10, 10);
 
                 g2D.drawString("Click", 768, 402);
                 g2D.drawImage(dice, 765, 340, null);//dice
 
                 g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
                 g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
-
 
                 for (int i = 0; i < 15; i++) {
                     for (int j = 0; j < 15; j++) {
@@ -353,7 +331,6 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
 
-                //fight
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                     if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
                     else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
@@ -364,32 +341,54 @@ public class Panel extends JPanel implements ActionListener {
                     repaint();
                 }
 
-
                 //events at homes
-                for (int i = 0; i < 5; i++) {
-                    if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
-                          marketwindow=new NewWindow();
+                for (int o = 0; o < 5; o++) {
+                    if (playerInfo.x == playerInfo.market[o].x && playerInfo.y == playerInfo.market[o].y) {
+                        if (market_bool) {
+                            NewWindow marketWindow = new NewWindow();
+                            market_bool = false;
+                            break;
+                        }
                     }
                 }
 
                 for (int i = 0; i < 5; i++) {
                     if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
-                        playerInfo.power -= 1;
-                        playerInfo.money -= 10;
+                        if (trap_bool) {
+                            playerInfo.power -= 1;
+                            playerInfo.money -= 10;
+                            playerInfo.trap[i].show = true;
+                            trap_bool = false;
+                            break;
+                        }
                     }
                 }
 
-                for (int i = 0; i < 13; i++) {
-                    if (playerInfo.x == playerInfo.loot[i].x && playerInfo.y == playerInfo.loot[i].y) {
-                        playerInfo.loot[i].show = true;
+                for (int j = 0; j < 13; j++) {
+                    if (playerInfo.x == playerInfo.loot[j].x && playerInfo.y == playerInfo.loot[j].y) {
+                        playerInfo.loot[j].show = true;
                     }
                 }
 
-                /*for (int i = 0; i < 8; i++) {
-                    if (playerInfo.x == playerInfo.treasure[i].x && playerInfo.y == playerInfo.treasure[i].y) {
-                        playerInfo.treasure[i].show = true;
+                for (int k = 0; k < 8; k++) {
+                    if (playerInfo.x == playerInfo.treasure[k].x && playerInfo.y == playerInfo.treasure[k].y) {
+                        playerInfo.treasure[k].show = true;
                     }
-                }*/
+                }
+
+                if (castle_bool) {
+                    if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
+                        NewWindow castleWindow = new NewWindow();
+                        castle_bool = false;
+                    }
+                }
+
+                if (playerInfo.x != 7 * 50 && playerInfo.y != 7 * 50) castle_bool = true;
+                //if (playerInfo.x!=playerInfo.trap[i].x&&playerInfo.y!=playerInfo.trap[i].y) trap_bool=true;
+                //if (playerInfo.x!=playerInfo.market[i].x&&playerInfo.y!=playerInfo.market[i].y) market_bool=true;
+
+
+                repaint();
 
                 break;
         }
