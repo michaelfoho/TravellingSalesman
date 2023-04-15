@@ -15,7 +15,7 @@ public class PlayerInfo implements KeyListener {
     Pointer mainTurn;
     Pointer dice;
     int[] weaponNumber = new int[4];
-    int[][] move = new int[6][2];
+    int[][] move = new int[6][6];
 
 
     mapObject[] treasure = new mapObject[8];

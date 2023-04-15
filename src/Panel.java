@@ -98,10 +98,10 @@ public class Panel extends JPanel implements ActionListener {
         lostObject[11] = new ImageIcon("img/lostObject/lostObject_12.png").getImage();
         lostObject[12] = new ImageIcon("img/lostObject/lostObject_13.png").getImage();
 
-        weapon[0] = new ImageIcon("img/weapon/weapon1.png").getImage();
-        weapon[1] = new ImageIcon("img/weapon/weapon2.png").getImage();
-        weapon[2] = new ImageIcon("img/weapon/weapon3.png").getImage();
-        weapon[3] = new ImageIcon("img/weapon/weapon4.png").getImage();
+        weapon[0] = new ImageIcon("img/weapon/inventory/weapon1.png").getImage();
+        weapon[1] = new ImageIcon("img/weapon/inventory/weapon2.png").getImage();
+        weapon[2] = new ImageIcon("img/weapon/inventory/weapon3.png").getImage();
+        weapon[3] = new ImageIcon("img/weapon/inventory/weapon4.png").getImage();
 
         werewolfImage = new ImageIcon("img/hero/big/werewolf.png").getImage();
         angelImage = new ImageIcon("img/hero/big/angel.png").getImage();
@@ -330,18 +330,12 @@ public class Panel extends JPanel implements ActionListener {
                         }
                     }
 
-                    //quest
-                /*if ()
-                  while (){
-
-                  }*/
-
 
                     //events at homes
                     for (int i = 0; i < 5; i++) {
                         if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
                             if (market_bool) {
-                                NewWindow marketWindow = new NewWindow();
+                                NewWindow marketWindow = new NewWindow("img/marketBackground.png", playerInfo);
                                 market_bool = false;
                                 break;
                             }
@@ -370,7 +364,7 @@ public class Panel extends JPanel implements ActionListener {
                     }
                     if (castle_bool) {
                         if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
-                            NewWindow castleWindow = new NewWindow();
+                            //NewWindow castleWindow = new NewWindow();
                             castle_bool = false;
                         }
                     }
@@ -379,17 +373,15 @@ public class Panel extends JPanel implements ActionListener {
                     if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                         if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
                         else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
-                        else if (player1Info.power == player2Info.power && playerInfo.power == 0){
-                            if (mainTurn.prt == 1){
+                        else if (player1Info.power == player2Info.power && playerInfo.power == 0) {
+                            if (mainTurn.prt == 1) {
                                 player2Info.x = 750;
                                 player2Info.y = 700;
-                            }
-                            else{
+                            } else {
                                 player1Info.x = 750;
                                 player1Info.y = 700;
                             }
-                        }
-                        else if (player1Info.power == player2Info.power && playerInfo.power != 0) {
+                        } else if (player1Info.power == player2Info.power && playerInfo.power != 0) {
                             if (mainTurn.prt == 1) fight(player1Info, player2Info);
                             else fight(player2Info, player1Info);
                         }
@@ -405,6 +397,7 @@ public class Panel extends JPanel implements ActionListener {
                     break;
                 }
         }
+
     }
 
 
