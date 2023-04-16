@@ -17,6 +17,7 @@ public class Panel extends JPanel implements ActionListener {
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
+    // DecimalFormat df = new DecimalFormat("#.##");
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Font font16 = new Font("Century", Font.PLAIN, 16);
     Font font36 = new Font("Century", Font.PLAIN, 36);
@@ -41,7 +42,6 @@ public class Panel extends JPanel implements ActionListener {
     Image[] weapon = new Image[4];
     Image[] diceImage = new Image[6];
     Image dice;
-    Weapon[] weap = new Weapon[4];
 
     Panel() {
 
@@ -121,11 +121,6 @@ public class Panel extends JPanel implements ActionListener {
         diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
         diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
-        weap[0] = new Weapon(400);
-        weap[1] = new Weapon(300);
-        weap[2] = new Weapon(200);
-        weap[3] = new Weapon(100);
-
 
         this.setLayout(null);
         this.setFocusable(true);
@@ -142,6 +137,7 @@ public class Panel extends JPanel implements ActionListener {
         player2Info.power = 0;
         player2Info.x = 750;
         player2Info.y = 700;
+
         repaint();
     }
 
@@ -166,10 +162,6 @@ public class Panel extends JPanel implements ActionListener {
 
                 break;
             case 2:
-
-                for (int i = 0; i < 8; i++) {
-                    treasure_checker[i] = false;
-                }
 
                 if (diceNumber.prt != 0) repaint();
 
@@ -246,28 +238,23 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setStroke(new BasicStroke(3));//thickness
                 g2D.setFont(font16);
 
-                if (playerInfo.weaponNumber[0] > 0) {
+                if (playerInfo.weapon[0].number > 0) {
                     g2D.drawImage(weapon[0], 935, 350, null);
-                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[0]), 960, 420);
+                    g2D.drawString(String.valueOf(playerInfo.weapon[0].number), 960, 420);
                 }
-                if (playerInfo.weaponNumber[1] > 0) {
+                if (playerInfo.weapon[1].number > 0) {
                     g2D.drawImage(weapon[1], 926, 445, null);
-                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[1]), 960, 514);
+                    g2D.drawString(String.valueOf(playerInfo.weapon[1].number), 960, 514);
                 }
-                if (playerInfo.weaponNumber[2] > 0) {
+                if (playerInfo.weapon[2].number > 0) {
                     g2D.drawImage(weapon[2], 926, 540, null);
-                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[2]), 960, 608);
+                    g2D.drawString(String.valueOf(playerInfo.weapon[2].number), 960, 608);
                 }
-                if (playerInfo.weaponNumber[3] > 0) {
+                if (playerInfo.weapon[3].number > 0) {
                     g2D.drawImage(weapon[3], 932, 635, null);
-                    g2D.drawString(String.valueOf(playerInfo.weaponNumber[3]), 960, 702);
+                    g2D.drawString(String.valueOf(playerInfo.weapon[3].number), 960, 702);
                 }
 
-
-                g2D.drawString("4", 920, 420);
-                g2D.drawString("3", 920, 514);
-                g2D.drawString("2", 920, 608);
-                g2D.drawString("1", 920, 702);
 
                 g2D.setFont(font40);
                 g2D.setPaint(Color.BLACK);
@@ -332,12 +319,12 @@ public class Panel extends JPanel implements ActionListener {
                     }
                 }
 
+
                 //quest
                 do {
                     adad = rand.nextInt(8);
-                    quest[adad]=true;
-                    if (!treasure_checker[adad]) break;
-                } while (true);
+                    quest[adad] = true;
+                } while (treasure_checker[adad]);
 
                 if (quest[0]) g2D.drawImage(ring, 1093, 60, null);
                 if (quest[1]) g2D.drawImage(sword, 1093, 60, null);
@@ -354,7 +341,7 @@ public class Panel extends JPanel implements ActionListener {
                 for (int i = 0; i < 5; i++) {
                     if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
                         if (market_bool) {
-                            NewWindow marketWindow = new NewWindow("img/marketBackground.png", playerInfo);
+                            Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo);
                             market_bool = false;
                             break;
                         }
@@ -440,7 +427,6 @@ public class Panel extends JPanel implements ActionListener {
 
                 break;
         }
-
     }
 
 

@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class mapObject {
+public class MapObject {
     Random rand = new Random();
 
     int x;
@@ -8,7 +8,7 @@ public class mapObject {
     boolean show;
     int price;
 
-    mapObject(boolean[][] map, int area, int price, boolean show) {
+    MapObject(boolean[][] map, int area, int price, boolean show) {
         int i = 0, j = 0;
 
         if (area >= 0 && area < 5) {

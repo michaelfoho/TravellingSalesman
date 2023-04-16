@@ -1,10 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class NewWindow extends JFrame implements MouseListener {
+public class Market extends JFrame {
     PlayerInfo playerInfo;
+
+    Area[] area = new Area[8];
 
     Image background, wallet;
     Image weapon1 = new ImageIcon("img/weapon/market/weapon1.png").getImage();
@@ -12,20 +12,33 @@ public class NewWindow extends JFrame implements MouseListener {
     Image weapon3 = new ImageIcon("img/weapon/market/weapon3.png").getImage();
     Image weapon4 = new ImageIcon("img/weapon/market/weapon4.png").getImage();
 
-    NewWindow(String URL, PlayerInfo playerInfo) {
+
+    Market(String backgroundURL, String frameIconURL, String title, PlayerInfo playerInfo) {
 
         this.playerInfo = playerInfo;
 
-        background = new ImageIcon(URL).getImage();
+        background = new ImageIcon(backgroundURL).getImage();
         wallet = new ImageIcon("img/wallet.png").getImage();
 
 
+        area[0] = new Area(770 + 0 * 170, 80 + 0 * 220, 150, 150, 0, "img/weapon/inventory/weapon1.png", playerInfo);
+        area[1] = new Area(770 + 1 * 170, 80 + 0 * 220, 150, 150, 1, "img/weapon/inventory/weapon2.png", playerInfo);
+        area[2] = new Area(770 + 2 * 170, 80 + 0 * 220, 150, 150, 2, "img/weapon/inventory/weapon3.png", playerInfo);
+        area[3] = new Area(770 + 3 * 170, 80 + 0 * 220, 150, 150, 3, "img/weapon/inventory/weapon4.png", playerInfo);
+        area[4] = new Area(770 + 0 * 170, 80 + 1 * 220, 150, 150, 4, null, playerInfo);
+        area[5] = new Area(770 + 1 * 170, 80 + 1 * 220, 150, 150, 5, null, playerInfo);
+        area[6] = new Area(770 + 2 * 170, 80 + 1 * 220, 150, 150, 6, null, playerInfo);
+        area[7] = new Area(770 + 3 * 170, 80 + 1 * 220, 150, 150, 7, null, playerInfo);
+
+        for (int i = 0; i < 8; i++) this.addMouseListener(area[i]);
+
         this.setBounds(12, 35, 1514, 780);
+        this.setTitle(title);
         this.setResizable(false);
         this.setFocusable(true);
         this.setLayout(null);
         this.setVisible(true);
-        ImageIcon imageIcon = new ImageIcon("img/logo.png");//change icon of frame(top left)
+        ImageIcon imageIcon = new ImageIcon(frameIconURL);//change icon of frame(top left)
         this.setIconImage(imageIcon.getImage());
     }
 
@@ -37,7 +50,9 @@ public class NewWindow extends JFrame implements MouseListener {
         g2D.setStroke(new BasicStroke(4));//thickness
         g2D.setFont(new Font("Century", Font.PLAIN, 40));
 
+
         g2D.drawImage(background, 0, 0, 1514, 775, null);
+
 
         g2D.setPaint(new Color(50, 50, 50, 150));
         g2D.fillRoundRect(750, 60, 700, 460, 10, 10);
@@ -50,7 +65,7 @@ public class NewWindow extends JFrame implements MouseListener {
 
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 2; j++) {
-                g2D.setPaint(new Color(130, 150, 0, 100));
+                g2D.setPaint(new Color(255, 255, 0, 200));
                 // g2D.fillRoundRect(770 + i * 170, 80 + j * 220, 150, 150, 10, 10);
                 g2D.setPaint(Color.BLACK);
                 g2D.drawRoundRect(770 + i * 170, 80 + j * 220, 150, 150, 10, 10);
@@ -77,44 +92,21 @@ public class NewWindow extends JFrame implements MouseListener {
         g2D.drawImage(weapon3, 1221, 568, 32, 70, null);
         g2D.drawImage(weapon4, 1294, 568, 21, 70, null);
 
-
         g2D.setPaint(new Color(255, 180, 0));
-
-        g2D.drawString(String.valueOf(playerInfo.money) + "$", 920, 725);
 
         g2D.drawString("400 $", 795, 268);
         g2D.drawString("300 $", 966, 268);
         g2D.drawString("200 $", 1137, 268);
         g2D.drawString("100 $", 1308, 268);
 
+
+        g2D.drawString(String.valueOf(playerInfo.money) + "$", 920, 725);
+
         g2D.setPaint(Color.white);
         g2D.setFont(new Font("Century", Font.PLAIN, 16));
-        for (int i = 0; i < 4; i++) g2D.drawString(String.valueOf(playerInfo.weaponNumber[i]), 1107 + i * 70, 640);
-    }
+        for (int i = 0; i < 4; i++) g2D.drawString(String.valueOf(playerInfo.weapon[i].number), 1107 + i * 70, 640);
 
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+        repaint();
     }
 }

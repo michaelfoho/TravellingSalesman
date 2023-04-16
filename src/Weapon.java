@@ -1,6 +1,7 @@
 public class Weapon {
     int price;
     int strength;
+    int number = 1;
 
     Weapon(int price) {
 
