@@ -19,9 +19,9 @@ public class PlayerInfo implements KeyListener {
 
 
     MapObject[] treasure = new MapObject[8];
-    MapObject[] loot = new MapObject[13];
+    MapObject[] mapLoot = new MapObject[13];
     static MapObject[] wall = new MapObject[24];
-    MapObject[] market = new MapObject[5];
+    static MapObject[] market = new MapObject[5];
     MapObject[] trap = new MapObject[10];
 
 
@@ -52,9 +52,9 @@ public class PlayerInfo implements KeyListener {
         map[7][7] = true;//castle
         for (int i = 0; i < 24; i++) wall[i] = new MapObject(map, area[i], 0, true);
         for (int i = 0; i < 8; i++) treasure[i] = new MapObject(map, area[i], 5000 - i * 500, false);
-        for (int i = 0; i < 13; i++) loot[i] = new MapObject(map, area[i + 8], 500 - i * 25, false);
-        for (int i = 0; i < 5; i++) market[i] = new MapObject(map, area[i], 0, true);
-        for (int i = 0; i < 10; i++) trap[i] = new MapObject(map, area[i], 0, false);
+        for (int i = 0; i < 13; i++) mapLoot[i] = new MapObject(map, area[i + 8], 500 - i * 25, false);
+        for (int i = 0; i < 5; i++) market[i] = new MapObject(map, area[23 - i], 0, true);
+        for (int i = 0; i < 10; i++) trap[i] = new MapObject(map, area[2 * i], 0, false);
     }
 
     @Override
@@ -66,10 +66,9 @@ public class PlayerInfo implements KeyListener {
 
         if (mainTurn.prt == turn) if (dice.prt > 0) {
 
-            if (dice.prt > 0) {
-                move[dice.prt - 1][0] = x;
-                move[dice.prt - 1][1] = y;
-            }
+            move[dice.prt - 1][0] = x;
+            move[dice.prt - 1][1] = y;
+
 
             if (e.getKeyChar() == 'w' && y - 50 >= 0 && x != 750) {
                 y -= 50;

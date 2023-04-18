@@ -21,14 +21,14 @@ public class Market extends JFrame {
         wallet = new ImageIcon("img/wallet.png").getImage();
 
 
-        area[0] = new Area(770 + 0 * 170, 80 + 0 * 220, 150, 150, 0, "img/weapon/inventory/weapon1.png", playerInfo);
-        area[1] = new Area(770 + 1 * 170, 80 + 0 * 220, 150, 150, 1, "img/weapon/inventory/weapon2.png", playerInfo);
-        area[2] = new Area(770 + 2 * 170, 80 + 0 * 220, 150, 150, 2, "img/weapon/inventory/weapon3.png", playerInfo);
-        area[3] = new Area(770 + 3 * 170, 80 + 0 * 220, 150, 150, 3, "img/weapon/inventory/weapon4.png", playerInfo);
-        area[4] = new Area(770 + 0 * 170, 80 + 1 * 220, 150, 150, 4, null, playerInfo);
-        area[5] = new Area(770 + 1 * 170, 80 + 1 * 220, 150, 150, 5, null, playerInfo);
-        area[6] = new Area(770 + 2 * 170, 80 + 1 * 220, 150, 150, 6, null, playerInfo);
-        area[7] = new Area(770 + 3 * 170, 80 + 1 * 220, 150, 150, 7, null, playerInfo);
+        area[0] = new Area(770, 80, 150, 150, 0, "img/weapon/inventory/weapon1.png", playerInfo, this);
+        area[1] = new Area(940, 80, 150, 150, 1, "img/weapon/inventory/weapon2.png", playerInfo, this);
+        area[2] = new Area(1110, 80, 150, 150, 2, "img/weapon/inventory/weapon3.png", playerInfo, this);
+        area[3] = new Area(1280, 80, 150, 150, 3, "img/weapon/inventory/weapon4.png", playerInfo, this);
+        area[4] = new Area(770, 300, 150, 150, 4, null, playerInfo, this);
+        area[5] = new Area(940, 300, 150, 150, 5, null, playerInfo, this);
+        area[6] = new Area(1110, 300, 150, 150, 6, null, playerInfo, this);
+        area[7] = new Area(1280, 300, 150, 150, 7, null, playerInfo, this);
 
         for (int i = 0; i < 8; i++) this.addMouseListener(area[i]);
 
@@ -105,8 +105,5 @@ public class Market extends JFrame {
         g2D.setPaint(Color.white);
         g2D.setFont(new Font("Century", Font.PLAIN, 16));
         for (int i = 0; i < 4; i++) g2D.drawString(String.valueOf(playerInfo.weapon[i].number), 1107 + i * 70, 640);
-
-
-        repaint();
     }
 }

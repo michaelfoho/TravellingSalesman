@@ -9,7 +9,7 @@ public class Panel extends JPanel implements ActionListener {
     /*ImageIcon icon = new ImageIcon("img/logo.png");
     Image scaleIcon = icon.getImage().getScaledInstance(200, 100, Image.SCALE_DEFAULT);*/   //scaled image
 
-    boolean marketBool, trapBool, castleBool;
+    boolean marketBool = true, trapBool = true, castleBool = true;
     boolean[] quest = new boolean[8];
     int sw = 2, adad = 0;
     int repaint = 1;//for repaint after firstpage
@@ -29,7 +29,7 @@ public class Panel extends JPanel implements ActionListener {
     PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf");
     PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel");
 
-    Button nextButton, diceButton, continueButton, newGameButton, quitButton;
+    Button nextButton, stateButton, diceButton, continueButton, newGameButton, quitButton;
 
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasureBox, lootBox;
@@ -38,7 +38,6 @@ public class Panel extends JPanel implements ActionListener {
     Image statusBoard, inventory;
     Image playerImage, werewolfImage, angelImage;
     Image player1, player2, werewolf, angel;
-    //Image ring, sword, goldenGlass, glassCup, bow, shield, key, scroll;
     Image[] treasure = new Image[8];
     Image[] lostObject = new Image[13];
     Image[] weapon = new Image[4];
@@ -56,11 +55,14 @@ public class Panel extends JPanel implements ActionListener {
         quitButton = new Button(1200, 145, 250, 50, "Quit", new Color(100, 100, 100));
         quitButton.addActionListener(this);
 
-        diceButton = new Button(767, 341, 98, 98, "", new Color(50, 50, 50));
+        diceButton = new Button(767, 341, 98, 98, null, new Color(50, 50, 50));
         diceButton.addActionListener(this);
 
         nextButton = new Button(767, 450, 98, 70, "Next", new Color(180, 150, 0));
         nextButton.addActionListener(this);
+
+        stateButton = new Button(767, 550, 98, 70, "state", new Color(180, 150, 0));
+        stateButton.addActionListener(this);
 
 
         firstPage = new ImageIcon("img/firstPage.png").getImage();
@@ -143,16 +145,6 @@ public class Panel extends JPanel implements ActionListener {
         repaint();
     }
 
-    private void quest() {
-
-        do {
-            adad = rand.nextInt(8);
-
-        } while (quest[adad]);
-
-        quest[adad] = true;
-    }
-
     public void paint(Graphics g) {
 
         Graphics2D g2D = (Graphics2D) g;
@@ -184,6 +176,7 @@ public class Panel extends JPanel implements ActionListener {
 
                 this.add(diceButton);
                 this.add(nextButton);
+                this.add(stateButton);
 
 
                 g2D.drawImage(desert, 0, 0, null);
@@ -198,8 +191,8 @@ public class Panel extends JPanel implements ActionListener {
                         g2D.drawImage(treasureBox, playerInfo.treasure[i].x, playerInfo.treasure[i].y, null);
                 }
                 for (int i = 0; i < 13; i++) {
-                    if (playerInfo.loot[i].show)
-                        g2D.drawImage(lootBox, playerInfo.loot[i].x, playerInfo.loot[i].y, null);
+                    if (playerInfo.mapLoot[i].show)
+                        g2D.drawImage(lootBox, playerInfo.mapLoot[i].x, playerInfo.mapLoot[i].y, null);
                 }
                 for (int i = 0; i < 5; i++) {
                     if (playerInfo.market[i].show)
@@ -226,20 +219,19 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.treasure[6].show) g2D.drawImage(treasure[6], 1325, 545, null);
                 if (playerInfo.treasure[7].show) g2D.drawImage(treasure[7], 1314, 635, null);
 
-                if (playerInfo.loot[0].show) g2D.drawImage(lostObject[0], 1235, 445, null);
-                if (playerInfo.loot[1].show) g2D.drawImage(lostObject[1], 1235, 540, null);
-                if (playerInfo.loot[2].show) g2D.drawImage(lostObject[2], 1235, 635, null);
-                if (playerInfo.loot[3].show) g2D.drawImage(lostObject[3], 1157, 445, null);
-                if (playerInfo.loot[4].show) g2D.drawImage(lostObject[4], 1157, 540, null);
-                if (playerInfo.loot[5].show) g2D.drawImage(lostObject[5], 1157, 635, null);
-                if (playerInfo.loot[6].show) g2D.drawImage(lostObject[6], 1079, 445, null);
-                if (playerInfo.loot[7].show) g2D.drawImage(lostObject[7], 1079, 540, null);
-                if (playerInfo.loot[8].show) g2D.drawImage(lostObject[8], 1079, 635, null);
-                if (playerInfo.loot[9].show) g2D.drawImage(lostObject[9], 1000, 350, null);
-                if (playerInfo.loot[10].show) g2D.drawImage(lostObject[10], 1000, 445, null);
-                if (playerInfo.loot[11].show) g2D.drawImage(lostObject[11], 1000, 540, null);
-                if (playerInfo.loot[12].show) g2D.drawImage(lostObject[12], 1000, 635, null);
-
+                if (playerInfo.mapLoot[0].show) g2D.drawImage(lostObject[0], 1235, 445, null);
+                if (playerInfo.mapLoot[1].show) g2D.drawImage(lostObject[1], 1235, 540, null);
+                if (playerInfo.mapLoot[2].show) g2D.drawImage(lostObject[2], 1235, 635, null);
+                if (playerInfo.mapLoot[3].show) g2D.drawImage(lostObject[3], 1157, 445, null);
+                if (playerInfo.mapLoot[4].show) g2D.drawImage(lostObject[4], 1157, 540, null);
+                if (playerInfo.mapLoot[5].show) g2D.drawImage(lostObject[5], 1157, 635, null);
+                if (playerInfo.mapLoot[6].show) g2D.drawImage(lostObject[6], 1079, 445, null);
+                if (playerInfo.mapLoot[7].show) g2D.drawImage(lostObject[7], 1079, 540, null);
+                if (playerInfo.mapLoot[8].show) g2D.drawImage(lostObject[8], 1079, 635, null);
+                if (playerInfo.mapLoot[9].show) g2D.drawImage(lostObject[9], 1000, 350, null);
+                if (playerInfo.mapLoot[10].show) g2D.drawImage(lostObject[10], 1000, 445, null);
+                if (playerInfo.mapLoot[11].show) g2D.drawImage(lostObject[11], 1000, 540, null);
+                if (playerInfo.mapLoot[12].show) g2D.drawImage(lostObject[12], 1000, 635, null);
 
                 for (int i = 0; i < 6; i++) {
                     if (playerInfo.move[i][0] != 0 && playerInfo.move[i][1] != 0)
@@ -319,11 +311,20 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawRoundRect(750, 700, 50, 50, 10, 10);
 
+
+                g2D.setPaint(Color.WHITE);
                 g2D.drawString("Click", 768, 402);
                 g2D.drawImage(dice, 765, 340, null);//dice
+                g2D.setFont(font36);
+                g2D.drawString("Next", 775, 497);
+                g2D.drawString("state", 773, 595);
+
+                g2D.setFont(font40);
+                g2D.setPaint(Color.BLACK);
 
                 g2D.drawRoundRect(766, 340, 100, 100, 10, 10);//dice
-                g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//button
+                g2D.drawRoundRect(766, 450, 100, 70, 10, 10);//next button
+                g2D.drawRoundRect(766, 550, 100, 70, 10, 10);//state button
 
                 for (int i = 0; i < 15; i++) {
                     for (int j = 0; j < 15; j++) {
@@ -342,37 +343,37 @@ public class Panel extends JPanel implements ActionListener {
 
 
                 //events at homes
+
                 int counter = 0;
                 for (int i = 0; i < 5; i++) {
-                    if (playerInfo.x == playerInfo.market[i].x && playerInfo.y == playerInfo.market[i].y) {
+                    if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
                         if (marketBool) {
                             Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo);
                             marketBool = false;
                             break;
                         }
+                        repaint();
                     }
-                }
-
+                }//market
                 for (int i = 0; i < 5; i++) {
-                    if (playerInfo.x != playerInfo.market[i].x && playerInfo.y != playerInfo.market[i].y) {
+                    if (playerInfo.x != PlayerInfo.market[i].x && playerInfo.y != PlayerInfo.market[i].y) {
                         counter += 1;
                     }
                 }
                 if (counter == 5) marketBool = true;
-                //repaint();
 
                 for (int i = 0; i < 10; i++) {
                     if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
                         if (trapBool) {
-                            playerInfo.power -= 1;
-                            playerInfo.money -= 10;
+                            if (playerInfo.power > 0) playerInfo.power -= 1;
+                            if (playerInfo.money > 9) playerInfo.money -= 10;
                             playerInfo.trap[i].show = true;
                             trapBool = false;
                             break;
                         }
+                        repaint();
                     }
-                }
-
+                }//trap
                 counter = 0;
                 for (int i = 0; i < 10; i++) {
                     if (playerInfo.x != playerInfo.trap[i].x && playerInfo.y != playerInfo.trap[i].y) {
@@ -380,16 +381,17 @@ public class Panel extends JPanel implements ActionListener {
                     }
                 }
                 if (counter == 10) trapBool = true;
-                //repaint();
 
                 for (int i = 0; i < 13; i++) {
-                    if (playerInfo.x == playerInfo.loot[i].x && playerInfo.y == playerInfo.loot[i].y) {
-                        playerInfo.loot[i].show = true;
+                    if (playerInfo.x == playerInfo.mapLoot[i].x && playerInfo.y == playerInfo.mapLoot[i].y) {
+                        playerInfo.mapLoot[i].show = true;
+                        repaint();
                     }
                 }
                 for (int i = 0; i < 8; i++) {
                     if (playerInfo.x == playerInfo.treasure[i].x && playerInfo.y == playerInfo.treasure[i].y) {
                         playerInfo.treasure[i].show = true;
+                        repaint();
                     }
                 }
                 if (castleBool) {
@@ -404,9 +406,8 @@ public class Panel extends JPanel implements ActionListener {
                         castleBool = false;
                         repaint();
                     }
-                }
+                }//castle
 
-                //fight
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                     if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
                     else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
@@ -424,7 +425,7 @@ public class Panel extends JPanel implements ActionListener {
                     }
 
                     repaint();
-                }
+                }//fight
 
 
                 if (playerInfo.x != 7 * 50 && playerInfo.y != 7 * 50) castleBool = true;
@@ -477,6 +478,18 @@ public class Panel extends JPanel implements ActionListener {
             }
 
             dice = null;
+        }
+        if (e.getSource() == stateButton) {
+
+            if (playerInfo == player1Info) {
+
+                playerInfo = player2Info;
+                playerImage = angelImage;
+            } else {
+
+                playerInfo = player1Info;
+                playerImage = werewolfImage;
+            }
         }
 
 
