@@ -12,9 +12,10 @@ public class Panel extends JPanel implements ActionListener {
     boolean marketBool = true, trapBool = true, castleBool = true;
     boolean[] quest = new boolean[8];
     boolean lootchecker[] = new boolean[13];
-    boolean once[] = new boolean[13];
+    boolean once[] = new boolean[13], once2[] = new boolean[8];
     int sw = 2;
     int repaint = 1;//for repaint after firstpage
+    int ending_y=-810;
     Pointer mainTurn = new Pointer(1);
     Pointer diceNumber = new Pointer();
 
@@ -46,6 +47,7 @@ public class Panel extends JPanel implements ActionListener {
     Image[] diceImage = new Image[6];
     Image dice;
     Image questImage;
+    Image ending;
 
     Panel() {
 
@@ -128,6 +130,8 @@ public class Panel extends JPanel implements ActionListener {
         diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
         diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
+        ending = new ImageIcon().getImage();
+
 
         this.setLayout(null);
         this.setFocusable(true);
@@ -180,6 +184,13 @@ public class Panel extends JPanel implements ActionListener {
                 this.add(diceButton);
                 this.add(nextButton);
                 this.add(stateButton);
+
+                //quest
+                int q = rand.nextInt(8);
+                questImage = treasure[q];
+                g2D.drawImage(questImage, 1093, 60, null);
+                quest[q] = true;
+                once2[q] = true;
 
 
                 g2D.drawImage(desert, 0, 0, null);
@@ -446,17 +457,46 @@ public class Panel extends JPanel implements ActionListener {
                 if (castleBool) {
                     if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
 
-                        int r;
-                        do {
-                            r = rand.nextInt(8);
-                        } while (quest[r]);
+                        for (int i = 0; i < 8; i++) {
+                            if (playerInfo.treasure[i].show == true && quest[i] == true && once2[i] == true) {
+                                playerInfo.money += playerInfo.treasure[i].price;
+                                playerInfo.treasure_number += 1;
+                                once2[i] = false;
 
-                        quest[r] = true;
-                        questImage = treasure[r];
+                                int r;
+                                do {
+                                    r = rand.nextInt(8);
+                                } while (quest[r]);
 
+                                once2[r] = true;
+                                quest[r] = true;
+                                questImage = treasure[r];
 
-                        castleBool = false;
-                        repaint();
+                                castleBool = false;
+                                repaint();
+                                break;
+                            }
+                        }
+                        //ending
+                        if (player1Info.treasure_number + player2Info.treasure_number == 8) {
+
+                            g2D.drawImage(ending,0,ending_y+5,null);
+                            if (ending_y>=0) ending_y=0;
+
+                            if (player1Info.treasure_number > player2Info.treasure_number) {
+                                 playerImage=werewolfImage;
+                                 g2D.drawImage(playerImage,200,400,null);
+                                 g2D.drawString(player1Info.name,200,470);
+                                g2D.setFont(font40);
+                            }
+                            else if (player2Info.treasure_number > player1Info.treasure_number) {
+
+                            }
+                            else if (player1Info.treasure_number == player2Info.treasure_number) {
+
+                            }
+                        }
+
                     }
                 }//castle
 

@@ -11,6 +11,7 @@ public class PlayerInfo implements KeyListener {
     int y = 700;
     int money = 5500;
     int power = 10;
+    int treasure_number=0;
     String name;
     Pointer mainTurn;
     Pointer dice;
