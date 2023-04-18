@@ -7,6 +7,7 @@ public class Market extends JFrame {
     Area[] area = new Area[8];
 
     Image background, wallet;
+    Image treasureMap = new ImageIcon("img/treasureMap.png").getImage();
     Image weapon1 = new ImageIcon("img/weapon/market/weapon1.png").getImage();
     Image weapon2 = new ImageIcon("img/weapon/market/weapon2.png").getImage();
     Image weapon3 = new ImageIcon("img/weapon/market/weapon3.png").getImage();
@@ -25,7 +26,7 @@ public class Market extends JFrame {
         area[1] = new Area(940, 80, 150, 150, 1, "img/weapon/inventory/weapon2.png", playerInfo, this);
         area[2] = new Area(1110, 80, 150, 150, 2, "img/weapon/inventory/weapon3.png", playerInfo, this);
         area[3] = new Area(1280, 80, 150, 150, 3, "img/weapon/inventory/weapon4.png", playerInfo, this);
-        area[4] = new Area(770, 300, 150, 150, 4, null, playerInfo, this);
+        area[4] = new Area(770, 300, 150, 150, 4, "img/smallTreasureMap.png", playerInfo, this);
         area[5] = new Area(940, 300, 150, 150, 5, null, playerInfo, this);
         area[6] = new Area(1110, 300, 150, 150, 6, null, playerInfo, this);
         area[7] = new Area(1280, 300, 150, 150, 7, null, playerInfo, this);
@@ -73,11 +74,9 @@ public class Market extends JFrame {
             }
         }
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 2; j++) {
-                g2D.drawRoundRect(1070 + i * 70, 560 + j * 95, 50, 85, 10, 10);
-            }
-        }
+        for (int i = 0; i < 4; i++) g2D.drawRoundRect(1070 + i * 70, 560, 50, 85, 10, 10);
+        for (int i = 0; i < 4; i++) g2D.drawRoundRect(1070 + i * 70, 680, 50, 60, 10, 10);
+
 
         g2D.drawImage(wallet, 860, 685, 50, 50, null);
 
@@ -86,11 +85,14 @@ public class Market extends JFrame {
         g2D.drawImage(weapon2, 983, 95, 70, 120, null);
         g2D.drawImage(weapon3, 1165, 95, 55, 120, null);
         g2D.drawImage(weapon4, 1338, 95, 35, 120, null);
+        g2D.drawImage(treasureMap, 775, 305, 140, 140, null);
+
 
         g2D.drawImage(weapon1, 1086, 568, 17, 70, null);
         g2D.drawImage(weapon2, 1146, 568, 41, 70, null);
         g2D.drawImage(weapon3, 1221, 568, 32, 70, null);
         g2D.drawImage(weapon4, 1294, 568, 21, 70, null);
+        g2D.drawImage(treasureMap, 1072, 685, 45, 40, null);
 
         g2D.setPaint(new Color(255, 180, 0));
 
@@ -98,6 +100,7 @@ public class Market extends JFrame {
         g2D.drawString("300 $", 966, 268);
         g2D.drawString("200 $", 1137, 268);
         g2D.drawString("100 $", 1308, 268);
+        g2D.drawString("2500 $", 785, 488);
 
 
         g2D.drawString(String.valueOf(playerInfo.money) + "$", 920, 725);

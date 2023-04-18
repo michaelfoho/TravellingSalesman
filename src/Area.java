@@ -60,6 +60,27 @@ public class Area implements MouseListener {
                     }
             }
 
+            if (number == 4)
+                if (playerInfo.money - 2500 < 0) {
+                    JOptionPane.showMessageDialog(null,
+                            "you don't have enough money!",
+                            null,
+                            JOptionPane.INFORMATION_MESSAGE,
+                            new ImageIcon("img/smallWallet.png")
+                    );
+                } else {
+                    answer = JOptionPane.showOptionDialog(
+                            null,
+                            "do you want to buy this item?",
+                            null,
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.INFORMATION_MESSAGE,
+                            image,
+                            null,
+                            0
+                    );
+                }
+
         }
 
         if (answer == 0) {//0 -->means Yes
@@ -69,8 +90,14 @@ public class Area implements MouseListener {
                 if (number == i) if (playerInfo.money - playerInfo.weapon[i].price >= 0) {
                     playerInfo.money -= playerInfo.weapon[i].price;
                     playerInfo.weapon[i].number += 1;
+                    playerInfo.power += playerInfo.weapon[i].strength;
                 }
             }
+
+            if (number == 4) if (playerInfo.money - 2500 >= 0) {
+                playerInfo.money -= 2500;
+            }
+
             frame.repaint();
         }
     }

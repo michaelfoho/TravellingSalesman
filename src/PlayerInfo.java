@@ -9,7 +9,7 @@ public class PlayerInfo implements KeyListener {
     private final int turn;
     int x = 750;
     int y = 700;
-    int money = 500;
+    int money = 5500;
     int power = 10;
     String name;
     Pointer mainTurn;

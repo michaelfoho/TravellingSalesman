@@ -11,7 +11,9 @@ public class Panel extends JPanel implements ActionListener {
 
     boolean marketBool = true, trapBool = true, castleBool = true;
     boolean[] quest = new boolean[8];
-    int sw = 2, adad = 0;
+    boolean lootchecker[] = new boolean[13];
+    boolean once[] = new boolean[13];
+    int sw = 2;
     int repaint = 1;//for repaint after firstpage
     Pointer mainTurn = new Pointer(1);
     Pointer diceNumber = new Pointer();
@@ -43,6 +45,7 @@ public class Panel extends JPanel implements ActionListener {
     Image[] weapon = new Image[4];
     Image[] diceImage = new Image[6];
     Image dice;
+    Image questImage;
 
     Panel() {
 
@@ -219,19 +222,58 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.treasure[6].show) g2D.drawImage(treasure[6], 1325, 545, null);
                 if (playerInfo.treasure[7].show) g2D.drawImage(treasure[7], 1314, 635, null);
 
-                if (playerInfo.mapLoot[0].show) g2D.drawImage(lostObject[0], 1235, 445, null);
-                if (playerInfo.mapLoot[1].show) g2D.drawImage(lostObject[1], 1235, 540, null);
-                if (playerInfo.mapLoot[2].show) g2D.drawImage(lostObject[2], 1235, 635, null);
-                if (playerInfo.mapLoot[3].show) g2D.drawImage(lostObject[3], 1157, 445, null);
-                if (playerInfo.mapLoot[4].show) g2D.drawImage(lostObject[4], 1157, 540, null);
-                if (playerInfo.mapLoot[5].show) g2D.drawImage(lostObject[5], 1157, 635, null);
-                if (playerInfo.mapLoot[6].show) g2D.drawImage(lostObject[6], 1079, 445, null);
-                if (playerInfo.mapLoot[7].show) g2D.drawImage(lostObject[7], 1079, 540, null);
-                if (playerInfo.mapLoot[8].show) g2D.drawImage(lostObject[8], 1079, 635, null);
-                if (playerInfo.mapLoot[9].show) g2D.drawImage(lostObject[9], 1000, 350, null);
-                if (playerInfo.mapLoot[10].show) g2D.drawImage(lostObject[10], 1000, 445, null);
-                if (playerInfo.mapLoot[11].show) g2D.drawImage(lostObject[11], 1000, 540, null);
-                if (playerInfo.mapLoot[12].show) g2D.drawImage(lostObject[12], 1000, 635, null);
+                if (playerInfo.mapLoot[0].show) {
+                    g2D.drawImage(lostObject[0], 1235, 445, null);
+                    lootchecker[0] = true;
+                }
+                if (playerInfo.mapLoot[1].show) {
+                    g2D.drawImage(lostObject[1], 1235, 540, null);
+                    lootchecker[1] = true;
+                }
+                if (playerInfo.mapLoot[2].show) {
+                    g2D.drawImage(lostObject[2], 1235, 635, null);
+                    lootchecker[2] = true;
+                }
+                if (playerInfo.mapLoot[3].show) {
+                    g2D.drawImage(lostObject[3], 1157, 445, null);
+                    lootchecker[3] = true;
+                }
+                if (playerInfo.mapLoot[4].show) {
+                    g2D.drawImage(lostObject[4], 1157, 540, null);
+                    lootchecker[4] = true;
+                }
+                if (playerInfo.mapLoot[5].show) {
+                    g2D.drawImage(lostObject[5], 1157, 635, null);
+                    lootchecker[5] = true;
+                }
+                if (playerInfo.mapLoot[6].show) {
+                    g2D.drawImage(lostObject[6], 1079, 445, null);
+                    lootchecker[6] = true;
+                }
+                if (playerInfo.mapLoot[7].show) {
+                    g2D.drawImage(lostObject[7], 1079, 540, null);
+                    lootchecker[7] = true;
+                }
+                if (playerInfo.mapLoot[8].show) {
+                    g2D.drawImage(lostObject[8], 1079, 635, null);
+                    lootchecker[8] = true;
+                }
+                if (playerInfo.mapLoot[9].show) {
+                    g2D.drawImage(lostObject[9], 1000, 350, null);
+                    lootchecker[9] = true;
+                }
+                if (playerInfo.mapLoot[10].show) {
+                    g2D.drawImage(lostObject[10], 1000, 445, null);
+                    lootchecker[10] = true;
+                }
+                if (playerInfo.mapLoot[11].show) {
+                    g2D.drawImage(lostObject[11], 1000, 540, null);
+                    lootchecker[11] = true;
+                }
+                if (playerInfo.mapLoot[12].show) {
+                    g2D.drawImage(lostObject[12], 1000, 635, null);
+                    lootchecker[12] = true;
+                }
 
                 for (int i = 0; i < 6; i++) {
                     if (playerInfo.move[i][0] != 0 && playerInfo.move[i][1] != 0)
@@ -332,15 +374,22 @@ public class Panel extends JPanel implements ActionListener {
                     }
                 }
 
-                if (quest[0]) g2D.drawImage(treasure[0], 1093, 60, null);
-                if (quest[1]) g2D.drawImage(treasure[1], 1093, 60, null);
-                if (quest[2]) g2D.drawImage(treasure[2], 1093, 60, null);
-                if (quest[3]) g2D.drawImage(treasure[3], 1093, 60, null);
-                if (quest[4]) g2D.drawImage(treasure[4], 1093, 60, null);
-                if (quest[5]) g2D.drawImage(treasure[5], 1093, 60, null);
-                if (quest[6]) g2D.drawImage(treasure[6], 1093, 60, null);
-                if (quest[7]) g2D.drawImage(treasure[7], 1093, 60, null);
 
+                //quest
+                g2D.drawImage(questImage, 1093, 60, null);
+
+
+                //raise money cause of loot
+                for (int i = 0; i < 13; i++) {
+                    if (once[i] == true) lootchecker[i] = false;
+                }
+                for (int i = 0; i < 13; i++) {
+                    if (lootchecker[i] == true) {
+                        playerInfo.money += playerInfo.mapLoot[i].price;
+                        once[i] = true;
+                        repaint();
+                    }
+                }
 
                 //events at homes
 
@@ -396,13 +445,16 @@ public class Panel extends JPanel implements ActionListener {
                 }
                 if (castleBool) {
                     if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
-                        //NewWindow castleWindow = new NewWindow();
-                        /*for (int i=0;i<8;i++){
-                            if (quest[i]){
-                                treasure_checker[i]=true;
-                                //rise money
-                            }
-                        }*/
+
+                        int r;
+                        do {
+                            r = rand.nextInt(8);
+                        } while (quest[r]);
+
+                        quest[r] = true;
+                        questImage = treasure[r];
+
+
                         castleBool = false;
                         repaint();
                     }
