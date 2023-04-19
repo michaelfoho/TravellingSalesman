@@ -15,13 +15,13 @@ public class Panel extends JPanel implements ActionListener {
     boolean once[] = new boolean[13], once2[] = new boolean[8];
     int sw = 2;
     int repaint = 1;//for repaint after firstpage
-    int ending_y=-810;
+    int ending_y = -810;
+    int treasurescore[] = new int[8];
     Pointer mainTurn = new Pointer(1);
     Pointer diceNumber = new Pointer();
 
 
     Border border = BorderFactory.createLineBorder(new Color(0, 0, 0), 3, true);
-    // DecimalFormat df = new DecimalFormat("#.##");
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Font font16 = new Font("Century", Font.PLAIN, 16);
     Font font36 = new Font("Century", Font.PLAIN, 36);
@@ -32,7 +32,7 @@ public class Panel extends JPanel implements ActionListener {
     PlayerInfo player1Info = new PlayerInfo(1, mainTurn, diceNumber, "Werewolf");
     PlayerInfo player2Info = new PlayerInfo(2, mainTurn, diceNumber, "Angel");
 
-    Button nextButton, stateButton, diceButton, continueButton, newGameButton, quitButton;
+    Button nextButton, stateButton, diceButton, continueButton, newGameButton, quitButton, ExitButton, NewgameButton;
 
     Image firstPage, desert, backgroundColor;
     Image castle, wall, treasureBox, lootBox;
@@ -68,6 +68,12 @@ public class Panel extends JPanel implements ActionListener {
 
         stateButton = new Button(767, 550, 98, 70, "state", new Color(180, 150, 0));
         stateButton.addActionListener(this);
+
+        ExitButton = new Button(700, 80, 100, 50, "Exit", new Color(100, 100, 100));
+        ExitButton.addActionListener(this);
+
+        NewgameButton = new Button(800, 130, 100, 50, "Newgame", new Color(180, 150, 0));
+        NewgameButton.addActionListener(this);
 
 
         firstPage = new ImageIcon("img/firstPage.png").getImage();
@@ -111,8 +117,8 @@ public class Panel extends JPanel implements ActionListener {
         weapon[2] = new ImageIcon("img/weapon/inventory/weapon3.png").getImage();
         weapon[3] = new ImageIcon("img/weapon/inventory/weapon4.png").getImage();
 
-        werewolfImage = new ImageIcon("img/hero/big/werewolf.png").getImage();
-        angelImage = new ImageIcon("img/hero/big/angel.png").getImage();
+        werewolfImage = new ImageIcon("img/hero/werewolf.png").getImage();
+        angelImage = new ImageIcon("img/hero/angel.png").getImage();
 
         werewolf = new ImageIcon("img/hero/small/werewolf.png").getImage();
         angel = new ImageIcon("img/hero/small/angel.png").getImage();
@@ -130,7 +136,7 @@ public class Panel extends JPanel implements ActionListener {
         diceImage[4] = new ImageIcon("img/dice/dice5.png").getImage();
         diceImage[5] = new ImageIcon("img/dice/dice6.png").getImage();
 
-        ending = new ImageIcon().getImage();
+        ending = new ImageIcon("img/ending.png").getImage();
 
 
         this.setLayout(null);
@@ -176,21 +182,23 @@ public class Panel extends JPanel implements ActionListener {
 
                 if (diceNumber.prt != 0) repaint();
 
+                for (int i = 0; i < 8; i++) {
+                    treasurescore[i] = playerInfo.treasure[i].price;
+                }
+
                 if (repaint == 1) {
                     repaint();
                     repaint = 0;
+                    //quest
+                    int q = rand.nextInt(8);
+                    questImage = treasure[q];
+                    quest[q] = true;
+                    once2[q] = true;
                 }
 
                 this.add(diceButton);
                 this.add(nextButton);
                 this.add(stateButton);
-
-                //quest
-                int q = rand.nextInt(8);
-                questImage = treasure[q];
-                g2D.drawImage(questImage, 1093, 60, null);
-                quest[q] = true;
-                once2[q] = true;
 
 
                 g2D.drawImage(desert, 0, 0, null);
@@ -334,12 +342,22 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setPaint(new Color(20, 130, 0));
                 g2D.drawString(String.valueOf(playerInfo.money), 1060, 245);
 
+                //treasure score
+                for (int i=0;i<8;i++){
+                    if (once2[i]) {
+                        g2D.setFont(font24);
+                        g2D.setPaint(new Color(0, 0, 255));
+                        g2D.drawString(String.valueOf(treasurescore[i]), 1155, 155);
+                        break;
+                    }
+                }
+
 
                 g2D.setPaint(Color.BLACK);
                 g2D.setStroke(new BasicStroke(2));//thickness
                 g2D.setFont(font40);
 
-                g2D.drawImage(playerImage, 1250, 20, null);
+                g2D.drawImage(playerImage, 1250, 20, 250, 250, null);
                 g2D.setPaint(new Color(160, 160, 160));
                 switch (playerInfo.name) {
 
@@ -403,7 +421,7 @@ public class Panel extends JPanel implements ActionListener {
                 }
 
                 //events at homes
-
+                //market
                 int counter = 0;
                 for (int i = 0; i < 5; i++) {
                     if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
@@ -414,7 +432,7 @@ public class Panel extends JPanel implements ActionListener {
                         }
                         repaint();
                     }
-                }//market
+                }
                 for (int i = 0; i < 5; i++) {
                     if (playerInfo.x != PlayerInfo.market[i].x && playerInfo.y != PlayerInfo.market[i].y) {
                         counter += 1;
@@ -422,6 +440,7 @@ public class Panel extends JPanel implements ActionListener {
                 }
                 if (counter == 5) marketBool = true;
 
+                //trap
                 for (int i = 0; i < 10; i++) {
                     if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
                         if (trapBool) {
@@ -433,7 +452,7 @@ public class Panel extends JPanel implements ActionListener {
                         }
                         repaint();
                     }
-                }//trap
+                }
                 counter = 0;
                 for (int i = 0; i < 10; i++) {
                     if (playerInfo.x != playerInfo.trap[i].x && playerInfo.y != playerInfo.trap[i].y) {
@@ -454,6 +473,8 @@ public class Panel extends JPanel implements ActionListener {
                         repaint();
                     }
                 }
+
+                //castle
                 if (castleBool) {
                     if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
 
@@ -462,6 +483,7 @@ public class Panel extends JPanel implements ActionListener {
                                 playerInfo.money += playerInfo.treasure[i].price;
                                 playerInfo.treasure_number += 1;
                                 once2[i] = false;
+                                if (player1Info.treasure_number + player2Info.treasure_number == 8) break;
 
                                 int r;
                                 do {
@@ -472,6 +494,11 @@ public class Panel extends JPanel implements ActionListener {
                                 quest[r] = true;
                                 questImage = treasure[r];
 
+                                if (playerInfo.treasure[r].show == true) {
+                                    repaint();
+                                    continue;
+                                }
+
                                 castleBool = false;
                                 repaint();
                                 break;
@@ -480,26 +507,47 @@ public class Panel extends JPanel implements ActionListener {
                         //ending
                         if (player1Info.treasure_number + player2Info.treasure_number == 8) {
 
-                            g2D.drawImage(ending,0,ending_y+5,null);
-                            if (ending_y>=0) ending_y=0;
+                            g2D.drawImage(ending, 0, 0, null);
 
                             if (player1Info.treasure_number > player2Info.treasure_number) {
-                                 playerImage=werewolfImage;
-                                 g2D.drawImage(playerImage,200,400,null);
-                                 g2D.drawString(player1Info.name,200,470);
+                                g2D.drawImage(werewolfImage, 280, 350, 250, 250, null);
                                 g2D.setFont(font40);
-                            }
-                            else if (player2Info.treasure_number > player1Info.treasure_number) {
+                                g2D.setPaint(new Color(160, 160, 160));
+                                g2D.drawString(player1Info.name, 330, 640);
+                                g2D.setPaint(Color.white);
+                                g2D.drawString("is winner", 490, 490);
+                                this.add(NewgameButton);
+                                this.add(ExitButton);
 
-                            }
-                            else if (player1Info.treasure_number == player2Info.treasure_number) {
+                            } else if (player2Info.treasure_number > player1Info.treasure_number) {
+                                g2D.drawImage(angelImage, 200, 400, null);
+                                g2D.setFont(font40);
+                                g2D.setPaint(new Color(160, 160, 160));
+                                g2D.drawString(player2Info.name, 200, 470);
+                                g2D.setPaint(Color.white);
+                                g2D.drawString("is winner", 230, 430);
+                                this.add(NewgameButton);
+                                this.add(ExitButton);
 
+                            } else if (player1Info.treasure_number == player2Info.treasure_number) {
+                                g2D.drawImage(werewolfImage, 200, 400, null);
+                                g2D.drawImage(angelImage, 280, 400, null);
+                                g2D.setFont(font40);
+                                g2D.setPaint(new Color(160, 160, 160));
+                                g2D.drawString(player1Info.name, 200, 470);
+                                g2D.drawString(player2Info.name, 280, 470);
+                                g2D.setPaint(Color.white);
+                                g2D.drawString("=", 240, 430);
+                                this.add(NewgameButton);
+                                this.add(ExitButton);
                             }
+                            repaint();
                         }
 
                     }
-                }//castle
+                }
 
+                //fight
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
                     if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
                     else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
@@ -517,10 +565,15 @@ public class Panel extends JPanel implements ActionListener {
                     }
 
                     repaint();
-                }//fight
+                }
 
 
                 if (playerInfo.x != 7 * 50 && playerInfo.y != 7 * 50) castleBool = true;
+
+
+                break;
+
+            case 3://end
 
 
                 break;
@@ -584,6 +637,9 @@ public class Panel extends JPanel implements ActionListener {
             }
         }
 
+        if (e.getSource() == ExitButton) System.exit(0);
+
+        if (e.getSource() == NewgameButton) sw = 2;
 
         repaint();
     }

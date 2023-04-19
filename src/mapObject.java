@@ -43,4 +43,10 @@ public class MapObject {
         this.price = price;
         this.show = show;
     }
+
+    MapObject(int x, int y) {
+        this.x = x;
+        this.y = y;
+        show = true;
+    }
 }

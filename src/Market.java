@@ -5,6 +5,7 @@ public class Market extends JFrame {
     PlayerInfo playerInfo;
 
     Area[] area = new Area[8];
+    Area backArea;
 
     Image background, wallet;
     Image treasureMap = new ImageIcon("img/treasureMap.png").getImage();
@@ -31,7 +32,11 @@ public class Market extends JFrame {
         area[6] = new Area(1110, 300, 150, 150, 6, null, playerInfo, this);
         area[7] = new Area(1280, 300, 150, 150, 7, null, playerInfo, this);
 
+        area[7] = new Area(0, 0, 600, 750, 8, null, playerInfo, this);
+
+
         for (int i = 0; i < 8; i++) this.addMouseListener(area[i]);
+        this.addMouseListener(backArea);
 
         this.setBounds(12, 35, 1514, 780);
         this.setTitle(title);
@@ -92,7 +97,7 @@ public class Market extends JFrame {
         g2D.drawImage(weapon2, 1146, 568, 41, 70, null);
         g2D.drawImage(weapon3, 1221, 568, 32, 70, null);
         g2D.drawImage(weapon4, 1294, 568, 21, 70, null);
-        g2D.drawImage(treasureMap, 1072, 685, 45, 40, null);
+        g2D.drawImage(treasureMap, 1073, 685, 44, 44, null);
 
         g2D.setPaint(new Color(255, 180, 0));
 

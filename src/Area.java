@@ -1,13 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
 
 public class Area implements MouseListener {
     int x, y, width, height;
+    int random;
     int number;//shomare area
     ImageIcon image;
     PlayerInfo playerInfo;
     JFrame frame;
+    Random rand;
 
 
     Area(int x, int y, int width, int height, int number, String URL, PlayerInfo playerInfo, JFrame frame) {
@@ -20,6 +23,7 @@ public class Area implements MouseListener {
         this.playerInfo = playerInfo;
         this.frame = frame;
         image = new ImageIcon(URL);
+
     }
 
     public boolean area() {
@@ -31,9 +35,16 @@ public class Area implements MouseListener {
         return false;
     }
 
+        /*do {
+            random = rand.nextInt(8);
+        } while (playerInfo.treasure[random].show == true);
+        return 1;*/
+
     @Override
     public void mouseClicked(MouseEvent e) {
+
         int answer = -1;
+
         if (area()) {
 
             for (int i = 0; i < 4; i++) {
@@ -81,6 +92,8 @@ public class Area implements MouseListener {
                     );
                 }
 
+
+            if (number == 8) frame.setVisible(false);
         }
 
         if (answer == 0) {//0 -->means Yes
@@ -96,6 +109,7 @@ public class Area implements MouseListener {
 
             if (number == 4) if (playerInfo.money - 2500 >= 0) {
                 playerInfo.money -= 2500;
+                //if () playerInfo.treasure[random].show = true;
             }
 
             frame.repaint();
