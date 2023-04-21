@@ -6,7 +6,7 @@ public class Main {
         JProgressBar player_1_HP_bar = new JProgressBar(0, 500);
         JProgressBar player_2_HP_bar = new JProgressBar(0, 500);
 
-        Frame frame = Frame.getInstance();//singleton**************************************************
+        Frame frame = Frame.getInstance();//singleton
 
         frame.add(player_1_HP_bar);
         frame.add(player_2_HP_bar);
