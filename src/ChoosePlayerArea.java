@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.event.*;
 
 public class ChoosePlayerArea extends Area implements MouseListener {
@@ -20,12 +19,14 @@ public class ChoosePlayerArea extends Area implements MouseListener {
             if (number == 15) turn = 1;
             if (number == 16) turn = 2;
 
-            for (int i = 0; i < 5; i++)
-                for (int j = 0; j < 3; j++)
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 3; j++) {
                     if (number == 3 * i + j) {
                         if (turn == 1 && p2 != 3 * i + j) p1 = 3 * i + j;
                         if (turn == 2 && p1 != 3 * i + j) p2 = 3 * i + j;
                     }
+                }
+            }
         }
     }
 

@@ -15,7 +15,6 @@ public class Panel extends JPanel implements ActionListener {
     public Pointer sw = new Pointer(1);
     int treasurescore[] = new int[8];
     int repaint = 1, treasureRand = 0;//blocks{} integers
-
     static Pointer mainTurn = new Pointer(1);
     Pointer diceNumber = new Pointer();
 
@@ -54,7 +53,6 @@ public class Panel extends JPanel implements ActionListener {
     ChoosePlayerArea[] area = new ChoosePlayerArea[17];
     Keyboard keyboard = new Keyboard(sw);
 
-
     Panel() {
         this.addKeyListener(keyboard);
 
@@ -89,7 +87,6 @@ public class Panel extends JPanel implements ActionListener {
         endOthersButton.addActionListener(this);
         endHomeButton = new Button(530, 630, 200, 50, "Home", new Color(100, 100, 100));
         endHomeButton.addActionListener(this);
-
 
         firstPage = new ImageIcon("img/firstPage.png").getImage();
         choosePlayer = new ImageIcon("img/choosePlayer.png").getImage();
@@ -166,7 +163,6 @@ public class Panel extends JPanel implements ActionListener {
         pSmallImage[13] = new ImageIcon("img/hero/small/player13.png").getImage();
         pSmallImage[14] = new ImageIcon("img/hero/small/player14.png").getImage();
 
-
         diceImage[0] = new ImageIcon("img/dice/dice1.png").getImage();
         diceImage[1] = new ImageIcon("img/dice/dice2.png").getImage();
         diceImage[2] = new ImageIcon("img/dice/dice3.png").getImage();
@@ -182,7 +178,6 @@ public class Panel extends JPanel implements ActionListener {
         endIcon[2] = new ImageIcon("img/end/icon2.png").getImage();
         endIcon[3] = new ImageIcon("img/end/icon3.png").getImage();
         endIcon[4] = new ImageIcon("img/end/icon4.png").getImage();
-
 
         playerInfo = player1Info;
 
@@ -225,8 +220,8 @@ public class Panel extends JPanel implements ActionListener {
                 newGameButton.setEnabled(true);
                 quitButton.setEnabled(true);
 
-
                 g2D.drawImage(firstPage, 0, 0, 1514, 750, null);
+
 
                 break;
             case 2:
@@ -256,7 +251,6 @@ public class Panel extends JPanel implements ActionListener {
                 nextButton.setEnabled(true);
                 stateButton.setEnabled(true);
 
-
                 g2D.drawImage(desert, 0, 0, null);
                 g2D.drawImage(castle, 7 * 50, 7 * 50, null);
 
@@ -270,12 +264,11 @@ public class Panel extends JPanel implements ActionListener {
                     if (playerInfo.loot[i].show)
                         g2D.drawImage(lootBox, playerInfo.loot[i].x, playerInfo.loot[i].y, null);
                 for (int i = 0; i < 5; i++)
-                    if (playerInfo.market[i].show)
-                        g2D.drawImage(marketDesert, playerInfo.market[i].x, playerInfo.market[i].y, null);
+                    if (PlayerInfo.market[i].show)
+                        g2D.drawImage(marketDesert, PlayerInfo.market[i].x, PlayerInfo.market[i].y, null);
                 for (int i = 0; i < 10; i++)
                     if (playerInfo.trap[i].show)
                         g2D.drawImage(trapDesert, playerInfo.trap[i].x, playerInfo.trap[i].y, null);
-
 
                 g2D.drawImage(backgroundColor, 750, 0, null);
                 g2D.drawImage(statusBoard, 760, 10, null);
@@ -291,7 +284,6 @@ public class Panel extends JPanel implements ActionListener {
                 if (playerInfo.treasure[5].show) g2D.drawImage(treasure[5], 1314, 445, null);
                 if (playerInfo.treasure[6].show) g2D.drawImage(treasure[6], 1325, 545, null);
                 if (playerInfo.treasure[7].show) g2D.drawImage(treasure[7], 1314, 635, null);
-
 
                 if (playerInfo.loot[0].show) {
                     g2D.drawImage(lostObject[0], 1235, 445, null);
@@ -345,7 +337,6 @@ public class Panel extends JPanel implements ActionListener {
                     g2D.drawImage(lostObject[12], 1000, 635, null);
                     lootchecker[12] = true;
                 }
-
 
                 for (int i = 0; i < 6; i++)
                     if (playerInfo.move[i][0] != 0 && playerInfo.move[i][1] != 0)
@@ -409,7 +400,7 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(playerImage, 1250, 20, 250, 250, null);
                 g2D.setPaint(new Color(160, 160, 160));
-               /* switch (playerInfo.name) {
+                /* switch (playerInfo.name) {
 
                     case "Werewolf":
                         g2D.drawString(playerInfo.name, 1290, 300);
@@ -448,7 +439,6 @@ public class Panel extends JPanel implements ActionListener {
                         g2D.drawRoundRect(50 * i, 50 * j, 50, 50, 10, 10);
                 g2D.drawRoundRect(750, 700, 50, 50, 10, 10);
 
-
                 //raise money cause of loot
                 for (int i = 0; i < 13; i++) if (once[i] == true) lootchecker[i] = false;
 
@@ -458,7 +448,6 @@ public class Panel extends JPanel implements ActionListener {
                         once[i] = true;
                         repaint();
                     }
-
 
                 //events at homes
 
@@ -507,7 +496,6 @@ public class Panel extends JPanel implements ActionListener {
                         repaint();
                     }
 
-
                 //castle
                 if (castleBool) {
                     if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
@@ -543,11 +531,9 @@ public class Panel extends JPanel implements ActionListener {
                             sw.prt = 3;
                             repaint();
                         }
-
                     }
                 }
                 if (playerInfo.x != 7 * 50 && playerInfo.y != 7 * 50) castleBool = true;
-
 
                 //fight
                 if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
@@ -568,7 +554,6 @@ public class Panel extends JPanel implements ActionListener {
                     repaint();
                 }
 
-
                 /*if (diceNumber.prt > 0) {
 
                     if (diceNumber.prt % 2 == 0) {
@@ -578,8 +563,7 @@ public class Panel extends JPanel implements ActionListener {
                     if (diceNumber.prt % 2 == 1) {
                         
                     }
-                }
-*/
+                }*/
 
                 //treasure map
                 if (playerInfo.hasTreasureMap) {
@@ -616,10 +600,8 @@ public class Panel extends JPanel implements ActionListener {
                 endOthersButton.setEnabled(true);
                 endHomeButton.setEnabled(true);
 
-
                 g2D.setPaint(Color.BLACK);
                 g2D.setStroke(new BasicStroke(4));
-
 
                 g2D.drawImage(ending, 0, 0, null);
 
@@ -661,13 +643,10 @@ public class Panel extends JPanel implements ActionListener {
                     if (player2Info.treasure[6].show) g2D.drawImage(treasure[6], 602 - 390 + 330, 345 + 40, null);
                     if (player2Info.treasure[7].show) g2D.drawImage(treasure[7], 655 - 390 + 330, 340 + 40, null);
 
-
                     for (int i = 0; i < 4; i++)
                         for (int j = 0; j < 2; j++) g2D.drawRoundRect(70 + i * 65, 290 + j * 90, 50, 70, 10, 10);
-
                     for (int i = 0; i < 4; i++)
                         for (int j = 0; j < 2; j++) g2D.drawRoundRect(400 + i * 65, 290 + j * 90, 50, 70, 10, 10);
-
 
                 } else {
 
@@ -679,12 +658,10 @@ public class Panel extends JPanel implements ActionListener {
                         playerImage = player2Image;
                     }
 
-
                     for (int j = 0; j < 5; j++) {
                         g2D.drawImage(endIcon[j], 70, 70 + j * 90, 70, 70, null);
                         g2D.drawRoundRect(70, 70 + j * 90, 70, 70, 10, 10);
                     }
-
 
                     if (playerInfo.treasure[0].show) g2D.drawImage(treasure[0], 200, 345, null);
                     if (playerInfo.treasure[1].show) g2D.drawImage(treasure[1], 278, 340, null);
@@ -714,14 +691,12 @@ public class Panel extends JPanel implements ActionListener {
                         g2D.drawRoundRect(200 + i * 65, 520, 50, 70, 10, 10);
                     }
 
-                    g2D.setFont(font40);
-
                     g2D.drawImage(playerImage, 775, 50, 700, 700, null);
 
+                    g2D.setFont(font40);
                     g2D.drawString(playerInfo.name + "  is the winner", 200, 120);
                     g2D.drawString(playerInfo.money + " $", 200, 207);
                 }
-
 
                 g2D.drawRoundRect(70, 630, 200, 50, 10, 10);
                 g2D.drawRoundRect(300, 630, 200, 50, 10, 10);
@@ -732,11 +707,10 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString("Others", 340, 667);
                 g2D.drawString("Home", 583, 667);
 
-
                 repaint();
 
-                break;
 
+                break;
             case 4://choose player
 
                 g2D.setPaint(Color.BLACK);
@@ -744,7 +718,6 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.setFont(font40);
 
                 g2D.drawImage(choosePlayer, 0, 0, 1514, 750, null);
-
 
                 g2D.setPaint(new Color(100, 70, 50, 170));
                 g2D.fillRoundRect(30, 30, 1200, 690, 10, 10);
@@ -760,7 +733,6 @@ public class Panel extends JPanel implements ActionListener {
                 //g2D.drawRoundRect(1283, 230, 200, 50, 10, 10);
                 //g2D.drawRoundRect(1283, 550, 200, 50, 10, 10);
 
-
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 3; j++) {
                         g2D.drawRoundRect(60 + i * 235, 55 + j * 220, 200, 200, 10, 10);
@@ -770,7 +742,6 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(player1Image, 1283, 30, 200, 200, null);
                 g2D.drawImage(player2Image, 1283, 350, 200, 200, null);
-
 
                 if (ChoosePlayerArea.p1 != -1) {
                     player1Image = pImage[ChoosePlayerArea.p1];
@@ -782,13 +753,10 @@ public class Panel extends JPanel implements ActionListener {
                 }
                 playerImage = player1Image;
 
-
                 repaint();
-
 
                 break;
         }
-
     }
 
    /* public void newGame() {
@@ -798,7 +766,6 @@ public class Panel extends JPanel implements ActionListener {
         sw = 2;
         repaint();
     }*/
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -812,7 +779,6 @@ public class Panel extends JPanel implements ActionListener {
             continueButton.setEnabled(false);
             newGameButton.setEnabled(false);
             quitButton.setEnabled(false);
-
         }
         if (e.getSource() == quitButton) {
             System.exit(0);
@@ -822,22 +788,17 @@ public class Panel extends JPanel implements ActionListener {
 
             diceNumber.prt = rand.nextInt(6) + 1;
             dice = diceImage[diceNumber.prt - 1];
-
         }
         if (e.getSource() == nextButton) {
 
             if (mainTurn.prt == 1) {
-
                 mainTurn.prt = 2;
                 playerInfo = player2Info;
                 playerImage = player2Image;
-
             } else {
-
                 mainTurn.prt = 1;
                 playerInfo = player1Info;
                 playerImage = player1Image;
-
             }
 
             dice = null;
@@ -845,26 +806,20 @@ public class Panel extends JPanel implements ActionListener {
         if (e.getSource() == stateButton) {
 
             if (playerInfo == player1Info) {
-
                 playerInfo = player2Info;
                 playerImage = player2Image;
             } else {
-
                 playerInfo = player1Info;
                 playerImage = player1Image;
             }
         }
 
         if (e.getSource() == endNewGameButton) {
-
             //newGame();
-
             System.out.println(10);
         }
         if (e.getSource() == endOthersButton) {
-
             System.out.println(20);
-
             /*if (playerInfo == player1Info) playerInfo = player2Info;
             else playerInfo = player1Info;*/
         }
@@ -875,7 +830,6 @@ public class Panel extends JPanel implements ActionListener {
             endOthersButton.setEnabled(false);
             endHomeButton.setEnabled(false);
         }
-
 
         repaint();
     }

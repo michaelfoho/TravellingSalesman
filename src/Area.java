@@ -1,10 +1,8 @@
 import java.awt.*;
 
 public class Area {
-
     int x, y, width, height;
-    int number;//shomare area
-
+    int number;//area number
 
     Area(int x, int y, int width, int height, int number) {
 

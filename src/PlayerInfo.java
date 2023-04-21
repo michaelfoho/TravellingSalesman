@@ -5,7 +5,6 @@ public class PlayerInfo implements KeyListener {
     Random rand = new Random();
     static boolean[][] map = new boolean[15][15];
     int treasureNumber = 0;
-
     private final int turn;
     int x = 750;
     int y = 700;
@@ -19,18 +18,14 @@ public class PlayerInfo implements KeyListener {
     int lastX;
     int lastY;
     boolean[] moveLock = new boolean[4];
-
-
     boolean hasTreasureMap;
     boolean hasTreasureMapOnce = true;
-
     static MapObject castle;
     static MapObject[] wall = new MapObject[24];
     static MapObject[] market = new MapObject[5];
     MapObject[] treasure = new MapObject[8];
     MapObject[] loot = new MapObject[13];
     MapObject[] trap = new MapObject[10];
-
 
     PlayerInfo(int turn, Pointer mainTurn, Pointer dice, String name) {
 
@@ -124,15 +119,12 @@ public class PlayerInfo implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
 
-        if (e.getKeyCode() == 10) {
-            for (int i = 0; i < 5; i++) {
+        if (e.getKeyCode() == 10)
+            for (int i = 0; i < 5; i++)
                 if (x == market[i].x && y == market[i].y) {
-
                     Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", this, Panel.player1Image, Panel.player2Image);
                     break;
                 }
-            }//market
-        }
     }
 
     @Override
@@ -182,7 +174,6 @@ public class PlayerInfo implements KeyListener {
         if (y == 700) moveLock[1] = true;
         if (x == 0) moveLock[2] = true;
         if (x == 700) moveLock[3] = true;
-
 
         for (int i = 0, lockCount = 0; i < 4; i++) {
             if (moveLock[i]) lockCount++;

@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Area.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChoosePlayerArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChoosePlayerArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Keyboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MarketArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MarketArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProgressBarDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgressBarDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,14 +163,7 @@
       <workItem from="1682002922461" duration="125000" />
       <workItem from="1682011128933" duration="5799000" />
       <workItem from="1682057421819" duration="4718000" />
-      <workItem from="1682071802514" duration="11691000" />
-    </task>
-    <task id="LOCAL-00031" summary="start">
-      <created>1680641002901</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1680641002901</updated>
+      <workItem from="1682071802514" duration="12930000" />
     </task>
     <task id="LOCAL-00032" summary="start">
       <created>1680641181840</created>
@@ -497,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682083992455</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="start">
+      <created>1682084119264</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1682084119264</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

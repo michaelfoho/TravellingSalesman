@@ -11,7 +11,6 @@ public class ProgressBarDemo  {
         bar.setForeground(new Color(0, 150, 255));
         bar.setBackground(new Color(0, 0, 0));
 
-
         fill(bar);
     }
 
@@ -31,7 +30,6 @@ public class ProgressBarDemo  {
 
             counter += 1;
         }
-
         bar.setString("Max");//when the bar is 100% shows the text
     }
 }
