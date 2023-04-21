@@ -15,9 +15,12 @@ public class Market extends JFrame {
     Image weapon4 = new ImageIcon("img/weapon/market/weapon4.png").getImage();
 
 
-    Market(String backgroundURL, String frameIconURL, String title, PlayerInfo playerInfo) {
+    Market(String backgroundURL, String frameIconURL, String title, PlayerInfo playerInfo, Image player1Image, Image player2Image) {
 
         this.playerInfo = playerInfo;
+
+        if (Panel.mainTurn.prt == 1) this.playerImage = player1Image;
+        if (Panel.mainTurn.prt == 2) this.playerImage = player2Image;
 
         background = new ImageIcon(backgroundURL).getImage();
         wallet = new ImageIcon("img/wallet.png").getImage();

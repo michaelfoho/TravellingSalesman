@@ -12,11 +12,11 @@ public class Panel extends JPanel implements ActionListener {
     boolean[] quest = new boolean[8];
     boolean lootchecker[] = new boolean[13];
     boolean once[] = new boolean[13], once2[] = new boolean[8];
-    public Pointer sw = new Pointer(4);
+    public Pointer sw = new Pointer(1);
     int treasurescore[] = new int[8];
     int repaint = 1, treasureRand = 0;//blocks{} integers
 
-    Pointer mainTurn = new Pointer(1);
+    static Pointer mainTurn = new Pointer(1);
     Pointer diceNumber = new Pointer();
 
     Font font40 = new Font("Century", Font.PLAIN, 40);
@@ -38,7 +38,7 @@ public class Panel extends JPanel implements ActionListener {
     Image trapDesert;
     Image marketDesert;
     Image statusBoard, inventory;
-    Image playerImage, player1Image, player2Image;
+    static Image playerImage, player1Image, player2Image;
     Image[] pImage = new Image[15];
     Image player1, player2;
     Image[] pSmallImage = new Image[15];
@@ -60,12 +60,12 @@ public class Panel extends JPanel implements ActionListener {
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 3; j++) {
-                area[3 * i + j] = new ChoosePlayerArea(60 + i * 235, 55 + j * 220, 200, 200, 3 * i + j, sw.prt);
+                area[3 * i + j] = new ChoosePlayerArea(60 + i * 235, 55 + j * 220, 200, 200, 3 * i + j, sw);
                 this.addMouseListener(area[3 * i + j]);
             }
         }
-        area[15] = new ChoosePlayerArea(1283, 30, 200, 200, 15, sw.prt);
-        area[16] = new ChoosePlayerArea(1283, 350, 200, 200, 16, sw.prt);
+        area[15] = new ChoosePlayerArea(1283, 30, 200, 200, 15, sw);
+        area[16] = new ChoosePlayerArea(1283, 350, 200, 200, 16, sw);
         this.addMouseListener(area[15]);
         this.addMouseListener(area[16]);
 
@@ -409,7 +409,7 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(playerImage, 1250, 20, 250, 250, null);
                 g2D.setPaint(new Color(160, 160, 160));
-                switch (playerInfo.name) {
+               /* switch (playerInfo.name) {
 
                     case "Werewolf":
                         g2D.drawString(playerInfo.name, 1290, 300);
@@ -418,12 +418,12 @@ public class Panel extends JPanel implements ActionListener {
                         g2D.drawString(playerInfo.name, 1325, 300);
                         break;
 
-                }
+                }*/
 
                 g2D.setPaint(Color.BLACK);
 
                 if (player1Info.x == 750 && player2Info.x == 750) {
-                    g2D.drawImage(player1, player1Info.x, player1Info.y, null);////////////////////////////////////////////////scale
+                    g2D.drawImage(player1, player1Info.x, player1Info.y, null);
                 } else {
                     g2D.drawImage(player1, player1Info.x, player1Info.y, null);
                     g2D.drawImage(player2, player2Info.x, player2Info.y, null);
@@ -467,9 +467,7 @@ public class Panel extends JPanel implements ActionListener {
                 for (int i = 0; i < 5; i++)
                     if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
                         if (marketBool) {
-                            Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo);
-                            if (mainTurn.prt == 1) market.playerImage = player1Image;
-                            if (mainTurn.prt == 2) market.playerImage = player2Image;
+                            Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo, player1Image, player2Image);
                             marketBool = false;
                             break;
                         }
@@ -752,15 +750,15 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.fillRoundRect(30, 30, 1200, 690, 10, 10);
                 g2D.fillRoundRect(1283, 30, 200, 200, 10, 10);
                 g2D.fillRoundRect(1283, 350, 200, 200, 10, 10);
-                g2D.fillRoundRect(1283, 230, 200, 50, 10, 10);
-                g2D.fillRoundRect(1283, 550, 200, 50, 10, 10);
+                //g2D.fillRoundRect(1283, 230, 200, 50, 10, 10);
+                //g2D.fillRoundRect(1283, 550, 200, 50, 10, 10);
 
                 g2D.setPaint(Color.BLACK);
                 g2D.drawRoundRect(30, 30, 1200, 690, 10, 10);
                 g2D.drawRoundRect(1283, 30, 200, 200, 10, 10);
                 g2D.drawRoundRect(1283, 350, 200, 200, 10, 10);
-                g2D.drawRoundRect(1283, 230, 200, 50, 10, 10);
-                g2D.drawRoundRect(1283, 550, 200, 50, 10, 10);
+                //g2D.drawRoundRect(1283, 230, 200, 50, 10, 10);
+                //g2D.drawRoundRect(1283, 550, 200, 50, 10, 10);
 
 
                 for (int i = 0; i < 5; i++) {

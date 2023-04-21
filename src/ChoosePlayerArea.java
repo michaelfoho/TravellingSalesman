@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class ChoosePlayerArea extends Area implements MouseListener {
-    int sw;
+    Pointer sw;
     static int p1 = -1;
     static int p2 = -1;
     static int turn;
 
-    ChoosePlayerArea(int x, int y, int width, int height, int number, int sw) {
+    ChoosePlayerArea(int x, int y, int width, int height, int number, Pointer sw) {
         super(x, y, width, height, number);
         this.sw = sw;
     }
@@ -15,7 +15,7 @@ public class ChoosePlayerArea extends Area implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
 
-        if (area() && sw == 4) {
+        if (area() && sw.prt == 4) {
 
             if (number == 15) turn = 1;
             if (number == 16) turn = 2;

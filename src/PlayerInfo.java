@@ -9,7 +9,7 @@ public class PlayerInfo implements KeyListener {
     private final int turn;
     int x = 750;
     int y = 700;
-    int money = 10000;
+    int money = 100;
     int power = 5;
     String name;
     Pointer mainTurn;
@@ -128,7 +128,7 @@ public class PlayerInfo implements KeyListener {
             for (int i = 0; i < 5; i++) {
                 if (x == market[i].x && y == market[i].y) {
 
-                    Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", this);
+                    Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", this, Panel.player1Image, Panel.player2Image);
                     break;
                 }
             }//market
