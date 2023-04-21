@@ -19,5 +19,4 @@ public class Button extends JButton {
         this.setBackground(color);//if you add an image for background of button comment this line
         this.setBorder(border);
     }
-
 }

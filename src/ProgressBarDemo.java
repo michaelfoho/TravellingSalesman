@@ -34,6 +34,4 @@ public class ProgressBarDemo  {
 
         bar.setString("Max");//when the bar is 100% shows the text
     }
-
-
 }

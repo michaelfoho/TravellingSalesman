@@ -5,12 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_56_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_56_PM__Changes_1.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Area.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChoosePlayerArea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Keyboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Market.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MarketArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_29_2023_11_40_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_29_2023_11_40_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2023_2_39_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2023_2_39_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_31_2023_1_18_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_31_2023_1_18_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_56_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_8_56_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_10_29_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_10_29_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_10_31_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_10_31_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_05_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_05_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_09_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_09_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_10_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_10_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_58_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_12_58_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_1_53_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_1_53_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_2_04_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_2_04_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_4_01_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_4_01_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_5_36_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_5_36_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_6_12_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_6_12_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_9_37_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_9_2023_9_37_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at________Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at________Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/firstPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/firstPage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/big/angel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/big/werewolf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pngwing.com (44).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/weapon/weapon1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/weapon/weapon2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/weapon/weapon3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/weapon/weapon4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewWindow.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mapObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProgressBarDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProgressBarDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +72,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="22051ff4-57af-4ded-befa-7fb492ff550d" />
+        <option name="url" value="https://github.com/michaelfoho/TravellingSalesman" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,6 +105,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -106,24 +166,51 @@
       <workItem from="1681048310795" duration="3568000" />
       <workItem from="1681055713079" duration="506000" />
       <workItem from="1681059089722" duration="3768000" />
-      <workItem from="1681119354999" duration="1238000" />
-      <workItem from="1681123005333" duration="2776000" />
-      <workItem from="1681131489026" duration="562000" />
-      <workItem from="1681132587223" duration="1368000" />
-      <workItem from="1681134107736" duration="1264000" />
-      <workItem from="1681161564870" duration="4158000" />
-      <workItem from="1681169832111" duration="70000" />
-      <workItem from="1681199977603" duration="1038000" />
-      <workItem from="1681201422796" duration="1606000" />
-      <workItem from="1681204435355" duration="116000" />
-      <workItem from="1681204564891" duration="4352000" />
-      <workItem from="1681208975458" duration="6310000" />
-      <workItem from="1681217136731" duration="117000" />
-      <workItem from="1681217992704" duration="186000" />
-      <workItem from="1681218278822" duration="82000" />
-      <workItem from="1681218534892" duration="722000" />
-      <workItem from="1681230100094" duration="4943000" />
-      <workItem from="1681235183308" duration="506000" />
+      <workItem from="1681070055623" duration="334000" />
+      <workItem from="1681070656374" duration="2830000" />
+      <workItem from="1681075650999" duration="2838000" />
+      <workItem from="1681118178817" duration="465000" />
+      <workItem from="1681118866546" duration="209000" />
+      <workItem from="1681119603116" duration="6237000" />
+      <workItem from="1681131695121" duration="3722000" />
+      <workItem from="1681147049884" duration="1024000" />
+      <workItem from="1681201112336" duration="1494000" />
+      <workItem from="1681203497188" duration="6307000" />
+      <workItem from="1681210438579" duration="6612000" />
+      <workItem from="1681218020523" duration="4872000" />
+      <workItem from="1681230406548" duration="1927000" />
+      <workItem from="1681233192215" duration="2544000" />
+      <workItem from="1681238015215" duration="1400000" />
+      <workItem from="1681239604806" duration="370000" />
+      <workItem from="1681465304053" duration="75000" />
+      <workItem from="1681547061782" duration="9953000" />
+      <workItem from="1681558333290" duration="26000" />
+      <workItem from="1681558484269" duration="7495000" />
+      <workItem from="1681566529549" duration="62000" />
+      <workItem from="1681576608452" duration="958000" />
+      <workItem from="1681582358202" duration="7612000" />
+      <workItem from="1681632566155" duration="16151000" />
+      <workItem from="1681649792751" duration="1786000" />
+      <workItem from="1681722141867" duration="510000" />
+      <workItem from="1681722673864" duration="484000" />
+      <workItem from="1681724494571" duration="4305000" />
+      <workItem from="1681728856104" duration="1591000" />
+      <workItem from="1681738475178" duration="2708000" />
+      <workItem from="1681824231190" duration="1113000" />
+      <workItem from="1681828409833" duration="25963000" />
+      <workItem from="1681906350958" duration="29913000" />
+      <workItem from="1681988518643" duration="8519000" />
+      <workItem from="1682002922461" duration="125000" />
+      <workItem from="1682011128933" duration="5799000" />
+      <workItem from="1682057421819" duration="4718000" />
+      <workItem from="1682071802514" duration="5745000" />
+    </task>
+    <task id="LOCAL-00026" summary="start">
+      <created>1680629268324</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1680629268324</updated>
     </task>
     <task id="LOCAL-00027" summary="start">
       <created>1680630144553</created>
@@ -420,55 +507,48 @@
       <updated>1681065735982</updated>
     </task>
     <task id="LOCAL-00069" summary="start">
-      <created>1681162988676</created>
+      <created>1681066632805</created>
       <option name="number" value="00069" />
       <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1681162988677</updated>
+      <updated>1681066632805</updated>
     </task>
     <task id="LOCAL-00070" summary="start">
-      <created>1681169523408</created>
+      <created>1681066712223</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1681169523408</updated>
+      <updated>1681066712224</updated>
     </task>
     <task id="LOCAL-00071" summary="start">
-      <created>1681202914024</created>
+      <created>1681066918155</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1681202914024</updated>
+      <updated>1681066918155</updated>
     </task>
     <task id="LOCAL-00072" summary="start">
-      <created>1681205221738</created>
+      <created>1681070076454</created>
       <option name="number" value="00072" />
       <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1681205221739</updated>
+      <updated>1681070076455</updated>
     </task>
     <task id="LOCAL-00073" summary="start">
-      <created>1681212698063</created>
+      <created>1681070262465</created>
       <option name="number" value="00073" />
       <option name="presentableId" value="LOCAL-00073" />
       <option name="project" value="LOCAL" />
-      <updated>1681212698063</updated>
+      <updated>1681070262465</updated>
     </task>
     <task id="LOCAL-00074" summary="start">
-      <created>1681217231104</created>
+      <created>1681075719750</created>
       <option name="number" value="00074" />
       <option name="presentableId" value="LOCAL-00074" />
       <option name="project" value="LOCAL" />
-      <updated>1681217231104</updated>
+      <updated>1681075719751</updated>
     </task>
-    <task id="LOCAL-00075" summary="start">
-      <created>1681234933094</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1681234933095</updated>
-    </task>
-    <option name="localTasksCounter" value="76" />
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +559,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
