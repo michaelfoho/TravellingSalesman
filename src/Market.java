@@ -7,7 +7,7 @@ public class Market extends JFrame {
     MarketArea[] area = new MarketArea[5];
     MarketArea backArea;
 
-    Image background, wallet;
+    Image background, wallet, playerImage;
     Image treasureMap = new ImageIcon("img/treasureMap.png").getImage();
     Image weapon1 = new ImageIcon("img/weapon/market/weapon1.png").getImage();
     Image weapon2 = new ImageIcon("img/weapon/market/weapon2.png").getImage();
@@ -78,6 +78,7 @@ public class Market extends JFrame {
 
 
         g2D.drawImage(wallet, 860, 685, 50, 50, null);
+        g2D.drawImage(playerImage, 860, 550, 150, 150, null);
 
 
         g2D.drawImage(weapon1, 830, 95, 30, 120, null);

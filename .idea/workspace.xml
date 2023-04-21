@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start" />
+    <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/angel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player10.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player11.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player12.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player13.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player4.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player5.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player6.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player7.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player8.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/player9.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/hero/small/player9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hero/small/werewolf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,14 +169,7 @@
       <workItem from="1682002922461" duration="125000" />
       <workItem from="1682011128933" duration="5799000" />
       <workItem from="1682057421819" duration="4718000" />
-      <workItem from="1682071802514" duration="6565000" />
-    </task>
-    <task id="LOCAL-00027" summary="start">
-      <created>1680630144553</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1680630144553</updated>
+      <workItem from="1682071802514" duration="10301000" />
     </task>
     <task id="LOCAL-00028" summary="start">
       <created>1680633148371</created>
@@ -495,7 +507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682077632629</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="start">
+      <created>1682078967240</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1682078967240</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

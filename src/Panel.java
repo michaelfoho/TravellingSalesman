@@ -40,7 +40,8 @@ public class Panel extends JPanel implements ActionListener {
     Image statusBoard, inventory;
     Image playerImage, player1Image, player2Image;
     Image[] pImage = new Image[15];
-    Image player1, player2, werewolf, angel;
+    Image player1, player2;
+    Image[] pSmallImage = new Image[15];
     Image[] treasure = new Image[8];
     Image[] lostObject = new Image[13];
     Image[] weapon = new Image[4];
@@ -149,11 +150,22 @@ public class Panel extends JPanel implements ActionListener {
         pImage[13] = new ImageIcon("img/hero/player13.png").getImage();
         pImage[14] = new ImageIcon("img/hero/player14.png").getImage();
 
+        pSmallImage[0] = new ImageIcon("img/hero/small/player0.png").getImage();
+        pSmallImage[1] = new ImageIcon("img/hero/small/player1.png").getImage();
+        pSmallImage[2] = new ImageIcon("img/hero/small/player2.png").getImage();
+        pSmallImage[3] = new ImageIcon("img/hero/small/player3.png").getImage();
+        pSmallImage[4] = new ImageIcon("img/hero/small/player4.png").getImage();
+        pSmallImage[5] = new ImageIcon("img/hero/small/player5.png").getImage();
+        pSmallImage[6] = new ImageIcon("img/hero/small/player6.png").getImage();
+        pSmallImage[7] = new ImageIcon("img/hero/small/player7.png").getImage();
+        pSmallImage[8] = new ImageIcon("img/hero/small/player8.png").getImage();
+        pSmallImage[9] = new ImageIcon("img/hero/small/player9.png").getImage();
+        pSmallImage[10] = new ImageIcon("img/hero/small/player10.png").getImage();
+        pSmallImage[11] = new ImageIcon("img/hero/small/player11.png").getImage();
+        pSmallImage[12] = new ImageIcon("img/hero/small/player12.png").getImage();
+        pSmallImage[13] = new ImageIcon("img/hero/small/player13.png").getImage();
+        pSmallImage[14] = new ImageIcon("img/hero/small/player14.png").getImage();
 
-        //werewolf = new ImageIcon("img/hero/small/werewolf.png").getImage();
-        //angel = new ImageIcon("img/hero/small/angel.png").getImage();
-
-        playerInfo = player1Info;
 
         diceImage[0] = new ImageIcon("img/dice/dice1.png").getImage();
         diceImage[1] = new ImageIcon("img/dice/dice2.png").getImage();
@@ -170,6 +182,9 @@ public class Panel extends JPanel implements ActionListener {
         endIcon[2] = new ImageIcon("img/end/icon2.png").getImage();
         endIcon[3] = new ImageIcon("img/end/icon3.png").getImage();
         endIcon[4] = new ImageIcon("img/end/icon4.png").getImage();
+
+
+        playerInfo = player1Info;
 
         this.setLayout(null);
         this.setFocusable(true);
@@ -453,6 +468,8 @@ public class Panel extends JPanel implements ActionListener {
                     if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
                         if (marketBool) {
                             Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo);
+                            if (mainTurn.prt == 1) market.playerImage = player1Image;
+                            if (mainTurn.prt == 2) market.playerImage = player2Image;
                             marketBool = false;
                             break;
                         }
@@ -759,11 +776,11 @@ public class Panel extends JPanel implements ActionListener {
 
                 if (ChoosePlayerArea.p1 != -1) {
                     player1Image = pImage[ChoosePlayerArea.p1];
-                    player1 = player1Image.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+                    player1 = pSmallImage[ChoosePlayerArea.p1];
                 }
                 if (ChoosePlayerArea.p2 != -1) {
                     player2Image = pImage[ChoosePlayerArea.p2];
-                    player2 = player2Image.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+                    player2 = pSmallImage[ChoosePlayerArea.p2];
                 }
                 playerImage = player1Image;
 
@@ -792,7 +809,7 @@ public class Panel extends JPanel implements ActionListener {
 
         }
         if (e.getSource() == newGameButton) {
-            sw.prt = 2;
+            sw.prt = 4;
 
             continueButton.setEnabled(false);
             newGameButton.setEnabled(false);
