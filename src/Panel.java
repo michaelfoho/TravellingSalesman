@@ -400,7 +400,7 @@ public class Panel extends JPanel implements ActionListener {
 
                 g2D.drawImage(playerImage, 1250, 20, 250, 250, null);
                 g2D.setPaint(new Color(160, 160, 160));
-                /* switch (playerInfo.name) {
+                switch (playerInfo.name) {
 
                     case "Werewolf":
                         g2D.drawString(playerInfo.name, 1290, 300);
@@ -409,7 +409,7 @@ public class Panel extends JPanel implements ActionListener {
                         g2D.drawString(playerInfo.name, 1325, 300);
                         break;
 
-                }*/
+                }
 
                 g2D.setPaint(Color.BLACK);
 
@@ -453,106 +453,112 @@ public class Panel extends JPanel implements ActionListener {
 
                 //market
                 int counter = 0;
-                for (int i = 0; i < 5; i++)
-                    if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
-                        if (marketBool) {
-                            Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo, player1Image, player2Image);
-                            marketBool = false;
-                            break;
+                if (diceNumber.prt == 0)
+                    for (int i = 0; i < 5; i++)
+                        if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
+                            if (marketBool) {
+                                Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo, player1Image, player2Image);
+                                marketBool = false;
+                                break;
+                            }
+                            repaint();
                         }
-                        repaint();
-                    }
 
                 for (int i = 0; i < 5; i++)
                     if (playerInfo.x != PlayerInfo.market[i].x && playerInfo.y != PlayerInfo.market[i].y) counter += 1;
                 if (counter == 5) marketBool = true;
 
                 //trap
-                for (int i = 0; i < 10; i++)
-                    if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
-                        if (trapBool) {
-                            if (playerInfo.power > 0) playerInfo.power -= 1;
-                            if (playerInfo.money > 9) playerInfo.money -= 10;
-                            playerInfo.trap[i].show = true;
-                            trapBool = false;
-                            break;
+                if (diceNumber.prt == 0)
+                    for (int i = 0; i < 10; i++)
+                        if (playerInfo.x == playerInfo.trap[i].x && playerInfo.y == playerInfo.trap[i].y) {
+                            if (trapBool) {
+                                if (playerInfo.power > 0) playerInfo.power -= 1;
+                                if (playerInfo.money > 9) playerInfo.money -= 10;
+                                playerInfo.trap[i].show = true;
+                                trapBool = false;
+                                break;
+                            }
+                            repaint();
                         }
-                        repaint();
-                    }
 
                 counter = 0;
                 for (int i = 0; i < 10; i++)
                     if (playerInfo.x != playerInfo.trap[i].x && playerInfo.y != playerInfo.trap[i].y) counter += 1;
                 if (counter == 10) trapBool = true;
 
-                for (int i = 0; i < 13; i++)
-                    if (playerInfo.x == playerInfo.loot[i].x && playerInfo.y == playerInfo.loot[i].y) {
-                        playerInfo.loot[i].show = true;
-                        repaint();
-                    }
-                for (int i = 0; i < 8; i++)
-                    if (playerInfo.x == playerInfo.treasure[i].x && playerInfo.y == playerInfo.treasure[i].y) {
-                        playerInfo.treasure[i].show = true;
-                        repaint();
-                    }
-
-                //castle
-                if (castleBool) {
-                    if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
-
-                        for (int i = 0; i < 8; i++) {
-                            if (playerInfo.treasure[i].show == true && quest[i] == true && once2[i] == true) {
-                                playerInfo.money += playerInfo.treasure[i].price;
-                                playerInfo.treasureNumber += 1;
-                                once2[i] = false;
-                                if (player1Info.treasureNumber + player2Info.treasureNumber == 8) break;
-
-                                int r;
-                                do {
-                                    r = rand.nextInt(8);
-                                } while (quest[r]);
-
-                                once2[r] = true;
-                                quest[r] = true;
-                                questImage = treasure[r];
-
-                                if (playerInfo.treasure[r].show == true) {
-                                    repaint();
-                                    continue;
-                                }
-
-                                castleBool = false;
-                                repaint();
-                                break;
-                            }
-                        }
-                        //ending
-                        if (player1Info.treasureNumber + player2Info.treasureNumber == 8) {
-                            sw.prt = 3;
+                if (diceNumber.prt == 0)
+                    for (int i = 0; i < 13; i++)
+                        if (playerInfo.x == playerInfo.loot[i].x && playerInfo.y == playerInfo.loot[i].y) {
+                            playerInfo.loot[i].show = true;
                             repaint();
                         }
+                if (diceNumber.prt == 0)
+                    for (int i = 0; i < 8; i++)
+                        if (playerInfo.x == playerInfo.treasure[i].x && playerInfo.y == playerInfo.treasure[i].y) {
+                            playerInfo.treasure[i].show = true;
+                            repaint();
+                        }
+
+                //castle
+                if (diceNumber.prt == 0)
+                    if (castleBool) {
+                        if (playerInfo.x == 7 * 50 && playerInfo.y == 7 * 50) {
+
+                            for (int i = 0; i < 8; i++) {
+                                if (playerInfo.treasure[i].show == true && quest[i] == true && once2[i] == true) {
+                                    playerInfo.money += playerInfo.treasure[i].price;
+                                    playerInfo.treasureNumber += 1;
+                                    once2[i] = false;
+                                    if (player1Info.treasureNumber + player2Info.treasureNumber == 8) break;
+
+                                    int r;
+                                    do {
+                                        r = rand.nextInt(8);
+                                    } while (quest[r]);
+
+                                    once2[r] = true;
+                                    quest[r] = true;
+                                    questImage = treasure[r];
+
+                                    if (playerInfo.treasure[r].show == true) {
+                                        repaint();
+                                        continue;
+                                    }
+
+                                    castleBool = false;
+                                    repaint();
+                                    break;
+                                }
+                            }
+                            //ending
+                            if (player1Info.treasureNumber + player2Info.treasureNumber == 8) {
+                                sw.prt = 3;
+                                repaint();
+                            }
+                        }
                     }
-                }
                 if (playerInfo.x != 7 * 50 && playerInfo.y != 7 * 50) castleBool = true;
 
                 //fight
-                if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
-                    if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
-                    else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
-                    else if (player1Info.power == player2Info.power && playerInfo.power == 0) {
-                        if (mainTurn.prt == 1) {
-                            player2Info.x = 750;
-                            player2Info.y = 700;
-                        } else {
-                            player1Info.x = 750;
-                            player1Info.y = 700;
+                if (diceNumber.prt == 0)
+                    if (player1Info.x == player2Info.x && player1Info.y == player2Info.y && player1Info.x != 750) {
+                        if (player1Info.power > player2Info.power) fight(player1Info, player2Info);
+                        else if (player2Info.power > player1Info.power) fight(player2Info, player1Info);
+                        else if (player1Info.power == player2Info.power && playerInfo.power == 0) {
+                            if (mainTurn.prt == 1) {
+                                player2Info.x = 750;
+                                player2Info.y = 700;
+                            } else {
+                                player1Info.x = 750;
+                                player1Info.y = 700;
+                            }
+                        } else if (player1Info.power == player2Info.power && playerInfo.power != 0) {
+                            if (mainTurn.prt == 1) fight(player1Info, player2Info);
+                            else fight(player2Info, player1Info);
                         }
-                    } else if (player1Info.power == player2Info.power && playerInfo.power != 0) {
-                        if (mainTurn.prt == 1) fight(player1Info, player2Info);
-                        else fight(player2Info, player1Info);
+                        repaint();
                     }
-                    repaint();
-                }
 
                 /*if (diceNumber.prt > 0) {
 
@@ -784,7 +790,7 @@ public class Panel extends JPanel implements ActionListener {
             System.exit(0);
         }
 
-        if (e.getSource() == diceButton) {
+        if (e.getSource() == diceButton) if (diceNumber.prt == 0) {
 
             diceNumber.prt = rand.nextInt(6) + 1;
             dice = diceImage[diceNumber.prt - 1];
