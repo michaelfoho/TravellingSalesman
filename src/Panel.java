@@ -17,6 +17,7 @@ public class Panel extends JPanel implements ActionListener {
     int repaint = 1, treasureRand = 0;//blocks{} integers
     static Pointer mainTurn = new Pointer(1);
     Pointer diceNumber = new Pointer();
+    boolean diceOnce = true;
 
     Font font40 = new Font("Century", Font.PLAIN, 40);
     Font font16 = new Font("Century", Font.PLAIN, 16);
@@ -401,14 +402,12 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawImage(playerImage, 1250, 20, 250, 250, null);
                 g2D.setPaint(new Color(160, 160, 160));
                 switch (playerInfo.name) {
-
                     case "Werewolf":
                         g2D.drawString(playerInfo.name, 1290, 300);
                         break;
                     case "Angel":
                         g2D.drawString(playerInfo.name, 1325, 300);
                         break;
-
                 }
 
                 g2D.setPaint(Color.BLACK);
@@ -459,7 +458,6 @@ public class Panel extends JPanel implements ActionListener {
                             if (marketBool) {
                                 Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo, player1Image, player2Image);
                                 marketBool = false;
-                                break;
                             }
                             repaint();
                         }
@@ -477,7 +475,6 @@ public class Panel extends JPanel implements ActionListener {
                                 if (playerInfo.money > 9) playerInfo.money -= 10;
                                 playerInfo.trap[i].show = true;
                                 trapBool = false;
-                                break;
                             }
                             repaint();
                         }
@@ -559,17 +556,6 @@ public class Panel extends JPanel implements ActionListener {
                         }
                         repaint();
                     }
-
-                /*if (diceNumber.prt > 0) {
-
-                    if (diceNumber.prt % 2 == 0) {
-
-                    }
-
-                    if (diceNumber.prt % 2 == 1) {
-                        
-                    }
-                }*/
 
                 //treasure map
                 if (playerInfo.hasTreasureMap) {
@@ -790,12 +776,13 @@ public class Panel extends JPanel implements ActionListener {
             System.exit(0);
         }
 
-        if (e.getSource() == diceButton) if (diceNumber.prt == 0) {
+        if (e.getSource() == diceButton) if (diceNumber.prt == 0 && diceOnce) {
 
             diceNumber.prt = rand.nextInt(6) + 1;
             dice = diceImage[diceNumber.prt - 1];
+            diceOnce = false;
         }
-        if (e.getSource() == nextButton) {
+        if (e.getSource() == nextButton) if (diceNumber.prt == 0) {
 
             if (mainTurn.prt == 1) {
                 mainTurn.prt = 2;
@@ -808,6 +795,7 @@ public class Panel extends JPanel implements ActionListener {
             }
 
             dice = null;
+            diceOnce = true;
         }
         if (e.getSource() == stateButton) {
 
