@@ -1,29 +1,16 @@
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.Random;
 
-public class Area implements MouseListener {
+public class Area {
     int x, y, width, height;
-    int random;
-    int number;//shomare area
-    ImageIcon image;
-    PlayerInfo playerInfo;
-    JFrame frame;
-    Random rand;
+    int number;//area number
 
-
-    Area(int x, int y, int width, int height, int number, String URL, PlayerInfo playerInfo, JFrame frame) {
+    Area(int x, int y, int width, int height, int number) {
 
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
         this.number = number;
-        this.playerInfo = playerInfo;
-        this.frame = frame;
-        image = new ImageIcon(URL);
-
     }
 
     public boolean area() {
@@ -33,106 +20,5 @@ public class Area implements MouseListener {
                 return true;
 
         return false;
-    }
-
-        /*do {
-            random = rand.nextInt(8);
-        } while (playerInfo.treasure[random].show == true);
-        return 1;*/
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-        int answer = -1;
-
-        if (area()) {
-
-            for (int i = 0; i < 4; i++) {
-
-                if (number == i)
-                    if (playerInfo.money - playerInfo.weapon[i].price < 0) {
-                        JOptionPane.showMessageDialog(null,
-                                "you don't have enough money!",
-                                null,
-                                JOptionPane.INFORMATION_MESSAGE,
-                                new ImageIcon("img/smallWallet.png")
-                        );
-                    } else {
-                        answer = JOptionPane.showOptionDialog(
-                                null,
-                                "do you want to buy this item?",
-                                null,
-                                JOptionPane.YES_NO_OPTION,
-                                JOptionPane.INFORMATION_MESSAGE,
-                                image,
-                                null,
-                                0
-                        );
-                    }
-            }
-
-            if (number == 4)
-                if (playerInfo.money - 2500 < 0) {
-                    JOptionPane.showMessageDialog(null,
-                            "you don't have enough money!",
-                            null,
-                            JOptionPane.INFORMATION_MESSAGE,
-                            new ImageIcon("img/smallWallet.png")
-                    );
-                } else {
-                    answer = JOptionPane.showOptionDialog(
-                            null,
-                            "do you want to buy this item?",
-                            null,
-                            JOptionPane.YES_NO_OPTION,
-                            JOptionPane.INFORMATION_MESSAGE,
-                            image,
-                            null,
-                            0
-                    );
-                }
-
-
-            if (number == 8) frame.setVisible(false);
-        }
-
-        if (answer == 0) {//0 -->means Yes
-
-            for (int i = 0; i < 4; i++) {
-
-                if (number == i) if (playerInfo.money - playerInfo.weapon[i].price >= 0) {
-                    playerInfo.money -= playerInfo.weapon[i].price;
-                    playerInfo.weapon[i].number += 1;
-                    playerInfo.power += playerInfo.weapon[i].strength;
-                }
-            }
-
-            if (number == 4) if (playerInfo.money - 2500 >= 0) {
-                playerInfo.money -= 2500;
-                //if () playerInfo.treasure[random].show = true;
-            }
-
-            frame.repaint();
-        }
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
     }
 }
