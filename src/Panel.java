@@ -58,6 +58,8 @@ public class Panel extends JPanel implements ActionListener {
     int secs;
     private Timer timer;
     private int seconds;
+    boolean t = true;
+
 
     Panel() {
         this.addKeyListener(keyboard);
@@ -406,9 +408,12 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString(String.valueOf(playerInfo.money + "$"), 1060, 245);
 
                 //timer
-                startTimer();
+                if (t == true) {
+                    startTimer();
+                    t = false;
+                }
                 g2D.setPaint(Color.WHITE);
-                g2D.drawString(String.format("%02d:%02d", minutes, secs), 1058, 285);
+                g2D.drawString(String.format("%02d:%02d", minutes, secs), 1058, 290);
                 repaint();
 
                 //treasure score
