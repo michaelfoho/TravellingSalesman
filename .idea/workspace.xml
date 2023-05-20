@@ -7,6 +7,7 @@
     <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlayerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayerInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,13 +156,11 @@
       <workItem from="1682057421819" duration="4718000" />
       <workItem from="1682071802514" duration="12953000" />
       <workItem from="1682326568213" duration="1495000" />
-    </task>
-    <task id="LOCAL-00036" summary="start">
-      <created>1680643593341</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1680643593341</updated>
+      <workItem from="1684270245838" duration="177000" />
+      <workItem from="1684498695567" duration="253000" />
+      <workItem from="1684573159940" duration="540000" />
+      <workItem from="1684577842195" duration="1866000" />
+      <workItem from="1684580331089" duration="385000" />
     </task>
     <task id="LOCAL-00037" summary="start">
       <created>1680646868830</created>
@@ -499,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684253931837</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="start">
+      <created>1684254740647</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1684254740647</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

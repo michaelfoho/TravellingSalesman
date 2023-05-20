@@ -4,6 +4,7 @@ import java.util.Random;
 public class PlayerInfo implements KeyListener {
     Random rand = new Random();
     static boolean[][] map = new boolean[15][15];
+    boolean[][] rah = new boolean[15][15];
     int treasureNumber = 0;
     private final int turn;
     int x = 750;
@@ -186,6 +187,9 @@ public class PlayerInfo implements KeyListener {
                 move[i][1] = -100;
             }
             for (int i = 0; i < 4; i++) moveLock[i] = false;
+
+
+            if (this.x != 750) rah[this.x / 50][this.y / 50] = true;
         }
     }
 }

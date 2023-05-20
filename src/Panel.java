@@ -75,11 +75,11 @@ public class Panel extends JPanel implements ActionListener {
         this.addMouseListener(area[15]);
         this.addMouseListener(area[16]);
 
-        continueButton = new Button(1200, 15, 250, 50, "Continue", new Color(100, 100, 100));
+        continueButton = new Button(675, 15, 250, 50, "Continue", new Color(100, 100, 100));
         continueButton.addActionListener(this);
-        newGameButton = new Button(1200, 80, 250, 50, "New Game", new Color(100, 100, 100));
+        newGameButton = new Button(675, 80, 250, 50, "New Game", new Color(100, 100, 100));
         newGameButton.addActionListener(this);
-        quitButton = new Button(1200, 145, 250, 50, "Quit", new Color(100, 100, 100));
+        quitButton = new Button(675, 145, 250, 50, "Quit", new Color(100, 100, 100));
         quitButton.addActionListener(this);
 
         diceButton = new Button(767, 341, 98, 98, null, new Color(50, 50, 50));
@@ -360,6 +360,17 @@ public class Panel extends JPanel implements ActionListener {
                     lootchecker[12] = true;
                 }
 
+                for (int i = 0; i < 15; i++) {
+                    for (int j = 0; j < 15; j++) {
+                        if (playerInfo.rah[i][j]) {
+                            g2D.setPaint(new Color(0,0,100));
+                            g2D.fillOval(i * 50 + 20, j * 50 + 20, 10, 10);
+                        }
+                    }
+                }
+
+                g2D.setPaint(Color.BLACK);
+
                 for (int i = 0; i < 6; i++)
                     if (playerInfo.move[i][0] != 0 && playerInfo.move[i][1] != 0)
                         g2D.fillOval(playerInfo.move[i][0] + 20, playerInfo.move[i][1] + 20, 10, 10);
@@ -408,7 +419,7 @@ public class Panel extends JPanel implements ActionListener {
                 g2D.drawString(String.valueOf(playerInfo.money + "$"), 1060, 245);
 
                 //timer
-                if (t == true) {
+                if (t) {
                     startTimer();
                     t = false;
                 }
