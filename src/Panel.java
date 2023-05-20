@@ -363,7 +363,7 @@ public class Panel extends JPanel implements ActionListener {
                 for (int i = 0; i < 15; i++) {
                     for (int j = 0; j < 15; j++) {
                         if (playerInfo.rah[i][j]) {
-                            g2D.setPaint(new Color(0,0,100));
+                            g2D.setPaint(new Color(0, 0, 100));
                             g2D.fillOval(i * 50 + 20, j * 50 + 20, 10, 10);
                         }
                     }
@@ -493,19 +493,23 @@ public class Panel extends JPanel implements ActionListener {
 
                 //market
                 int counter = 0;
-                if (diceNumber.prt == 0)
-                    for (int i = 0; i < 5; i++)
+                if (diceNumber.prt == 0) {
+                    for (int i = 0; i < 5; i++) {
                         if (playerInfo.x == PlayerInfo.market[i].x && playerInfo.y == PlayerInfo.market[i].y) {
                             if (marketBool) {
                                 Market market = new Market("img/marketBackground.png", "img/building/marketDesert.png", "Market", playerInfo, player1Image, player2Image);
                                 marketBool = false;
+                                repaint();
                             }
-                            repaint();
                         }
+                    }
+                }
 
-                for (int i = 0; i < 5; i++)
-                    if (playerInfo.x != PlayerInfo.market[i].x && playerInfo.y != PlayerInfo.market[i].y) counter += 1;
-                if (counter == 5) marketBool = true;
+                for (int i = 0; i < 5; i++) {
+                    if (player1Info.x != PlayerInfo.market[i].x && player1Info.y != PlayerInfo.market[i].y && player2Info.x != PlayerInfo.market[i].x && player2Info.y != PlayerInfo.market[i].y)
+                        counter += 1;
+                    if (counter == 5) marketBool = true;
+                }
 
                 //trap
                 if (diceNumber.prt == 0)

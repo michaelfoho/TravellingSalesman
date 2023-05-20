@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start" />
+    <list default="true" id="6ace8c08-b2ba-4e54-9bb0-20211672cb75" name="Changes" comment="start">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_16_2023_7_47_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_16_2023_7_47_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Panel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,19 +24,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="22051ff4-57af-4ded-befa-7fb492ff550d" />
-        <option name="url" value="https://github.com/michaelfoho/TravellingSalesman" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,7 +44,6 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -113,50 +104,72 @@
       <workItem from="1681048310795" duration="3568000" />
       <workItem from="1681055713079" duration="506000" />
       <workItem from="1681059089722" duration="3768000" />
-      <workItem from="1681070055623" duration="334000" />
-      <workItem from="1681070656374" duration="2830000" />
-      <workItem from="1681075650999" duration="2838000" />
-      <workItem from="1681118178817" duration="465000" />
-      <workItem from="1681118866546" duration="209000" />
-      <workItem from="1681119603116" duration="6237000" />
-      <workItem from="1681131695121" duration="3722000" />
-      <workItem from="1681147049884" duration="1024000" />
-      <workItem from="1681201112336" duration="1494000" />
-      <workItem from="1681203497188" duration="6307000" />
-      <workItem from="1681210438579" duration="6612000" />
-      <workItem from="1681218020523" duration="4872000" />
-      <workItem from="1681230406548" duration="1927000" />
-      <workItem from="1681233192215" duration="2544000" />
-      <workItem from="1681238015215" duration="1400000" />
-      <workItem from="1681239604806" duration="370000" />
-      <workItem from="1681465304053" duration="75000" />
-      <workItem from="1681547061782" duration="9953000" />
-      <workItem from="1681558333290" duration="26000" />
-      <workItem from="1681558484269" duration="7495000" />
-      <workItem from="1681566529549" duration="62000" />
-      <workItem from="1681576608452" duration="958000" />
-      <workItem from="1681582358202" duration="7612000" />
-      <workItem from="1681632566155" duration="16151000" />
-      <workItem from="1681649792751" duration="1786000" />
-      <workItem from="1681722141867" duration="510000" />
-      <workItem from="1681722673864" duration="484000" />
-      <workItem from="1681724494571" duration="4305000" />
-      <workItem from="1681728856104" duration="1591000" />
-      <workItem from="1681738475178" duration="2708000" />
-      <workItem from="1681824231190" duration="1113000" />
-      <workItem from="1681828409833" duration="25963000" />
-      <workItem from="1681906350958" duration="29913000" />
-      <workItem from="1681988518643" duration="8519000" />
-      <workItem from="1682002922461" duration="125000" />
-      <workItem from="1682011128933" duration="5799000" />
-      <workItem from="1682057421819" duration="4718000" />
-      <workItem from="1682071802514" duration="12953000" />
-      <workItem from="1682326568213" duration="1495000" />
-      <workItem from="1684270245838" duration="177000" />
-      <workItem from="1684498695567" duration="253000" />
-      <workItem from="1684573159940" duration="540000" />
-      <workItem from="1684577842195" duration="1866000" />
-      <workItem from="1684580331089" duration="714000" />
+      <workItem from="1681119354999" duration="1238000" />
+      <workItem from="1681123005333" duration="2776000" />
+      <workItem from="1681131489026" duration="562000" />
+      <workItem from="1681132587223" duration="1368000" />
+      <workItem from="1681134107736" duration="1264000" />
+      <workItem from="1681161564870" duration="4158000" />
+      <workItem from="1681169832111" duration="70000" />
+      <workItem from="1681199977603" duration="1038000" />
+      <workItem from="1681201422796" duration="1606000" />
+      <workItem from="1681204435355" duration="116000" />
+      <workItem from="1681204564891" duration="4352000" />
+      <workItem from="1681208975458" duration="6310000" />
+      <workItem from="1681217136731" duration="117000" />
+      <workItem from="1681217992704" duration="186000" />
+      <workItem from="1681218278822" duration="82000" />
+      <workItem from="1681218534892" duration="722000" />
+      <workItem from="1681230100094" duration="4943000" />
+      <workItem from="1681235183308" duration="506000" />
+      <workItem from="1681235714175" duration="154000" />
+      <workItem from="1681390303726" duration="4049000" />
+      <workItem from="1681406483923" duration="5169000" />
+      <workItem from="1681555916836" duration="872000" />
+      <workItem from="1681556907804" duration="4430000" />
+      <workItem from="1681561726491" duration="1857000" />
+      <workItem from="1681580901043" duration="1884000" />
+      <workItem from="1681632593499" duration="890000" />
+      <workItem from="1681633497893" duration="2043000" />
+      <workItem from="1681635572949" duration="886000" />
+      <workItem from="1681636473822" duration="8506000" />
+      <workItem from="1681645120330" duration="96000" />
+      <workItem from="1681645250896" duration="32000" />
+      <workItem from="1681645311738" duration="519000" />
+      <workItem from="1681645926990" duration="69000" />
+      <workItem from="1681646014697" duration="1524000" />
+      <workItem from="1681648103867" duration="1204000" />
+      <workItem from="1681720999801" duration="59000" />
+      <workItem from="1681721777084" duration="1280000" />
+      <workItem from="1681723272885" duration="395000" />
+      <workItem from="1681723699718" duration="3154000" />
+      <workItem from="1681736574767" duration="989000" />
+      <workItem from="1681752572490" duration="152000" />
+      <workItem from="1681825361978" duration="1797000" />
+      <workItem from="1681832385620" duration="749000" />
+      <workItem from="1681833205761" duration="442000" />
+      <workItem from="1681833725081" duration="3226000" />
+      <workItem from="1681841841664" duration="8987000" />
+      <workItem from="1681851946559" duration="3830000" />
+      <workItem from="1681891683008" duration="6160000" />
+      <workItem from="1681904517991" duration="392000" />
+      <workItem from="1681904922188" duration="1965000" />
+      <workItem from="1681908285756" duration="4901000" />
+      <workItem from="1681918135526" duration="7625000" />
+    </task>
+    <task id="LOCAL-00036" summary="start">
+      <created>1680643593341</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1680643593341</updated>
+    </task>
+    <task id="LOCAL-00037" summary="start">
+      <created>1680646868830</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1680646868830</updated>
     </task>
     <task id="LOCAL-00038" summary="start">
       <created>1680648174946</created>
@@ -376,132 +389,118 @@
       <updated>1681065735982</updated>
     </task>
     <task id="LOCAL-00069" summary="start">
-      <created>1681066632805</created>
+      <created>1681162988676</created>
       <option name="number" value="00069" />
       <option name="presentableId" value="LOCAL-00069" />
       <option name="project" value="LOCAL" />
-      <updated>1681066632805</updated>
+      <updated>1681162988677</updated>
     </task>
     <task id="LOCAL-00070" summary="start">
-      <created>1681066712223</created>
+      <created>1681169523408</created>
       <option name="number" value="00070" />
       <option name="presentableId" value="LOCAL-00070" />
       <option name="project" value="LOCAL" />
-      <updated>1681066712224</updated>
+      <updated>1681169523408</updated>
     </task>
     <task id="LOCAL-00071" summary="start">
-      <created>1681066918155</created>
+      <created>1681202914024</created>
       <option name="number" value="00071" />
       <option name="presentableId" value="LOCAL-00071" />
       <option name="project" value="LOCAL" />
-      <updated>1681066918155</updated>
+      <updated>1681202914024</updated>
     </task>
     <task id="LOCAL-00072" summary="start">
-      <created>1681070076454</created>
+      <created>1681205221738</created>
       <option name="number" value="00072" />
       <option name="presentableId" value="LOCAL-00072" />
       <option name="project" value="LOCAL" />
-      <updated>1681070076455</updated>
+      <updated>1681205221739</updated>
     </task>
     <task id="LOCAL-00073" summary="start">
-      <created>1681070262465</created>
+      <created>1681212698063</created>
       <option name="number" value="00073" />
       <option name="presentableId" value="LOCAL-00073" />
       <option name="project" value="LOCAL" />
-      <updated>1681070262465</updated>
+      <updated>1681212698063</updated>
     </task>
     <task id="LOCAL-00074" summary="start">
-      <created>1681075719750</created>
+      <created>1681217231104</created>
       <option name="number" value="00074" />
       <option name="presentableId" value="LOCAL-00074" />
       <option name="project" value="LOCAL" />
-      <updated>1681075719751</updated>
+      <updated>1681217231104</updated>
     </task>
     <task id="LOCAL-00075" summary="start">
-      <created>1682077632628</created>
+      <created>1681234933094</created>
       <option name="number" value="00075" />
       <option name="presentableId" value="LOCAL-00075" />
       <option name="project" value="LOCAL" />
-      <updated>1682077632629</updated>
+      <updated>1681234933095</updated>
     </task>
     <task id="LOCAL-00076" summary="start">
-      <created>1682078967240</created>
+      <created>1681235848971</created>
       <option name="number" value="00076" />
       <option name="presentableId" value="LOCAL-00076" />
       <option name="project" value="LOCAL" />
-      <updated>1682078967240</updated>
+      <updated>1681235848971</updated>
     </task>
     <task id="LOCAL-00077" summary="start">
-      <created>1682082726966</created>
+      <created>1681561324794</created>
       <option name="number" value="00077" />
       <option name="presentableId" value="LOCAL-00077" />
       <option name="project" value="LOCAL" />
-      <updated>1682082726966</updated>
+      <updated>1681561324794</updated>
     </task>
     <task id="LOCAL-00078" summary="start">
-      <created>1682082777251</created>
+      <created>1681563402085</created>
       <option name="number" value="00078" />
       <option name="presentableId" value="LOCAL-00078" />
       <option name="project" value="LOCAL" />
-      <updated>1682082777251</updated>
+      <updated>1681563402085</updated>
     </task>
     <task id="LOCAL-00079" summary="start">
-      <created>1682083992455</created>
+      <created>1681645382117</created>
       <option name="number" value="00079" />
       <option name="presentableId" value="LOCAL-00079" />
       <option name="project" value="LOCAL" />
-      <updated>1682083992455</updated>
+      <updated>1681645382117</updated>
     </task>
     <task id="LOCAL-00080" summary="start">
-      <created>1682084119264</created>
+      <created>1681646264770</created>
       <option name="number" value="00080" />
       <option name="presentableId" value="LOCAL-00080" />
       <option name="project" value="LOCAL" />
-      <updated>1682084119264</updated>
+      <updated>1681646264770</updated>
     </task>
     <task id="LOCAL-00081" summary="start">
-      <created>1682085379031</created>
+      <created>1681648228927</created>
       <option name="number" value="00081" />
       <option name="presentableId" value="LOCAL-00081" />
       <option name="project" value="LOCAL" />
-      <updated>1682085379031</updated>
+      <updated>1681648228927</updated>
     </task>
     <task id="LOCAL-00082" summary="start">
-      <created>1682327221339</created>
+      <created>1681825406673</created>
       <option name="number" value="00082" />
       <option name="presentableId" value="LOCAL-00082" />
       <option name="project" value="LOCAL" />
-      <updated>1682327221339</updated>
+      <updated>1681825406674</updated>
     </task>
     <task id="LOCAL-00083" summary="start">
-      <created>1684253925736</created>
+      <created>1681834502877</created>
       <option name="number" value="00083" />
       <option name="presentableId" value="LOCAL-00083" />
       <option name="project" value="LOCAL" />
-      <updated>1684253925737</updated>
+      <updated>1681834502877</updated>
     </task>
     <task id="LOCAL-00084" summary="start">
-      <created>1684253931837</created>
+      <created>1681851760038</created>
       <option name="number" value="00084" />
       <option name="presentableId" value="LOCAL-00084" />
       <option name="project" value="LOCAL" />
-      <updated>1684253931837</updated>
+      <updated>1681851760038</updated>
     </task>
-    <task id="LOCAL-00085" summary="start">
-      <created>1684254740647</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1684254740647</updated>
-    </task>
-    <task id="LOCAL-00086" summary="start">
-      <created>1684580894221</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1684580894221</updated>
-    </task>
-    <option name="localTasksCounter" value="87" />
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,13 +511,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

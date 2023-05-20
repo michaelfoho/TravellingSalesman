@@ -1,3 +1,6 @@
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -14,6 +17,7 @@ public class Frame extends JFrame implements ActionListener {
     JMenuItem soundOffItem = new JMenuItem("Off");
 
     Panel panel;
+    private Clip clip;
 
     public static Frame getInstance() {
         return instance;
@@ -42,7 +46,7 @@ public class Frame extends JFrame implements ActionListener {
         fileMenu.add(saveItem);
         fileMenu.add(exitItem);
 
-        soundOnItem.addActionListener(this);
+        //soundOnItem.addActionListener(this);
         soundOffItem.addActionListener(this);
 
         soundMenu.add(soundOnItem);
@@ -53,7 +57,34 @@ public class Frame extends JFrame implements ActionListener {
 
         this.setJMenuBar(menuBar);
         this.setVisible(true);
+
+        soundOnItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (clip != null && clip.isRunning()) {
+                    clip.stop();
+                } else {
+                    playSound();
+                }
+            }
+        });
     }
+
+
+    private void playSound() {
+        try {
+
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(Frame.class.getResource("music/menumusic.wav"));
+
+            clip = AudioSystem.getClip();
+            clip.open(audioIn);
+
+
+            clip.start();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
